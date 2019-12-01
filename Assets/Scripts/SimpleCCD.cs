@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class SimpleCCD : MonoBehaviour
 {
     public int iterations = 5;
-    public Unity.tag.BodyTab tab = Unity.tag.BodyTab.None;
     [Range(0.01f, 1f)] public float damping = 1;
 
     public Transform target;
