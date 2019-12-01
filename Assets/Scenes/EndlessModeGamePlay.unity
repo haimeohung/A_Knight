@@ -722,11 +722,6 @@ PrefabInstance:
       propertyPath: input
       value: 
       objectReference: {fileID: 73054387}
-    - target: {fileID: 4922780581557607668, guid: 7d1f8d7c73038d3408453611d8223af7,
-        type: 3}
-      propertyPath: jumpAbility
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2800469728285425646, guid: 7d1f8d7c73038d3408453611d8223af7,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -750,12 +745,12 @@ PrefabInstance:
     - target: {fileID: 2800469726748011121, guid: 7d1f8d7c73038d3408453611d8223af7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.4587869
+      value: -0.45878702
       objectReference: {fileID: 0}
     - target: {fileID: 2800469726748011121, guid: 7d1f8d7c73038d3408453611d8223af7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.88854635
+      value: 0.8885463
       objectReference: {fileID: 0}
     - target: {fileID: 2800469726748011121, guid: 7d1f8d7c73038d3408453611d8223af7,
         type: 3}
@@ -790,7 +785,7 @@ PrefabInstance:
     - target: {fileID: 2800469727971245344, guid: 7d1f8d7c73038d3408453611d8223af7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.5603179
+      value: -0.56031805
       objectReference: {fileID: 0}
     - target: {fileID: 2800469727971245344, guid: 7d1f8d7c73038d3408453611d8223af7,
         type: 3}
@@ -827,11 +822,6 @@ PrefabInstance:
       propertyPath: hander
       value: 
       objectReference: {fileID: 73054387}
-    - target: {fileID: 2800469728282561836, guid: 7d1f8d7c73038d3408453611d8223af7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3015508030488048499, guid: 7d1f8d7c73038d3408453611d8223af7,
         type: 3}
       propertyPath: m_Enabled
@@ -867,7 +857,13 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.323
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2800469728282561836, guid: 7d1f8d7c73038d3408453611d8223af7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3432916555656403053, guid: 7d1f8d7c73038d3408453611d8223af7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7d1f8d7c73038d3408453611d8223af7, type: 3}
 --- !u!1 &1253071465
 GameObject:

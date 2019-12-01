@@ -9,12 +9,12 @@ public class LogicJoint : MonoBehaviour
     [SerializeField] private Transform target; // targer aim to
     private enum AutoConfigureType { none, horizontal, vertical }
     [SerializeField] private AutoConfigureType autoConfigure = AutoConfigureType.none;
-    [SerializeField] private bool _flipAngle = true;
+    [SerializeField] private bool flipAngle = false;
     private Transform child;
     private float r1, r2, r1delta, r2delta;
-    public bool FlipAngle { get => _flipAngle; set => _flipAngle = value; }
-    public void TryFlipAngle() { _flipAngle = !FlipAngle; }
+    public void FlipAngle() { flipAngle = !flipAngle; }
 
+    private bool? autoAngle;
 
     void Start()
     {
@@ -35,7 +35,7 @@ public class LogicJoint : MonoBehaviour
         Vector3 distance = target.position - transform.position;
         if (distance.Magnitude2D() < 0.000001) // too close
             return;
-        if (distance.Magnitude2D() > (r1+r2)) // too far
+        if (distance.Magnitude2D() > (r1 + r2)) // too far
         {
             float angle = CaculateAngle(distance);
             transform.rotation = Quaternion.Euler(0, 0, angle + r1delta);
@@ -49,14 +49,21 @@ public class LogicJoint : MonoBehaviour
         switch (autoConfigure)
         {
             case AutoConfigureType.vertical:
-                FlipAngle = target.position.x > transform.position.x;
+                autoAngle = target.position.x > transform.position.x;
                 break;
             case AutoConfigureType.horizontal:
-                FlipAngle = target.position.y > transform.position.y;
+                autoAngle = target.position.y > transform.position.y;
+                break;
+            default:
+                autoAngle = false;
                 break;
         }
 
-        if (FlipAngle)
+        bool canFlip = flipAngle;
+        if (autoAngle.HasValue)
+            canFlip = flipAngle ^ autoAngle.Value;
+
+        if (canFlip)
         {
             angle1 = -angle1;
             angle2 = -angle2;

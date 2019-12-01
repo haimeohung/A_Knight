@@ -8,18 +8,19 @@ using UnityEngine.UI;
 public class ButtonControler : MonoBehaviour
 {
     public ButtonTag buttonTag = ButtonTag.None;
-    [SerializeField] private InputMode inputMode = InputMode.Touch;
+    [SerializeField] private KeyCode keyCode;
     [SerializeField] private bool enableEffect = true;
     [Range(0.1f, 1f)] [SerializeField] private float timeEffect = 0.5f;
     [SerializeField] private Vector3 endSize = new Vector3(2f, 2f, 1f);
-    [Range(0f,1f)] [SerializeField] private float deltaTouchSize = 0.6f;
+    [Range(0f, 1f)] [SerializeField] private float deltaTouchSize = 0.6f;
+
 
     private RectTransform target, self;
     private Image image;
     private Image backGround;
     private float step, radius;
     private int isRunning = 0;
-    private KeyCode keyCode;
+
 
     private bool _IsPress = false;
     public bool IsPress
@@ -38,7 +39,7 @@ public class ButtonControler : MonoBehaviour
                     }
                     catch { };
 
-                    OnButtomUp = false;
+                    OnButtonUp = false;
                     OnButtonDown = !_IsPress;
                 }
                 else
@@ -49,13 +50,13 @@ public class ButtonControler : MonoBehaviour
                     }
                     catch { };
 
-                    OnButtomUp = _IsPress;
+                    OnButtonUp = _IsPress;
                     OnButtonDown = false;
                 }
             _IsPress = value;
         }
     }
-    public bool OnButtomUp { get; private set; }
+    public bool OnButtonUp { get; private set; }
     public bool OnButtonDown { get; private set; }
 
     void Start()
@@ -73,38 +74,20 @@ public class ButtonControler : MonoBehaviour
         catch { };
         if (!(target is null))
             target.localScale = new Vector3(0f, 0f, 1f);
-
-        switch (buttonTag)
-        {
-            case ButtonTag.Jump:
-                keyCode = KeyCode.Space;
-                break;
-            case ButtonTag.Left:
-                keyCode = KeyCode.LeftArrow;
-                break;
-            case ButtonTag.Right:
-                keyCode = KeyCode.RightArrow;
-                break;
-        }
     }
 
     void Update()
     {
-        if (inputMode == InputMode.Touch)
-        {
-            if (Input.touchCount > 0)
-                CheckPress();
-            else
-            {
-                IsPress = false;
-                OnButtomUp = false;
-                OnButtonDown = false;
-            }
-        }
+        if (Input.touchCount > 0)
+            CheckPress();
         else
         {
-            IsPress = Input.GetKey(keyCode);
+            IsPress = false;
+            OnButtonUp = false;
+            OnButtonDown = false;
         }
+
+        IsPress |= Input.GetKey(keyCode);
     }
 
     private void CheckPress()
@@ -123,7 +106,7 @@ public class ButtonControler : MonoBehaviour
         if (target is null || image is null)
             return;
         isRunning++;
-        if (isRunning > 1)  
+        if (isRunning > 1)
             return;
         StartCoroutine(RunningTrigger());
     }
@@ -133,7 +116,7 @@ public class ButtonControler : MonoBehaviour
         float process;
         Color color = image.color;
         Color change = image.color;
-        while (timer < timeEffect) 
+        while (timer < timeEffect)
         {
             if (isRunning > 1)
             {
@@ -143,7 +126,7 @@ public class ButtonControler : MonoBehaviour
             timer += Time.fixedDeltaTime;
             process = timer / timeEffect;
             target.localScale = endSize * process;
-            change.a = 1f-process;
+            change.a = 1f - process;
             image.color = change;
             yield return null;
         }

@@ -6,40 +6,77 @@ using Unity.tag;
 public class UIInputHander : MonoBehaviour
 {
     public Vector3 atkDirection;
-    public int movingDirection;
 
     private VJHander[] joysticks;
     private ButtonControler[] buttons;
-    private Dictionary<JoystickTag, int> joystickTagMap = new Dictionary<JoystickTag, int>();
-    private Dictionary<ButtonTag, int> buttonTagMap = new Dictionary<ButtonTag, int>();
+
+    private AttackMode _attackMode = AttackMode.None;
+    public AttackMode AttackMode
+    {
+        get => _attackMode;
+        set
+        {
+            try
+            {
+                if (value != _attackMode)
+                {
+                    switch (value)
+                    {
+                        case AttackMode.None:
+                            buttons[(int)ButtonTag.Attack]?.gameObject.SetActive(false);
+                            joysticks[(int)JoystickTag.Weapon]?.gameObject.SetActive(false);
+                            break;
+                        case AttackMode.NonDirection:
+                            buttons[(int)ButtonTag.Attack]?.gameObject.SetActive(true);
+                            joysticks[(int)JoystickTag.Weapon]?.gameObject.SetActive(false);
+                            break;
+                        case AttackMode.HaveDirection:
+                            buttons[(int)ButtonTag.Attack]?.gameObject.SetActive(false);
+                            joysticks[(int)JoystickTag.Weapon]?.gameObject.SetActive(true);
+                            break;
+                    }
+                    _attackMode = value;
+                }
+            }
+            catch
+            {
+                StartCoroutine(FixSetAttackMode(value));
+            }
+        }
+    }
+    IEnumerator FixSetAttackMode(AttackMode mode)
+    {
+        yield return 0;
+        AttackMode = mode;
+    }
+
+    public int movingDirection
+    {
+        get
+        {
+            if (IsPress(ButtonTag.Left) && IsPress(ButtonTag.Right))
+                return 0;
+            if (IsPress(ButtonTag.Left))
+                return -1;
+            if (IsPress(ButtonTag.Right))
+                return 1;
+            return 0;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        joysticks = gameObject.GetComponentsInChildren<VJHander>();
-        buttons = gameObject.GetComponentsInChildren<ButtonControler>();
-        for (int i = 0; i < joysticks.Length; i++)
-            if (joysticks[i].joystickTag != JoystickTag.None)
-                joystickTagMap.Add(joysticks[i].joystickTag, i);
-        for (int i = 0; i < buttons.Length; i++)
-            if (buttons[i].buttonTag != ButtonTag.None)
-                buttonTagMap.Add(buttons[i].buttonTag, i);
+        joysticks = new VJHander[System.Enum.GetValues(typeof(JoystickTag)).Length];
+        buttons = new ButtonControler[System.Enum.GetValues(typeof(ButtonTag)).Length];
+        foreach (var item in GetComponentsInChildren<VJHander>())
+            joysticks[(int)item.joystickTag] = item;
+        foreach (var item in GetComponentsInChildren<ButtonControler>())
+            buttons[(int)item.buttonTag] = item;
     }
 
-    void Update()
-    {
-        movingDirection = 0;
-        if (IsPress(ButtonTag.Left))
-            movingDirection = -1;
-        if (IsPress(ButtonTag.Right))
-            movingDirection = 1;
-        if (IsPress(ButtonTag.Left) && IsPress(ButtonTag.Right))
-            movingDirection = 0;
-    }
-
-    public bool IsPress(ButtonTag tag) => tag == ButtonTag.None ? false : buttons[buttonTagMap[tag]].IsPress;
-    public bool OnButtonUp(ButtonTag tag) => tag == ButtonTag.None ? false : buttons[buttonTagMap[tag]].OnButtomUp;
-    public bool OnButtonDown(ButtonTag tag) => tag == ButtonTag.None ? false : buttons[buttonTagMap[tag]].OnButtonDown;
-    public Vector3 GetDirection(JoystickTag tag) => tag == JoystickTag.None ? Vector3.zero : joysticks[joystickTagMap[tag]].GetInputDirection;
-    public float GetAngle(JoystickTag tag) => tag == JoystickTag.None ? 0f : joysticks[joystickTagMap[tag]].GetInputAngle;
+    public bool IsPress(ButtonTag tag) => tag == ButtonTag.None || buttons[(int)tag] is null ? false : buttons[(int)tag].IsPress;
+    public bool OnButtonUp(ButtonTag tag) => tag == ButtonTag.None || buttons[(int)tag] is null ? false : buttons[(int)tag].OnButtonUp;
+    public bool OnButtonDown(ButtonTag tag) => tag == ButtonTag.None || buttons[(int)tag] is null ? false : buttons[(int)tag].OnButtonDown;
+    public Vector3 GetDirection(JoystickTag tag) => tag == JoystickTag.None || buttons[(int)tag] is null ? Vector3.zero : joysticks[(int)tag].GetInputDirection;
 }
