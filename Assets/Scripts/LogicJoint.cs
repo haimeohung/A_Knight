@@ -7,9 +7,10 @@ using Unity.Extentison;
 public class LogicJoint : MonoBehaviour
 {
     [SerializeField] private Transform target; // targer aim to
-    private enum AutoConfigureType { none, horizontal, vertical }
+    private enum AutoConfigureType { none, horizontal, vertical, dependingObject }
     [SerializeField] private AutoConfigureType autoConfigure = AutoConfigureType.none;
     [SerializeField] private bool flipAngle = false;
+    [SerializeField] private GameObject whatIsDependingObject;
     private Transform child;
     private float r1, r2, r1delta, r2delta;
     public void FlipAngle() { flipAngle = !flipAngle; }
@@ -53,6 +54,9 @@ public class LogicJoint : MonoBehaviour
                 break;
             case AutoConfigureType.horizontal:
                 autoAngle = target.position.y > transform.position.y;
+                break;
+            case AutoConfigureType.dependingObject:
+                autoAngle = whatIsDependingObject?.transform.eulerAngles.y > 90f;
                 break;
             default:
                 autoAngle = false;

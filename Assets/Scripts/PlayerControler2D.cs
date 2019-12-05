@@ -18,7 +18,7 @@ public class PlayerControler2D : MonoBehaviour
     [Header("Checking Setting")]
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Transform groundCheck = null;
-    [Range(0.01f, 0.1f)] [SerializeField] private float checkRadius = 0.1f;
+    [SerializeField] private float checkRadius = 0.1f;
     [Range(0.0001f, 0.001f)] [SerializeField] private float accurate = 0.0005f;
     [Header("Weapon Setting")]
     [SerializeField] private Transform weaponContainer = null;
@@ -27,12 +27,27 @@ public class PlayerControler2D : MonoBehaviour
     #region flag and get set
     [Header("Info run-time Flag (Read-Only, do not edit here)")]
     [SerializeField] private WeaponTag _selectedWeapon = WeaponTag.None;
+    [SerializeField] private int _attackPhase = 0;
     [SerializeField] private bool _facingRight = true;
     [SerializeField] private bool _isGrounder = false;
     [SerializeField] private bool _isJumpUp = false;
     [SerializeField] private bool _isJumpDown = false;
+    [SerializeField] private bool _canAttack = false;
+    [SerializeField] private bool _attacking = false;
     [SerializeField] private int _runningSpeed = 0;
     [SerializeField] private int jumpCounter = 0;
+    public int AttackPhase
+    {
+        get => _attackPhase;
+        private set
+        {
+            if (_attackPhase == value)
+                return;
+            CanGoNextAttack = false;
+            _attackPhase = value > 3 ? 1 : value;
+            ani.SetInteger("AttackPhase", _attackPhase);
+        }
+    }
     public bool FacingRight
     {
         get => _facingRight;
@@ -51,7 +66,10 @@ public class PlayerControler2D : MonoBehaviour
         private set
         {
             if (value && (!_isGrounder))
+            {
                 ani?.SetTrigger("Grounder");
+                Attacking = false;
+            }
             _isGrounder = value;
         }
     }
@@ -60,7 +78,7 @@ public class PlayerControler2D : MonoBehaviour
         get => _isJumpUp;
         private set
         {
-            if ((!_isJumpUp) && value)
+            if ((!_isJumpUp) && value && !Attacking)
                 ani?.SetTrigger("JumpingUp");
             _isJumpUp = value;
         }
@@ -70,9 +88,33 @@ public class PlayerControler2D : MonoBehaviour
         get => _isJumpDown;
         private set
         {
-            if ((!_isJumpDown) && value)
+            if ((!_isJumpDown) && value && !Attacking)
                 ani?.SetTrigger("JumpingDown");
             _isJumpDown = value;
+        }
+    }
+    public bool CanAttack
+    {
+        get => _canAttack;
+        set
+        {
+            if (!_canAttack && value)
+            {
+                if (!Attacking)
+                    AttackPhase++;
+                Attacking = true;
+            }
+            _canAttack = value;
+        }
+    }
+    public bool Attacking
+    {
+        get => _attacking;
+        set
+        {
+            if (!_attacking && value)
+                ani.SetTrigger("Attack");
+            _attacking = value;
         }
     }
     public int RuningSpeed
@@ -80,6 +122,7 @@ public class PlayerControler2D : MonoBehaviour
         get => _runningSpeed;
         private set
         {
+            rb.velocity = new Vector2(value, rb.velocity.y);
             if (value == _runningSpeed)
                 return;
             ani?.SetInteger("RunningSpeed", value);
@@ -126,6 +169,7 @@ public class PlayerControler2D : MonoBehaviour
     }
     #endregion
 
+
     private Rigidbody2D rb;
     private Animator ani;
     private float jumpTimer;
@@ -165,7 +209,13 @@ public class PlayerControler2D : MonoBehaviour
             {
                 GameObject gc = new GameObject("GroundCheck");
                 gc.transform.SetParent(transform);
-                groundCheck = gc.GetComponent<Transform>();
+                groundCheck = gc.transform;
+                CircleCollider2D cr = gameObject.GetComponent<CircleCollider2D>();
+                if (cr != null)
+                {
+                    groundCheck.localPosition = cr.bounds.center + new Vector3(cr.offset.x, cr.offset.y + cr.radius * 0.5f);
+                    checkRadius = cr.radius * 0.5f;
+                }
             }
         }
         BoxCollider2D boxCollider2D = transform.GetComponent<BoxCollider2D>();
@@ -190,13 +240,14 @@ public class PlayerControler2D : MonoBehaviour
                 weapons[(int)tag] = node;
         }
         #endregion
-        SelectedWeapon = WeaponTag.Bow;
+        SelectedWeapon = WeaponTag.Sword;
     }
 
     void Update()
     {
-        #region Jump
+        RuningSpeed = input.movingDirection * runSpeed;
         IsGrounder = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        #region Jump
         if (IsGrounder)
         {
             jumpCounter = jumpAbility;
@@ -229,8 +280,8 @@ public class PlayerControler2D : MonoBehaviour
             jumpTimer -= Time.fixedDeltaTime;
         }
         #endregion
-        RuningSpeed = input.movingDirection * runSpeed;
-
+        CanAttack = input.OnButtonDown(ButtonTag.Attack);
+        CanGoNextAttack = input.IsPress(ButtonTag.Attack);
         #region weapon controler
         if (input.AttackMode == AttackMode.HaveDirection)
             try
@@ -248,7 +299,53 @@ public class PlayerControler2D : MonoBehaviour
 
     void FixedUpdate()
     {
+        RuningSpeed = input.movingDirection * runSpeed;
         if (IsJumpDown)
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y > -jumpForce ? rb.velocity.y : -jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y > -jumpForce * 2 ? rb.velocity.y : -jumpForce * 2);
     }
+
+    void AttackDone()
+    {
+        Attacking = false;
+        if (IsGrounder && CanGoNextAttack)
+        {
+            AttackPhase++;
+            Attacking = true;
+        }
+        else
+        {
+            ani.SetTrigger("AttackDone");
+            AttackPhase = 0;
+        }
+    }
+
+    #region combo attack
+    private bool _canGoNextAttack = false;
+    private float privaterTimer = 0f;
+    private float attackDelay = 0.5f;
+    public bool CanGoNextAttack
+    {
+        get => _canGoNextAttack;
+        set
+        {
+            _canGoNextAttack = value;
+            if (value)
+            {
+                if (privaterTimer > 0)
+                    StartCoroutine(DenyAttack());
+                else
+                    privaterTimer = attackDelay;
+            }
+        }
+    }
+    IEnumerator DenyAttack()
+    {
+        while (privaterTimer > 0)
+        {
+            privaterTimer -= Time.fixedDeltaTime;
+            yield return 0;
+        }
+        CanGoNextAttack = false;
+    }
+#endregion
 }

@@ -4,54 +4,87 @@ using UnityEngine;
 
 public class MenuDisplay : MonoBehaviour
 {
-    public bool moveImmediately;
-    public float distance;
-    public float timeMove;
-    public float timeBetweenObjet;
-    public float delayStart;
-    
-    private float dt;
-    private Vector3 trans;
+    [SerializeField] [Range(0.2f, 1f)] private float timeMove = 0.5f;
+    [SerializeField] [Range(0f, 0.5f)] private float timeBetweenObjet = 0.25f;
+    [SerializeField] private float length = 400f;
+    private List<RectTransform> objs = new List<RectTransform>();
+    private List<float> root = new List<float>();
     private int nObj;
-    private int doneObj;
-    private float gotoPositionX;
-    // Start is called before the first frame update
+    private float timer = 0f;
+
     void Start()
     {
-        trans = new Vector3(timeMove == 0 ? float.PositiveInfinity : distance / timeMove, 0, 0);
-        nObj = transform.childCount;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        dt += Time.fixedDeltaTime;
-        if (moveImmediately && dt >= 0) 
+        RectTransform rt = gameObject.GetComponent<RectTransform>();        
+        nObj = rt.childCount;
+        for (int i = 0; i < nObj; i++)
         {
-            for (int i = doneObj; i < nObj; i++)
-                if (dt > timeBetweenObjet * i)
-                {
-                    Transform obj = transform.GetChild(i);
-                    if (Mathf.Abs(obj.localPosition.x - gotoPositionX) < trans.magnitude * Time.fixedDeltaTime)   
-                    {
-                        obj.localPosition = new Vector3(gotoPositionX, obj.localPosition.y, obj.localPosition.z);
-                        doneObj++;
-                        continue;
-                    }
-                    obj.localPosition += trans * Time.fixedDeltaTime;
-                }
-            if (doneObj == nObj)
-                moveImmediately = false;
+            objs.Add(rt.GetChild(i).GetComponent<RectTransform>());
+            root.Add(objs[i].localPosition.x);
         }
     }
 
-    public void StartMove(int direction)
+    public void Trigger_ShowMenu()
     {
-        dt = -delayStart;
-        moveImmediately = true;
-        doneObj = 0;
-        gotoPositionX = transform.childCount > 0 ? transform.GetChild(0).localPosition.x : transform.localPosition.x;
-        gotoPositionX += direction * distance;
-        trans = new Vector3(Mathf.Abs(trans.x) * direction, 0, 0);
+        if (timer <= 0)
+            StartCoroutine(ShowMenu());
+    }
+
+    public void Trigger_CloseMenu()
+    {
+        if (timer>=0)
+            StartCoroutine(CloseMenu());
+    }
+
+    IEnumerator ShowMenu()
+    {
+        timer = 0f;
+        int doneObj = 0;
+        float process;
+        float done = length + timeBetweenObjet * nObj;
+
+        while (timer < done)
+        {
+            timer += Time.fixedDeltaTime;
+            for (int i = doneObj; i < nObj; i++)
+                if (timer > timeBetweenObjet * i)
+                {
+                    process = (timer - timeBetweenObjet * i) / timeMove;
+                    if (process >= 1) 
+                    {
+                        doneObj++;
+                        process = 1;
+                    }
+                    objs[i].localPosition = new Vector3(root[i] - (process * length), objs[i].localPosition.y, objs[i].localPosition.z);
+                }
+            yield return 0;
+        }
+    }
+
+    IEnumerator CloseMenu()
+    {
+        timer = 0f;
+        int doneObj = 0;
+        float process;
+        float done = length + timeBetweenObjet * nObj;
+        List<RectTransform> objs = this.objs;
+        objs.Reverse();
+
+        while (timer < done)
+        {
+            timer += Time.fixedDeltaTime;
+            for (int i = doneObj; i < nObj; i++)
+                if (timer > timeBetweenObjet * i)
+                {
+                    process = (timer - timeBetweenObjet * i) / timeMove;
+                    if (process >= 1)
+                    {
+                        doneObj++;
+                        process = 1;
+                    }
+                    objs[i].localPosition = new Vector3(root[i] - length + (process * length), objs[i].localPosition.y, objs[i].localPosition.z);
+                }
+            yield return 0;
+        }
+        timer = -0f;
     }
 }

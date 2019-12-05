@@ -28,31 +28,30 @@ public class ButtonControler : MonoBehaviour
         get => _IsPress;
         private set
         {
-            if (enableEffect)
-                if (value)
+            if (value)
+            {
+                if (!_IsPress && enableEffect)
+                    EffectTrigger();
+                try
                 {
-                    if (!_IsPress)
-                        EffectTrigger();
-                    try
-                    {
-                        backGround.enabled = true;
-                    }
-                    catch { };
-
-                    OnButtonUp = false;
-                    OnButtonDown = !_IsPress;
+                    backGround.enabled = true;
                 }
-                else
+                catch { };
+
+                //OnButtonUp = false;
+                //OnButtonDown = !_IsPress;
+            }
+            else
+            {
+                try
                 {
-                    try
-                    {
-                        backGround.enabled = false;
-                    }
-                    catch { };
-
-                    OnButtonUp = _IsPress;
-                    OnButtonDown = false;
+                    backGround.enabled = false;
                 }
+                catch { };
+
+                //OnButtonUp = _IsPress;
+                //OnButtonDown = false;
+            }
             _IsPress = value;
         }
     }
@@ -88,14 +87,18 @@ public class ButtonControler : MonoBehaviour
         }
 
         IsPress |= Input.GetKey(keyCode);
+        OnButtonUp |= Input.GetKeyUp(keyCode);
+        OnButtonDown |= Input.GetKeyDown(keyCode);
     }
 
     private void CheckPress()
     {
         foreach (var item in Input.touches)
-            if ((int)item.phase <= 2 && Vector2.Distance(item.position, self.position) <= radius)
+            if (Vector2.Distance(item.position, self.position) <= radius)
             {
-                IsPress = true;
+                IsPress = (int)item.phase <= 2;
+                OnButtonUp = item.phase == TouchPhase.Ended;
+                OnButtonDown = item.phase == TouchPhase.Began;
                 return;
             }
         IsPress = false;
