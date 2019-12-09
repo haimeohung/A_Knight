@@ -80,7 +80,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5308666830615982419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a52c0676ea1bcad4a88a75a437c75dc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b8a3ea3b39a76444bfe7e32cc1250c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hander: {fileID: 5308666831974381244}
@@ -183,13 +183,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8601742087831489082}
-  m_RootOrder: 3
+  m_Father: {fileID: 5308666832253360141}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -32.3, y: -0.00000009685755}
-  m_SizeDelta: {x: 100, y: 5}
+  m_AnchoredPosition: {x: 388, y: 0}
+  m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &5308666830973817595
 CanvasRenderer:
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 43.85
+  m_fontSize: 44.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -624,6 +624,7 @@ RectTransform:
   m_Children:
   - {fileID: 5308666830974202524}
   - {fileID: 8601742087831489082}
+  - {fileID: 5308666830973817597}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -641,11 +642,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5308666832253360142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 360de5c818266f84a98044adc6db54a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bb27327fc197ed448fb5ce3ccbc6109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 50
-  _autoRecoveryPerSecond: 1
+  _value: 0
+  _autoRecoveryPerSecond: 0
   timeDelay: 1
   autoDropHP: -20
   autoDropHPMaxValue: 100
@@ -991,7 +992,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8601742087625096332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a52c0676ea1bcad4a88a75a437c75dc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b8a3ea3b39a76444bfe7e32cc1250c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hander: {fileID: 8601742087366191672}
@@ -1027,7 +1028,6 @@ RectTransform:
   - {fileID: 8601742087625096333}
   - {fileID: 8601742086912204501}
   - {fileID: 8601742086491960265}
-  - {fileID: 5308666830973817597}
   m_Father: {fileID: 5308666832253360141}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

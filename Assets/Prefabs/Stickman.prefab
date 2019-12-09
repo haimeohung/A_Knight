@@ -1195,12 +1195,12 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 5.903436
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ed0051ac236c59043b8c5bd4ea51a72d, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1260,7 +1260,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -3.38}
+  m_Offset: {x: 0, y: -3.3}
   serializedVersion: 2
   m_Radius: 1.1437595
 --- !u!95 &2800469728282561836
@@ -1311,6 +1311,9 @@ MonoBehaviour:
   runSpeed: 6
   jumpForce: 12
   jumpAbility: 2
+  HP: {fileID: 0}
+  MP: {fileID: 0}
+  SP: {fileID: 0}
   lengthTimeJump: 0.35
   whatIsGround:
     serializedVersion: 2

@@ -14,6 +14,7 @@ public class PlayerControler2D : MonoBehaviour
     [SerializeField] private int runSpeed = 6;
     [SerializeField] private int jumpForce = 10;
     [SerializeField] private int jumpAbility = 1;
+    [SerializeField] private UIScrollBarController HP, MP, SP;
     [Range(0.2f, 0.5f)] [SerializeField] private float lengthTimeJump = 0.35f;
     [Header("Checking Setting")]
     [SerializeField] private LayerMask whatIsGround;
@@ -201,7 +202,26 @@ public class PlayerControler2D : MonoBehaviour
         #region init
         rb = gameObject.GetComponent<Rigidbody2D>();
         if (input is null)
-            input = FindObjectOfType<Canvas>().GetComponentInChildren<UIInputHander>();
+            input = FindObjectOfType<UIInputHander>();
+        if (HP is null || MP is null || SP is null)
+        {
+            UIScrollBarController[] scrolls = FindObjectsOfType<UIScrollBarController>();
+            foreach (UIScrollBarController item in scrolls)
+                switch (item.gameObject.name)
+                {
+                    case "HP":
+                        HP = item;
+                        break;
+                    case "MP":
+                        MP = item;
+                        break;
+                    case "SP":
+                        SP = item;
+                        break;
+                }
+            if (HP is null || MP is null || SP is null)
+                Debug.LogError("Cannt find HP stat");
+        }
         if (groundCheck.isNull())
         {
             groundCheck = transform.Find("GroundCheck")?.GetComponent<Transform>();
@@ -213,11 +233,12 @@ public class PlayerControler2D : MonoBehaviour
                 CircleCollider2D cr = gameObject.GetComponent<CircleCollider2D>();
                 if (cr != null)
                 {
-                    groundCheck.localPosition = cr.bounds.center + new Vector3(cr.offset.x, cr.offset.y + cr.radius * 0.5f);
-                    checkRadius = cr.radius * 0.5f;
+                    groundCheck.localPosition = cr.bounds.center + new Vector3(cr.offset.x, cr.offset.y);
+                    checkRadius = cr.radius * gameObject.transform.localScale.x * 1.1f;
                 }
             }
         }
+
         BoxCollider2D boxCollider2D = transform.GetComponent<BoxCollider2D>();
         groundCheck.localPosition = new Vector3(0, boxCollider2D.offset.y - boxCollider2D.size.y * 0.5f, 0);
         ani = GetComponent<Animator>();
@@ -250,12 +271,14 @@ public class PlayerControler2D : MonoBehaviour
         #region Jump
         if (IsGrounder)
         {
-            jumpCounter = jumpAbility;
-            if (input.OnButtonDown(ButtonTag.Jump))
+            if (!input.IsPress(ButtonTag.Jump))
+                jumpCounter = jumpAbility;
+            if (input.OnButtonDown(ButtonTag.Jump) && jumpCounter > 0 && SP.value > 5) 
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 jumpTimer = lengthTimeJump;
                 jumpCounter--;
+                SP.value -= 5;
             }
             IsJumpUp = false;
             IsJumpDown = false;
@@ -264,24 +287,31 @@ public class PlayerControler2D : MonoBehaviour
         {
             IsJumpUp = rb.velocity.y > accurate;
             IsJumpDown = rb.velocity.y < -accurate;
+            if (IsJumpDown && jumpCounter == jumpAbility)
+                jumpCounter--;
 
             if (input.IsPress(ButtonTag.Jump))
+            {
                 if (jumpTimer > 0f)
                     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 else // additional jump
                 {
-                    if (jumpCounter > 0 && input.OnButtonDown(ButtonTag.Jump))
+                    if (jumpCounter > 0 && input.OnButtonDown(ButtonTag.Jump) && SP.value > 20)
                     {
                         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                         jumpTimer = lengthTimeJump;
                         jumpCounter--;
+                        SP.value -= 20;
                     }
                 }
+            }
+            else
+                jumpTimer = -0f;
             jumpTimer -= Time.deltaTime;
         }
         #endregion
         CanAttack = input.OnButtonDown(ButtonTag.Attack);
-        CanGoNextAttack = input.IsPress(ButtonTag.Attack);
+        CanGoNextAttack = input.OnButtonDown(ButtonTag.Attack);
         #region weapon controler
         if (input.AttackMode == AttackMode.HaveDirection)
             try
@@ -296,12 +326,13 @@ public class PlayerControler2D : MonoBehaviour
             }
         #endregion
     }
-
-    void FixedUpdate()
+    private void LateUpdate()
     {
         RuningSpeed = input.movingDirection * runSpeed;
         if (IsJumpDown)
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y > -jumpForce * 2 ? rb.velocity.y : -jumpForce * 2);
+        if (!(IsJumpDown || IsJumpUp))
+            IsGrounder = true;  
     }
 
     void AttackDone()
@@ -321,31 +352,33 @@ public class PlayerControler2D : MonoBehaviour
 
     #region combo attack
     private bool _canGoNextAttack = false;
-    private float privaterTimer = 0f;
-    private float attackDelay = 0.5f;
+    private float privaterTimer = -0f;
+    private float attackDelay = 0.2f;
     public bool CanGoNextAttack
     {
         get => _canGoNextAttack;
         set
         {
-            _canGoNextAttack = value;
             if (value)
             {
-                if (privaterTimer > 0)
+                _canGoNextAttack = value;
+                if (privaterTimer <= 0)
                     StartCoroutine(DenyAttack());
                 else
                     privaterTimer = attackDelay;
             }
+            
         }
     }
     IEnumerator DenyAttack()
     {
+        privaterTimer = attackDelay;
         while (privaterTimer > 0)
         {
             privaterTimer -= Time.deltaTime;
             yield return 0;
         }
-        CanGoNextAttack = false;
+        _canGoNextAttack = false;
     }
 #endregion
 }
