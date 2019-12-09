@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\FixPlayerAnimation.cs" />
     <Compile Include="Assets\Free Asset - 2D Handcrafted Art\Scripts\CamerController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy_Follow.cs" />
     <Compile Include="Assets\Scripts\extension.cs" />
     <Compile Include="Assets\Scripts\FloatingRockMovement.cs" />
     <Compile Include="Assets\Scripts\HitboxDraw.cs" />
