@@ -126,7 +126,7 @@ public class ButtonControler : MonoBehaviour
                 timer = 0f;
                 isRunning = 1;
             }
-            timer += Time.fixedDeltaTime;
+            timer += Time.deltaTime;
             process = timer / timeEffect;
             target.localScale = endSize * process;
             change.a = 1f - process;

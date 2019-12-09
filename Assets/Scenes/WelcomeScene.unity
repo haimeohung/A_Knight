@@ -226,10 +226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edb8c87091d5d341aa71d002b7f4cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: -556, y: -327, z: 0}
-  moveImmediately: 0
-  timeMove: 2
-  delayStart: 0
 --- !u!1 &115220501
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &115220502
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1727,7 +1723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78cf6e1ebae995d4f9f076eca03b671f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1061412043}
 --- !u!1 &1073195249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,11 +1931,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b2e8d8b72e5d740a4c00be0677776e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveImmediately: 0
-  distance: 500
-  timeMove: 0.5
-  timeBetweenObjet: 0.25
-  delayStart: 0
 --- !u!1 &1552552511
 GameObject:
   m_ObjectHideFlags: 0

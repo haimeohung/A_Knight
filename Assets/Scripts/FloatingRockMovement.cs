@@ -19,7 +19,7 @@ public class FloatingRockMovement : MonoBehaviour
         float wait = Random.Range(circle / 2, circle);
         while (timer<wait)
         {
-            timer += Time.fixedDeltaTime;
+            timer += Time.deltaTime;
             yield return 0;
         }
         timer = 0f;
@@ -33,8 +33,8 @@ public class FloatingRockMovement : MonoBehaviour
     {
         while (timer > 0)
         {
-            timer -= Time.fixedDeltaTime;
-            transform.Translate(Vector3.down * Time.fixedDeltaTime * length);
+            timer -= Time.deltaTime;
+            transform.Translate(Vector3.down * Time.deltaTime * length);
             yield return 0;
         }
         StartCoroutine(MoveUp());
@@ -44,8 +44,8 @@ public class FloatingRockMovement : MonoBehaviour
     {
         while (timer < circle)
         {
-            timer += Time.fixedDeltaTime;
-            transform.Translate(Vector3.up * Time.fixedDeltaTime * length);
+            timer += Time.deltaTime;
+            transform.Translate(Vector3.up * Time.deltaTime * length);
             yield return 0;
         }
         StartCoroutine(MoveDown());

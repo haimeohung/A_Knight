@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuDisplay : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class MenuDisplay : MonoBehaviour
     [SerializeField] private float length = 400f;
     private List<RectTransform> objs = new List<RectTransform>();
     private List<float> root = new List<float>();
+    private Button[] buttons;
     private int nObj;
     private float timer = 0f;
 
@@ -21,18 +23,29 @@ public class MenuDisplay : MonoBehaviour
             objs.Add(rt.GetChild(i).GetComponent<RectTransform>());
             root.Add(objs[i].localPosition.x);
         }
+        buttons = GetComponentsInChildren<Button>();
+        foreach (var item in buttons)
+            item.enabled = false;
     }
 
     public void Trigger_ShowMenu()
     {
         if (timer <= 0)
+        {
             StartCoroutine(ShowMenu());
+            foreach (var item in buttons)
+                item.enabled = false;
+        }
     }
 
     public void Trigger_CloseMenu()
     {
-        if (timer>=0)
+        if (timer >= 0)
+        {
             StartCoroutine(CloseMenu());
+            foreach (var item in buttons)
+                item.enabled = false;
+        }
     }
 
     IEnumerator ShowMenu()
@@ -40,7 +53,7 @@ public class MenuDisplay : MonoBehaviour
         timer = 0f;
         int doneObj = 0;
         float process;
-        float done = length + timeBetweenObjet * nObj;
+        float done = timeMove + timeBetweenObjet * (nObj - 1);
 
         while (timer < done)
         {
@@ -58,6 +71,8 @@ public class MenuDisplay : MonoBehaviour
                 }
             yield return 0;
         }
+        foreach (var item in buttons)
+            item.enabled = true;
     }
 
     IEnumerator CloseMenu()
@@ -65,7 +80,7 @@ public class MenuDisplay : MonoBehaviour
         timer = 0f;
         int doneObj = 0;
         float process;
-        float done = length + timeBetweenObjet * nObj;
+        float done = timeMove + timeBetweenObjet * (nObj - 1);
         List<RectTransform> objs = this.objs;
         objs.Reverse();
 
@@ -86,5 +101,8 @@ public class MenuDisplay : MonoBehaviour
             yield return 0;
         }
         timer = -0f;
+
+        foreach (var item in buttons)
+            item.enabled = true;
     }
 }

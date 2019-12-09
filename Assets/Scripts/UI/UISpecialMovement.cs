@@ -32,9 +32,9 @@ public class UISpecialMovement : MonoBehaviour
     {
         float timer = 0f;
         float process;
-        while (timer<=timeMove)
+        while (timer <= timeMove) 
         {
-            timer += Time.fixedDeltaTime;
+            timer += Time.deltaTime;
             process = timer / timeMove;
             rt.position = root + (process * delta);
             yield return 0;

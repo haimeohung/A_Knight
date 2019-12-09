@@ -36,7 +36,7 @@ public class UIComfirmExit : MonoBehaviour
     {
         try
         {
-            UnityEditor.EditorApplication.isPlaying = false;
+            //UnityEditor.EditorApplication.isPlaying = false;
         }
         catch { }
         Application.Quit();
@@ -49,7 +49,7 @@ public class UIComfirmExit : MonoBehaviour
         float process;
         while (timer<speed)
         {
-            timer += Time.fixedDeltaTime;
+            timer += Time.deltaTime;
             process = timer / speed;
             rt.localScale = new Vector3(process, process, process);
             yield return 0;
@@ -64,7 +64,7 @@ public class UIComfirmExit : MonoBehaviour
         float process;
         while (timer >=0)
         {
-            timer -= Time.fixedDeltaTime;
+            timer -= Time.deltaTime;
             process = timer / speed;
             rt.localScale = new Vector3(process, process, process);
             yield return 0;

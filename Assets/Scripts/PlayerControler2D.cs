@@ -277,7 +277,7 @@ public class PlayerControler2D : MonoBehaviour
                         jumpCounter--;
                     }
                 }
-            jumpTimer -= Time.fixedDeltaTime;
+            jumpTimer -= Time.deltaTime;
         }
         #endregion
         CanAttack = input.OnButtonDown(ButtonTag.Attack);
@@ -342,7 +342,7 @@ public class PlayerControler2D : MonoBehaviour
     {
         while (privaterTimer > 0)
         {
-            privaterTimer -= Time.fixedDeltaTime;
+            privaterTimer -= Time.deltaTime;
             yield return 0;
         }
         CanGoNextAttack = false;

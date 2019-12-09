@@ -24,7 +24,7 @@ public class AutoColorTMP : MonoBehaviour
     {
         while (privateTimer < halfCycle)
         {
-            privateTimer += Time.fixedDeltaTime;
+            privateTimer += Time.deltaTime;
             target.color = startColor + (endColor - startColor) * (privateTimer / halfCycle);
             if (stop)
             {
@@ -43,7 +43,7 @@ public class AutoColorTMP : MonoBehaviour
     {
         while (privateTimer < 0)
         {
-            privateTimer += Time.fixedDeltaTime;
+            privateTimer += Time.deltaTime;
             if (stop)
                 break;
             yield return 0;
@@ -55,7 +55,7 @@ public class AutoColorTMP : MonoBehaviour
     {
         while (privateTimer < halfCycle)
         {
-            privateTimer += Time.fixedDeltaTime;
+            privateTimer += Time.deltaTime;
             target.color = endColor + (startColor - endColor) * (privateTimer / halfCycle);
             yield return 0;
         }

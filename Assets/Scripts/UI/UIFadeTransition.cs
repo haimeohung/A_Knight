@@ -36,7 +36,7 @@ public class UIFadeTransition : MonoBehaviour
         float process;
         while (timer >= 0)
         {
-            timer -= Time.fixedDeltaTime;
+            timer -= Time.deltaTime;
             process = timer / time;
             image.color = new Color(0, 0, 0, process);
             yield return 0;
@@ -53,7 +53,7 @@ public class UIFadeTransition : MonoBehaviour
         float process;
         while (timer <= time)
         {
-            timer += Time.fixedDeltaTime;
+            timer += Time.deltaTime;
             process = timer / time;
             image.color = new Color(0, 0, 0, process);
             yield return 0;

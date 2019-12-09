@@ -28,7 +28,7 @@ public class FixPlayerAnimation : MonoBehaviour
         while (!reEnable)
         {
             yield return null;
-            currentTime += Time.fixedDeltaTime;
+            currentTime += Time.deltaTime;
             if (currentTime > stopTime)
             {
                 animator.enabled = false;
