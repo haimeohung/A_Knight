@@ -64,8 +64,14 @@
   <ItemGroup>
     <Compile Include="Assets\FixPlayerAnimation.cs" />
     <Compile Include="Assets\Free Asset - 2D Handcrafted Art\Scripts\CamerController.cs" />
+    <Compile Include="Assets\Scripts\DeleteTimer.cs" />
+    <Compile Include="Assets\Scripts\EnemyFollowing.cs" />
+    <Compile Include="Assets\Scripts\EntityDie.cs" />
+    <Compile Include="Assets\Scripts\EntityPosCollision.cs" />
+    <Compile Include="Assets\Scripts\EntityPostCollisionFaded.cs" />
     <Compile Include="Assets\Scripts\extension.cs" />
     <Compile Include="Assets\Scripts\FloatingRockMovement.cs" />
+    <Compile Include="Assets\Scripts\GuardController.cs" />
     <Compile Include="Assets\Scripts\HitboxDraw.cs" />
     <Compile Include="Assets\Scripts\LogicJoint.cs" />
     <Compile Include="Assets\Scripts\PlayerControler2D.cs" />
