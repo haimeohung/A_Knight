@@ -101,7 +101,7 @@ public class PlayerControler2D : MonoBehaviour
         {
             if (!_canAttack && value)
             {
-                if (!Attacking)
+                if (!Attacking && IsGrounder)
                     AttackPhase++;
                 Attacking = true;
             }
