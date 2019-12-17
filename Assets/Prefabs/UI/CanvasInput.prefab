@@ -75,7 +75,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 2560, y: 1440}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
@@ -223,22 +223,22 @@ PrefabInstance:
     - target: {fileID: 3897595402738006813, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 783
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 3897595402738006813, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -371
+      value: -380
       objectReference: {fileID: 0}
     - target: {fileID: 3897595402738006813, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 3897595402738006813, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 3897595402738006813, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
@@ -270,12 +270,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7612041829749778539, guid: e7d0d943750fbb441abe6c2208ef6a3e,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: de2ae4a3ee6651b4baace5c2d10d041d,
-        type: 3}
     - target: {fileID: 5957955105807301109, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
       propertyPath: buttonTag
@@ -286,6 +280,12 @@ PrefabInstance:
       propertyPath: keyCode
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 7612041829749778539, guid: e7d0d943750fbb441abe6c2208ef6a3e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: de2ae4a3ee6651b4baace5c2d10d041d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7d0d943750fbb441abe6c2208ef6a3e, type: 3}
 --- !u!224 &3541907119095603336 stripped
@@ -364,12 +364,12 @@ PrefabInstance:
     - target: {fileID: 1576750119031854357, guid: 194920ce9adc8304c9864bedc970d1e1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 547
+      value: 625.6
       objectReference: {fileID: 0}
     - target: {fileID: 1576750119031854357, guid: 194920ce9adc8304c9864bedc970d1e1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -224
+      value: -234.70001
       objectReference: {fileID: 0}
     - target: {fileID: 1576750119031854357, guid: 194920ce9adc8304c9864bedc970d1e1,
         type: 3}
@@ -494,7 +494,7 @@ PrefabInstance:
     - target: {fileID: 3897595402738006813, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -485
+      value: -535
       objectReference: {fileID: 0}
     - target: {fileID: 3897595402738006813, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
@@ -551,12 +551,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7612041829749778539, guid: e7d0d943750fbb441abe6c2208ef6a3e,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: de2ae4a3ee6651b4baace5c2d10d041d,
-        type: 3}
     - target: {fileID: 5957955105807301109, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
       propertyPath: buttonTag
@@ -567,6 +561,12 @@ PrefabInstance:
       propertyPath: keyCode
       value: 275
       objectReference: {fileID: 0}
+    - target: {fileID: 7612041829749778539, guid: e7d0d943750fbb441abe6c2208ef6a3e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: de2ae4a3ee6651b4baace5c2d10d041d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7d0d943750fbb441abe6c2208ef6a3e, type: 3}
 --- !u!224 &1639894552026997367 stripped
@@ -645,12 +645,12 @@ PrefabInstance:
     - target: {fileID: 3897595402738006813, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 548
+      value: 625.6
       objectReference: {fileID: 0}
     - target: {fileID: 3897595402738006813, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -224
+      value: -234.7
       objectReference: {fileID: 0}
     - target: {fileID: 3897595402738006813, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
@@ -702,12 +702,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7612041829749778539, guid: e7d0d943750fbb441abe6c2208ef6a3e,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 08358986213382c49bb14e6bae45bffd,
-        type: 3}
     - target: {fileID: 5957955105807301109, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
       propertyPath: buttonTag
@@ -718,6 +712,12 @@ PrefabInstance:
       propertyPath: keyCode
       value: 122
       objectReference: {fileID: 0}
+    - target: {fileID: 7612041829749778539, guid: e7d0d943750fbb441abe6c2208ef6a3e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 08358986213382c49bb14e6bae45bffd,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7d0d943750fbb441abe6c2208ef6a3e, type: 3}
 --- !u!224 &7696478572115139778 stripped
@@ -853,12 +853,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7612041829749778539, guid: e7d0d943750fbb441abe6c2208ef6a3e,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: de2ae4a3ee6651b4baace5c2d10d041d,
-        type: 3}
     - target: {fileID: 5957955105807301109, guid: e7d0d943750fbb441abe6c2208ef6a3e,
         type: 3}
       propertyPath: buttonTag
@@ -869,6 +863,12 @@ PrefabInstance:
       propertyPath: keyCode
       value: 276
       objectReference: {fileID: 0}
+    - target: {fileID: 7612041829749778539, guid: e7d0d943750fbb441abe6c2208ef6a3e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: de2ae4a3ee6651b4baace5c2d10d041d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7d0d943750fbb441abe6c2208ef6a3e, type: 3}
 --- !u!224 &5181657273340520800 stripped

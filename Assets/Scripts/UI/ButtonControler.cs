@@ -12,7 +12,7 @@ public class ButtonControler : MonoBehaviour
     [SerializeField] private bool enableEffect = true;
     [Range(0.1f, 1f)] [SerializeField] private float timeEffect = 0.5f;
     [SerializeField] private Vector3 endSize = new Vector3(2f, 2f, 1f);
-    [Range(0f, 1f)] [SerializeField] private float deltaTouchSize = 0.6f;
+    [Range(0.5f, 1.5f)] [SerializeField] private float deltaTouchSize = 1.2f;
 
 
     private RectTransform target, self;
