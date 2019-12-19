@@ -14,7 +14,7 @@ public class PlayerControler2D : MonoBehaviour
     [SerializeField] private int runSpeed = 6;
     [SerializeField] private int jumpForce = 10;
     [SerializeField] private int jumpAbility = 1;
-    [SerializeField] private UIScrollBarController HP, MP, SP;
+    [SerializeField] private UISliderController HP, MP, SP;
     [Range(0.2f, 0.5f)] [SerializeField] private float lengthTimeJump = 0.35f;
     [Header("Checking Setting")]
     [SerializeField] private LayerMask whatIsGround;
@@ -37,6 +37,7 @@ public class PlayerControler2D : MonoBehaviour
     [SerializeField] private bool _attacking = false;
     [SerializeField] private int _runningSpeed = 0;
     [SerializeField] private int jumpCounter = 0;
+    public Vector2 Carring { get; set; }
     public int AttackPhase
     {
         get => _attackPhase;
@@ -79,8 +80,14 @@ public class PlayerControler2D : MonoBehaviour
         get => _isJumpUp;
         private set
         {
-            if ((!_isJumpUp) && value && !Attacking)
-                ani?.SetTrigger("JumpingUp");
+            if ((!_isJumpUp) && value)
+                if (SelectedWeapon == WeaponTag.Sword)
+                {
+                    if (!Attacking)
+                        ani?.SetTrigger("JumpingUp");
+                }
+                else
+                    ani?.SetTrigger("JumpingUp");
             _isJumpUp = value;
         }
     }
@@ -89,8 +96,14 @@ public class PlayerControler2D : MonoBehaviour
         get => _isJumpDown;
         private set
         {
-            if ((!_isJumpDown) && value && !Attacking)
-                ani?.SetTrigger("JumpingDown");
+            if ((!_isJumpDown) && value)
+                if (SelectedWeapon == WeaponTag.Sword)
+                {
+                    if (!Attacking)
+                        ani?.SetTrigger("JumpingDown");
+                }
+                else
+                    ani?.SetTrigger("JumpingDown");
             _isJumpDown = value;
         }
     }
@@ -151,6 +164,7 @@ public class PlayerControler2D : MonoBehaviour
             {
                 weapons[(int)value].parent.SetActive(true);
                 _selectedWeapon = value;
+                ani.SetInteger("SelectedWeapon", (int)value);
             }
             catch
             {
@@ -205,8 +219,8 @@ public class PlayerControler2D : MonoBehaviour
             input = FindObjectOfType<UIInputHander>();
         if (HP is null || MP is null || SP is null)
         {
-            UIScrollBarController[] scrolls = FindObjectsOfType<UIScrollBarController>();
-            foreach (UIScrollBarController item in scrolls)
+            UISliderController[] scrolls = FindObjectsOfType<UISliderController>();
+            foreach (UISliderController item in scrolls)
                 switch (item.gameObject.name)
                 {
                     case "HP":
@@ -261,7 +275,7 @@ public class PlayerControler2D : MonoBehaviour
                 weapons[(int)tag] = node;
         }
         #endregion
-        SelectedWeapon = WeaponTag.Sword;
+        SelectedWeapon = WeaponTag.Bow;
     }
 
     void Update()
@@ -311,7 +325,19 @@ public class PlayerControler2D : MonoBehaviour
         }
         #endregion
         CanAttack = input.OnButtonDown(ButtonTag.Attack);
+        Attacking = input.GetDirection(JoystickTag.Weapon).Magnitude2D() > 0.1f;
         CanGoNextAttack = input.OnButtonDown(ButtonTag.Attack);
+    }
+    private void LateUpdate()
+    {
+        RuningSpeed = input.movingDirection * runSpeed;
+        if (IsJumpDown)
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y > -jumpForce * 2 ? rb.velocity.y : -jumpForce * 2);
+        rb.velocity += Carring;
+        if (!(IsJumpDown || IsJumpUp))
+            _isGrounder = true;
+        
+
         #region weapon controler
         if (input.AttackMode == AttackMode.HaveDirection)
             try
@@ -326,18 +352,11 @@ public class PlayerControler2D : MonoBehaviour
             }
         #endregion
     }
-    private void LateUpdate()
-    {
-        RuningSpeed = input.movingDirection * runSpeed;
-        if (IsJumpDown)
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y > -jumpForce * 2 ? rb.velocity.y : -jumpForce * 2);
-        if (!(IsJumpDown || IsJumpUp))
-            IsGrounder = true;  
-    }
 
     void AttackDone()
     {
         Attacking = false;
+        
         if (IsGrounder && CanGoNextAttack)
         {
             AttackPhase++;
@@ -345,9 +364,15 @@ public class PlayerControler2D : MonoBehaviour
         }
         else
         {
-            ani.SetTrigger("AttackDone");
+            if (input.GetDirection(JoystickTag.Weapon).Magnitude2D() < 0.1)
+                ani.SetTrigger("AttackDone");
             AttackPhase = 0;
         }
+    }
+
+    void AttackSpawnType()
+    {
+        weapons[(int)SelectedWeapon]?.parent.GetComponent<WeaponController>()?.SetOnTrigger();
     }
 
     #region combo attack

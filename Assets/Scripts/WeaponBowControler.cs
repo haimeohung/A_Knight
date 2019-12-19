@@ -4,15 +4,18 @@ using UnityEngine;
 using Unity.Extentison;
 
 [RequireComponent(typeof(LineRenderer))]
-public class WeaponBowControler : MonoBehaviour
+public class WeaponBowControler : WeaponController
 {
     private UIInputHander input;
     private PlayerControler2D controler;
+    [SerializeField] private float arrowSpeed = 50f;
     [Header("Target")]
     [SerializeField] Transform top;
     [SerializeField] Transform bottom;
     [SerializeField] Transform hand;
     private LineRenderer Renderer;
+    private SpawnMachine spawn;
+    private Vector3 inputDirection;
     void Start()
     {
         Renderer = GetComponent<LineRenderer>();
@@ -20,8 +23,23 @@ public class WeaponBowControler : MonoBehaviour
         Renderer.SetWidth(0.075f, 0.075f);
         Renderer.SetColors(Color.black, Color.black);
 
-        input = FindObjectOfType<Canvas>().GetComponentInChildren<UIInputHander>();
+        input = FindObjectOfType<UIInputHander>();
         controler = FindObjectOfType<PlayerControler2D>().GetComponent<PlayerControler2D>();
+        spawn = gameObject.GetComponent<SpawnMachine>();
+        spawn.SetOnInit = (clone) =>
+        {
+            Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
+            rb.velocity = inputDirection.normalized * (-arrowSpeed);
+        };
+        spawn.SetOnDelete = (clone) =>
+        {
+            clone.slowFade();
+        };
+
+        SetOnTrigger = () =>
+        {   
+            spawn.Trigger_Spawn();
+        };
     }
 
     // Update is called once per frame
@@ -31,7 +49,7 @@ public class WeaponBowControler : MonoBehaviour
         Renderer.SetPosition(1, hand.position);
         Renderer.SetPosition(2, bottom.position);
 
-        Vector3 inputDirection = input.GetDirection(Unity.tag.JoystickTag.Weapon);
+        inputDirection = input.GetDirection(Unity.tag.JoystickTag.Weapon);
         if (inputDirection != Vector3.zero)
         {
             float angle = inputDirection.signedAngle();
