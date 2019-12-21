@@ -75,6 +75,10 @@
     <Compile Include="Assets\Scripts\extension.cs" />
     <Compile Include="Assets\Scripts\FloatingRockMovement.cs" />
     <Compile Include="Assets\Scripts\HitboxDraw.cs" />
+    <Compile Include="Assets\Scripts\InfoEntity.cs" />
+    <Compile Include="Assets\Scripts\Item\BuffQueue.cs" />
+    <Compile Include="Assets\Scripts\Item\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Item\Pickup.cs" />
     <Compile Include="Assets\Scripts\LogicJoint.cs" />
     <Compile Include="Assets\Scripts\PlayerControler2D.cs" />
     <Compile Include="Assets\Scripts\QuickMove.cs" />
@@ -88,8 +92,12 @@
     <Compile Include="Assets\Scripts\UI\FPSShower.cs" />
     <Compile Include="Assets\Scripts\UI\MenuDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\UIComfirmExit.cs" />
+    <Compile Include="Assets\Scripts\UI\UIDragDrop.cs" />
     <Compile Include="Assets\Scripts\UI\UIFadeTransition.cs" />
     <Compile Include="Assets\Scripts\UI\UIInputHander.cs" />
+    <Compile Include="Assets\Scripts\UI\UIInventory.cs" />
+    <Compile Include="Assets\Scripts\UI\UIItem.cs" />
+    <Compile Include="Assets\Scripts\UI\UILvControler.cs" />
     <Compile Include="Assets\Scripts\UI\UISliderController.cs" />
     <Compile Include="Assets\Scripts\UI\UISpecialMovement.cs" />
     <Compile Include="Assets\Scripts\UI\VJHander.cs" />

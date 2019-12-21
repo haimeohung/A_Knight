@@ -26,9 +26,11 @@ public class BoatCarry : MonoBehaviour
             {
                 if (Time.time - time > 2f)
                 {
+                    Debug.Log(collision.gameObject.layer);
                     ani.SetTrigger("DuckTrigger");
                     time = Time.time;
                 }
+                
                 player.transform.SetParentWithoutChangeScale(transform.parent);
                 rb.velocity = new Vector2(velocity, 0f);
                 player.Carring = rb.velocity;
@@ -36,7 +38,7 @@ public class BoatCarry : MonoBehaviour
             if (collision.gameObject.layer == 10)
             {
                 player.transform.SetParentWithoutChangeScale(null);
-                rb.velocity = new Vector2(0, 0f);
+                rb.velocity = new Vector2(0f, 0f);
                 player.Carring = rb.velocity;
                 Destroy(this);
             }
@@ -44,7 +46,7 @@ public class BoatCarry : MonoBehaviour
         private void OnTriggerExit2D(Collider2D collision)
         { 
             player.transform.SetParentWithoutChangeScale(null);
-            rb.velocity = new Vector2(0, 0f);
+            rb.velocity = new Vector2(0f, 0f);
             player.Carring = rb.velocity;
         }
     }

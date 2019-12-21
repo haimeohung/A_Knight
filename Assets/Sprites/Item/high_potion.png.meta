@@ -1,0 +1,583 @@
+fileFormatVersion: 2
+guid: 63c70f7238093d94da8c5cb4500b8585
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7063469908903486701
+    second: high_potion_0
+  - first:
+      213: -5664972310193567806
+    second: high_potion_1
+  - first:
+      213: -5431537123325690832
+    second: high_potion_2
+  - first:
+      213: -8762595071849405749
+    second: high_potion_3
+  - first:
+      213: 2439017721626935145
+    second: high_potion_4
+  - first:
+      213: 2248229020783650028
+    second: high_potion_5
+  - first:
+      213: -59559827180054080
+    second: high_potion_6
+  - first:
+      213: -2232254743665136662
+    second: high_potion_7
+  - first:
+      213: 3896039646423187097
+    second: high_potion_8
+  - first:
+      213: -7305527566800700987
+    second: high_potion_9
+  - first:
+      213: -5494653351484055896
+    second: high_potion_10
+  - first:
+      213: -602289729018361426
+    second: high_potion_11
+  - first:
+      213: -948378898344755672
+    second: high_potion_12
+  - first:
+      213: 5069923604911122820
+    second: high_potion_13
+  - first:
+      213: -6912291447318204731
+    second: high_potion_14
+  - first:
+      213: -3581432382284509090
+    second: high_potion_15
+  - first:
+      213: 139747120882090130
+    second: high_potion_16
+  - first:
+      213: 2367539182947466342
+    second: high_potion_17
+  - first:
+      213: 6849369454968386757
+    second: high_potion_18
+  - first:
+      213: -2741323915785891340
+    second: high_potion_19
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: high_potion_0
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1040
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da48903a675ad442ba4a544c66fb392
+      internalID: -7063469908903486701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_1
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1040
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1bf239699d68984db74098f6e05da52
+      internalID: -5664972310193567806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_2
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 1040
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec5f1a42ebe4824584efb85ffd26f40
+      internalID: -5431537123325690832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_3
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1040
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f61a82ccb03a18547b383a5fe59298d7
+      internalID: -8762595071849405749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_4
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 790
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a39b9ea37209bf48b3c234d5f15ad90
+      internalID: 2439017721626935145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_5
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 790
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311b549e103c88f41883532a9d293927
+      internalID: 2248229020783650028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_6
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 790
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0987841dee91a624d8f25e14261621ba
+      internalID: -59559827180054080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_7
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 790
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09249bc90d6586b4ebdf1557367af55a
+      internalID: -2232254743665136662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_8
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 540
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e4ff8775f00411449ae096ad174cb25
+      internalID: 3896039646423187097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_9
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 540
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0991984d5b48a37449b9be8de52ba458
+      internalID: -7305527566800700987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_10
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 540
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd58e31584a6484ba6885941e2e0f73
+      internalID: -5494653351484055896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_11
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 540
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beaa511f186f08b418d6060bc10cc28e
+      internalID: -602289729018361426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_12
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 290
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8ad87f204d97764aafb8840763416cd
+      internalID: -948378898344755672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_13
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 290
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbbff7d4023427742bebf2b401754ae1
+      internalID: 5069923604911122820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_14
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 290
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf7268f5b2f639244b0d14b33b796391
+      internalID: -6912291447318204731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_15
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 290
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726545667d8f0c849b7a610c8ba97a59
+      internalID: -3581432382284509090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_16
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 40
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f5b200ae0eede458b4b21a7ec04b60
+      internalID: 139747120882090130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_17
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 40
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a8ad08ea9c6f84f822df9b3192c2d9
+      internalID: 2367539182947466342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_18
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 40
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b376efaacd5604b855a7acc1bbae2f
+      internalID: 6849369454968386757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: high_potion_19
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 40
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29782527f8093cd40929f4952ec953d3
+      internalID: -2741323915785891340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

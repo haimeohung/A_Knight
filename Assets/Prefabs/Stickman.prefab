@@ -263,7 +263,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2800469726748011120}
-  m_LocalRotation: {x: -0, y: -0, z: -0.6712934, w: 0.74119174}
+  m_LocalRotation: {x: -0, y: -0, z: -0.67129344, w: 0.7411917}
   m_LocalPosition: {x: 0, y: 0.6799998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -956,7 +956,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2800469727971245351}
-  m_LocalRotation: {x: -0, y: -0, z: -0.42257884, w: -0.90632623}
+  m_LocalRotation: {x: -0, y: -0, z: -0.4225789, w: -0.9063262}
   m_LocalPosition: {x: 1.308, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1242,7 +1242,7 @@ GameObject:
   - component: {fileID: 4922780581557607668}
   m_Layer: 8
   m_Name: Stickman
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1394,10 +1394,12 @@ MonoBehaviour:
   HP: {fileID: 0}
   MP: {fileID: 0}
   SP: {fileID: 0}
+  atk: 0
+  def: 0
   lengthTimeJump: 0.35
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 33792
   groundCheck: {fileID: 0}
   checkRadius: 0.1
   accurate: 0.0005

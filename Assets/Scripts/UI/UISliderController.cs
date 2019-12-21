@@ -24,6 +24,7 @@ public class UISliderController : MonoBehaviour
     private TextMeshProUGUI text;
 
     public float value { get => _value; set => _value = value; }
+    public float autoRecoveryPerSecond { get => _autoRecoveryPerSecond; set => _autoRecoveryPerSecond = value; }
 
     #region check for update
     #region color

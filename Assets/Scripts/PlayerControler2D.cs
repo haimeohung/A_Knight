@@ -15,6 +15,7 @@ public class PlayerControler2D : MonoBehaviour
     [SerializeField] private int jumpForce = 10;
     [SerializeField] private int jumpAbility = 1;
     [SerializeField] private UISliderController HP, MP, SP;
+    [SerializeField] private int atk, def;
     [Range(0.2f, 0.5f)] [SerializeField] private float lengthTimeJump = 0.35f;
     [Header("Checking Setting")]
     [SerializeField] private LayerMask whatIsGround;
@@ -276,6 +277,7 @@ public class PlayerControler2D : MonoBehaviour
         }
         #endregion
         SelectedWeapon = WeaponTag.Bow;
+        gameObject.AddComponent<InfoPlayer>();
     }
 
     void Update()
@@ -405,5 +407,114 @@ public class PlayerControler2D : MonoBehaviour
         }
         _canGoNextAttack = false;
     }
-#endregion
+    #endregion
+
+
+    private class InfoPlayer : InfoEntity
+    {
+        private int sp_index;
+        private int mp_index;
+        private bool IsBuff = false;
+        private int number_buff;
+        public PlayerControler2D player;
+        public void Start()
+        {
+            player = gameObject.GetComponent<PlayerControler2D>();
+        }
+        public enum Effect
+        {
+            low_hp,
+            high_hp,
+            low_mp,
+            high_mp,
+            low_sp,
+            high_sp,
+            low_atk,
+            high_atk,
+            low_def,
+            high_def,
+            low_speed,
+            high_speed,
+        }
+        public InfoPlayer() {
+        
+        }
+
+        IEnumerator Buffp(Effect effect)
+        {
+            switch (effect)
+            {
+                case Effect.high_hp:
+                    player.HP.autoRecoveryPerSecond += 10;
+                    yield return new WaitForSeconds(10f);
+                    player.HP.autoRecoveryPerSecond -= 10;
+                    break;
+                case Effect.low_hp:
+                    player.HP.autoRecoveryPerSecond += 5;
+                    yield return new WaitForSeconds(10f);
+                    player.HP.autoRecoveryPerSecond -= 5;
+                    break;
+                case Effect.high_mp:
+                    player.MP.autoRecoveryPerSecond += 10;
+                    yield return new WaitForSeconds(10f);
+                    player.MP.autoRecoveryPerSecond -= 10;
+                    break;
+                case Effect.low_mp:
+                    player.MP.autoRecoveryPerSecond += 5;
+                    yield return new WaitForSeconds(10f);
+                    player.MP.autoRecoveryPerSecond -= 5;
+                    break;
+                case Effect.high_sp:
+                    player.SP.autoRecoveryPerSecond += 10;
+                    yield return new WaitForSeconds(10f);
+                    player.SP.autoRecoveryPerSecond -= 10;
+                    break;
+                case Effect.low_sp:
+                    player.SP.autoRecoveryPerSecond += 5;
+                    yield return new WaitForSeconds(10f);
+                    player.SP.autoRecoveryPerSecond -= 5;
+                    break;
+                case Effect.high_atk:
+                    player.atk += 5;
+                    yield return new WaitForSeconds(20f);
+                    player.HP.autoRecoveryPerSecond -= 5;
+                    break;
+                case Effect.low_atk:
+                    player.atk += 2;
+                    yield return new WaitForSeconds(20f);
+                    player.HP.autoRecoveryPerSecond -= 2;
+                    break;
+                case Effect.high_def:
+                    player.atk += 4;
+                    yield return new WaitForSeconds(20f);
+                    player.HP.autoRecoveryPerSecond -= 4;
+                    break;
+                case Effect.low_def:
+                    player.def += 2;
+                    yield return new WaitForSeconds(20f);
+                    player.HP.autoRecoveryPerSecond -= 2;
+                    break;
+                case Effect.high_speed:
+                    player.runSpeed += 4;
+                    yield return new WaitForSeconds(20f);
+                    player.HP.autoRecoveryPerSecond -= 4;
+                    break;
+                case Effect.low_speed:
+                    player.runSpeed += 6;
+                    yield return new WaitForSeconds(20f);
+                    player.HP.autoRecoveryPerSecond -= 6;
+                    break;
+                default:
+                    break;
+            }
+        }
+        public void Buff(Effect effect)
+        {
+            StartCoroutine(Buffp(effect));
+        }
+        public void Update()
+        {
+
+        }
+    }
 }
