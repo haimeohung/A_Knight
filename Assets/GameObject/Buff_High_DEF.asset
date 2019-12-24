@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1fdb0ff65f341479ee8a3c1325e563, type: 3}
+  m_Name: Buff_High_DEF
+  m_EditorClassIdentifier: 
+  ani: {fileID: 9100000, guid: 4f5e2d1c9e2848c4ebf06badd810f393, type: 2}
+  name: "Thu\u1ED1c t\u0103ng DEF (n\u1EB7ng \u0111\xF4)"
+  buffDisplay: {fileID: 21300000, guid: 6639d8db43ddb1e478b2af137720b422, type: 3}
+  image: {fileID: 21300000, guid: d3f4652a43361284daac7ce2e3755555, type: 3}
+  timeEffect: 0
+  locationDrop: Guard
+  info: "T\u1EA5m khi\xEAn gi\xFAp b\u1EA1n c\u1EA3m th\u1EA5y b\u1EDBt th\u1ED1n
+    h\u01A1n m\u1ED7i khi \u0111\xE1nh boss"
+  effect: 0
+  effectDescription: "T\u0103ng t\u1EA1m th\u1EDDi 20 \u0111i\u1EC3m DEF trong 20s"

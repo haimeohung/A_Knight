@@ -5,12 +5,13 @@ using UnityEngine.EventSystems;
 
 public class UIDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [SerializeField] private RectTransform dragOut;
+    public RectTransform dragOut;
     private RectTransform rt;
     private Vector3 originPositon;
     private Vector3 delta;
     private Camera cam;
     public System.Action setOnDragOut { private get; set; } = null;
+    public System.Action<PointerEventData> setOnDragEnd { private get; set; } = (e) => { };
 
     void Start()
     {
@@ -42,5 +43,8 @@ public class UIDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         }
         catch { }
         rt.localPosition = originPositon;
+        setOnDragEnd(eventData);
     }
+
+    public bool IsInsideRect(RectTransform rt, Vector2 pos) => RectTransformUtility.RectangleContainsScreenPoint(rt, pos, cam);
 }

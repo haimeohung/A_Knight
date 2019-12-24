@@ -11,14 +11,20 @@ public class UIBuffController : MonoBehaviour
     private float timer = 0f;
     public System.Action setOnBuffStart { private get; set; } = null;
     public System.Action setOnBuffEnd { private get; set; } = null;
+    private PlayerControler2D player;
+
     void Start()
     {
         slider = gameObject.GetComponent<Slider>();
         timer = item.timeEffect;
+        player = FindObjectOfType<PlayerControler2D>();
         if (setOnBuffStart is null)
-            setOnBuffStart = item.setOnEffect;
+            setOnBuffStart = item.getEffectStart(player);
         if (setOnBuffEnd is null)
-            setOnBuffEnd = () => { Destroy(gameObject); };
+            setOnBuffEnd = () => {
+                item.getEffectEnd(player)();
+                Destroy(gameObject);
+            };
         gameObject.GetComponentInChildren<Image>().sprite = item.buffDisplay;
         setOnBuffStart();
     }

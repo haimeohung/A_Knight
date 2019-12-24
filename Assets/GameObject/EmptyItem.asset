@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1fdb0ff65f341479ee8a3c1325e563, type: 3}
   m_Name: EmptyItem
   m_EditorClassIdentifier: 
+  ani: {fileID: 0}
   name: 
-  number: 0
   buffDisplay: {fileID: 0}
-  image: {fileID: 0}
+  image: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   timeEffect: 0
   locationDrop: 
-  effectDescription: 
   info: 
+  effect: 0
+  effectDescription: 

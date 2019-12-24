@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1fdb0ff65f341479ee8a3c1325e563, type: 3}
+  m_Name: Buff_HighMP
+  m_EditorClassIdentifier: 
+  ani: {fileID: 9100000, guid: a6d81a2dacdb07640a552d249321c603, type: 2}
+  name: "Thu\u1ED1c h\u1ED3i MP (l\u1EDBn)"
+  buffDisplay: {fileID: 21300000, guid: 91adac64700bdcd47923caa443ac1f8d, type: 3}
+  image: {fileID: 21300000, guid: 91c2d5f3c9b46aa41a2c0b0a3820666e, type: 3}
+  timeEffect: 10
+  locationDrop: Guard, Zombie
+  info: "M\xF3n qu\xE1 \u0111\u1EBFn t\u1EEB nh\u1EEFng ph\xE1p s\u01B0 cao c\u1EA5p,
+    d\xF9 l\xE0 cao c\u1EA5p nh\u01B0ng r\u1ED1t cu\u1ED9c h\u1ECD v\u1EABn h\xF3a
+    th\xE0nh zombie th\xF4i"
+  effect: 0
+  effectDescription: "T\u0103ng t\u1ED1c \u0111\u1ED9 h\u1ED3i ph\u1EE5c MP th\xEAm
+    10 MP/s trong 10s"

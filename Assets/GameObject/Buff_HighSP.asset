@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1fdb0ff65f341479ee8a3c1325e563, type: 3}
+  m_Name: Buff_HighSP
+  m_EditorClassIdentifier: 
+  ani: {fileID: 9100000, guid: aaa2e8f16c65acd4bb3e6023187cc850, type: 2}
+  name: "Thu\u1ED1c h\u1ED3i SP (l\u1EDBn)"
+  buffDisplay: {fileID: 21300000, guid: 86ff6c776bc0f5f4c842b3faf1eb645c, type: 3}
+  image: {fileID: 21300000, guid: dfd3e3ceef4b5894c8edc339304a2786, type: 3}
+  timeEffect: 10
+  locationDrop: Guard
+  info: "H\xE0ng c\u1EA5m v\xE0 n\u1EB7ng \u0111\xF4 h\u01A1n b\u1EA5t k\xEC thu\u1ED1c
+    k\xEDch th\xEDch, doping gi\xFAp b\u1EA1n c\xF3 th\u1EC3 l\u1EF1c gi\u1ED1ng nh\u01B0
+    m\u1ED9t v\u1EADn \u0111\u1ED9ng vi\xEAn \u0111i\u1EC1n kinh"
+  effect: 0
+  effectDescription: "T\u0103ng t\u1ED1c \u0111\u1ED9 h\u1ED3i ph\u1EE5c SP th\xEAm
+    10 SP/s trong 10s"

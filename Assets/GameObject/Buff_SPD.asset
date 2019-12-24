@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1fdb0ff65f341479ee8a3c1325e563, type: 3}
+  m_Name: Buff_SPD
+  m_EditorClassIdentifier: 
+  ani: {fileID: 9100000, guid: 4f20d4b1d8b4dca42be4628b45f2884f, type: 2}
+  name: "Thu\u1ED1c t\u0103ng SPEED (nh\u1ECF)"
+  buffDisplay: {fileID: 21300000, guid: 272afbdea9a515f469fa4d7e4b3b70ca, type: 3}
+  image: {fileID: 21300000, guid: de6fd7b62aaaf3644915192a50dffe1e, type: 3}
+  timeEffect: 20
+  locationDrop: Guard, Zombie
+  info: "Khuy\u1EBFn c\xE1o: Tuy\u1EC7t \u0111\u1ED1i kh\xF4ng \u0111\u01B0\u1EE3c
+    d\xF9ng b\u1EEBa n\u1EBFu b\u1EA1n kh\xF4ng mu\u1ED1n ch\u01A1i l\u1EA1i t\u1EEB
+    \u0111\u1EA7u"
+  effect: 0
+  effectDescription: "T\u0103ng t\u1EA1m th\u1EDDi 3 \u0111i\u1EC3m SPEED trong 20s"

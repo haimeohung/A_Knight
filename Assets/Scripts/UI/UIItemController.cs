@@ -13,11 +13,15 @@ public class UIItemController : MonoBehaviour
     void Start()
     {
         image.sprite = item.image;
-        text.text = item.number.ToString();
     }
 
     public void Click()
     {
         setOnClick();
+    }
+
+    public void SetNumber(int number)
+    {
+        text.text = number.ToString();
     }
 }

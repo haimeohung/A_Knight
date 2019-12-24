@@ -48,18 +48,16 @@ public class SpawnMachine : MonoBehaviour
                 }
             }
             GameObject gene = Instantiate(what);
-            try { SetOnInit(gene); } catch { }
-            gene.transform.SetParentWithoutChangeScale(null, transform.position);
+            gene.transform.SetParentWithoutChangeScale(null, what.transform.position);
             gene.SetActive(true);
             try { SetOnInit(gene); } catch { }
             items.Enqueue(gene);
             numberOfClone = items.Count;
-
             yield return new WaitForSeconds(delayTimeSpawn + Random.Range(0, randomDelayDelta));
         }
     }
 
-    public void Trigger_Spawn(int number = 1)
+    public void Trigger_Spawn()
     {
         if (spawnMode == SpawnMode.Auto)
             return;
@@ -79,7 +77,7 @@ public class SpawnMachine : MonoBehaviour
             }
         }
         GameObject gene = Instantiate(what);
-        gene.transform.SetParentWithoutChangeScale(null, transform.position);
+        gene.transform.SetParentWithoutChangeScale(null, what.transform.position);
         gene.SetActive(true);
         try { SetOnInit(gene); } catch { }
         items.Enqueue(gene);

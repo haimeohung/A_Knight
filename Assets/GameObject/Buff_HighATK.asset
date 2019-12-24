@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1fdb0ff65f341479ee8a3c1325e563, type: 3}
+  m_Name: Buff_HighATK
+  m_EditorClassIdentifier: 
+  ani: {fileID: 9100000, guid: e22501ec118a8a644a69f362e26c2a95, type: 2}
+  name: "Thu\u1ED1c t\u0103ng ATK (n\u1EB7ng \u0111\xF4)"
+  buffDisplay: {fileID: 21300000, guid: d0612a35f03942447b93f5117467b7c6, type: 3}
+  image: {fileID: 21300000, guid: 78a9e30bc4371ed448cf9ea38dea76fe, type: 3}
+  timeEffect: 20
+  locationDrop: Zombie
+  info: "V\u1EADt ph\u1EA9m th\u01B0\u1EE3ng h\u1EA1ng, l\u1EDDi khuy\xEAn l\xE0 n\xEAn
+    t\xEDch tr\u1EEF v\u1EDBi s\u1ED1 l\u01B0\u1EE3ng l\u1EDBn \u0111\u1EC3 c\xF3
+    th\u1EC3 c\xE0y qua m\xE0n cu\u1ED1i"
+  effect: 0
+  effectDescription: "T\u0103ng t\u1EA1m th\u1EDDi 20 \u0111i\u1EC3m ATK trong 20s"

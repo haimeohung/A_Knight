@@ -15,7 +15,7 @@ public class WeaponBowControler : WeaponController
     [SerializeField] Transform hand;
     private LineRenderer Renderer;
     private SpawnMachine spawn;
-    private Vector3 inputDirection;
+    private Vector3 inputDirection, lastInputDirection;
     void Start()
     {
         Renderer = GetComponent<LineRenderer>();
@@ -29,7 +29,7 @@ public class WeaponBowControler : WeaponController
         spawn.SetOnInit = (clone) =>
         {
             Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
-            rb.velocity = inputDirection.normalized * (-arrowSpeed);
+            rb.velocity = lastInputDirection.normalized * (-arrowSpeed);
         };
         spawn.SetOnDelete = (clone) =>
         {
@@ -41,8 +41,7 @@ public class WeaponBowControler : WeaponController
             spawn.Trigger_Spawn();
         };
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         Renderer.SetPosition(0, top.position);
@@ -52,6 +51,7 @@ public class WeaponBowControler : WeaponController
         inputDirection = input.GetDirection(Unity.tag.JoystickTag.Weapon);
         if (inputDirection != Vector3.zero)
         {
+            lastInputDirection = inputDirection;
             float angle = inputDirection.signedAngle();
             if (controler.FacingRight)
             {

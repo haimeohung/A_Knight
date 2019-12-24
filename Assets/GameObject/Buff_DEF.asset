@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1fdb0ff65f341479ee8a3c1325e563, type: 3}
+  m_Name: Buff_DEF
+  m_EditorClassIdentifier: 
+  ani: {fileID: 9100000, guid: d3296e4540940c345b38749f0acc8838, type: 2}
+  name: "Thu\u1ED1c t\u0103ng DEF (nh\u1ECF)"
+  buffDisplay: {fileID: 21300000, guid: 156e317a7dfd941449d29b84ef31b409, type: 3}
+  image: {fileID: 21300000, guid: 92fd6f5873127cc499a56562bba7244b, type: 3}
+  timeEffect: 20
+  locationDrop: Guard
+  info: "C\xF4ng c\u1EE5 gi\xFAp b\u1EA1n treo m\xE1y nh\u01B0ng kh\xF4ng c\u1EA7n
+    nh\u1EA5n n\xFAt pause"
+  effect: 0
+  effectDescription: "T\u0103ng t\u1EA1m th\u1EDDi 5 \u0111i\u1EC3m DEF trong 20s"

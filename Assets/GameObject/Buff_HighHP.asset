@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1fdb0ff65f341479ee8a3c1325e563, type: 3}
+  m_Name: Buff_HighHP
+  m_EditorClassIdentifier: 
+  ani: {fileID: 9100000, guid: 405b5bfbc2e1a1944b1f9359943a0a82, type: 2}
+  name: "Thu\u1ED1c h\u1ED3i HP (l\u1EDBn)"
+  buffDisplay: {fileID: 21300000, guid: 066415c6d2472e7499486437004a5ad9, type: 3}
+  image: {fileID: 21300000, guid: 6baa80f588112d847b0628d93189e77b, type: 3}
+  timeEffect: 10
+  locationDrop: Zombie
+  info: "B\xECnh thu\u1ED1c ma thu\u1EADt chi\u1EBFt xu\u1EA5t t\u1EEB nh\u1EEFng
+    m\u1EA3nh linh h\u1ED3n thu\u1EA7n khi\u1EBFt c\u1EE7a zombie, t\u01B0\u01A1i
+    h\u01A1n, t\u0103ng t\u1ED1c \u0111\u1ED9 h\u1ED3i ph\u1EE5c ph\u1EE5c nhi\u1EC1u
+    h\u01A1n nh\u01B0ng hi\u1EBFm h\u01A1n thu\u1ED1c th\u01B0\u1EDDng"
+  effect: 1
+  effectDescription: "T\u0103ng t\u1ED1c \u0111\u1ED9 h\u1ED3i ph\u1EE5c HP th\xEAm
+    10 HP/s trong 10s"

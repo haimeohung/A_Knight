@@ -22,6 +22,7 @@ public class BoatCarry : MonoBehaviour
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            Debug.Log("Enter");
             if (collision.gameObject.layer == 8)
             {
                 if (Time.time - time > 2f)
@@ -46,8 +47,9 @@ public class BoatCarry : MonoBehaviour
         private void OnTriggerExit2D(Collider2D collision)
         { 
             player.transform.SetParentWithoutChangeScale(null);
-            rb.velocity = new Vector2(0f, 0f);
-            player.Carring = rb.velocity;
+            player.Carring = rb.velocity = Vector2.zero;
+            Debug.Log("Exit");
+            
         }
     }
 
