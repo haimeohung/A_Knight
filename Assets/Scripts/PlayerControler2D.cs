@@ -377,7 +377,10 @@ public class PlayerControler2D : MonoBehaviour
     {
         ani.SetTrigger("EatDone");
     }
-
+    void DashDone()
+    {
+        ani.SetTrigger("DashDone");
+    }
     void AttackSpawnType()
     {
         weapons[(int)SelectedWeapon]?.parent.GetComponent<WeaponController>()?.SetOnTrigger();

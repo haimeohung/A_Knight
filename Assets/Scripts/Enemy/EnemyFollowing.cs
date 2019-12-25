@@ -10,7 +10,7 @@ public class EnemyFollowing : MonoBehaviour
     [SerializeField] float speed = 1f;
     [SerializeField] float range = 30;
     [SerializeField] float rangeAttack = 5;
-    private bool _IsExitAttack = false;
+    public bool _IsExitAttack = true;
     private bool _IsFollowing = false;
     private bool IsFollowing
     {
@@ -95,6 +95,8 @@ public class EnemyFollowing : MonoBehaviour
             IsAttacking = false;
             IsDie = false;
             IsIdle = false;
+            _IsExitAttack = false;
+
         }
         if (state == State.attacking)
         {
@@ -102,6 +104,8 @@ public class EnemyFollowing : MonoBehaviour
             IsAttacking = true;
             IsDie = false;
             IsIdle = false;
+            _IsExitAttack = false;
+
         }
         if (state == State.die)
         {
@@ -109,6 +113,7 @@ public class EnemyFollowing : MonoBehaviour
             IsAttacking = false;
             IsDie = true;
             IsIdle = false;
+
         }
         if (state == State.idle)
         {
@@ -116,6 +121,7 @@ public class EnemyFollowing : MonoBehaviour
             IsAttacking = false;
             IsDie = false;
             IsIdle = true;
+
         }
 
     }
@@ -123,30 +129,19 @@ public class EnemyFollowing : MonoBehaviour
     {
         ///////
         float distance = Mathf.Abs(transform.position.x - playerPos.position.x);
-        if (_IsExitAttack)
+        if (_IsExitAttack == false)
         {
             return;
         }
         if (distance >= range)
         {
             SwitchState(State.idle);
+            rb.velocity = new Vector2(0f, 0f);
+            return;
         }
         if (distance >= rangeAttack && distance < range - 2)
         {
             SwitchState(State.following);
-        }
-        if (distance < rangeAttack - 2)
-        {
-            SwitchState(State.attacking);
-        }
-        /////////
-      
-        if (IsIdle)
-        {
-            rb.velocity = new Vector2(0f, 0f);
-        }
-        if (IsFollowing)
-        {         
             if (transform.position.x > playerPos.position.x)
             {
                 rb.velocity = new Vector2(-speed, 0f);
@@ -156,10 +151,12 @@ public class EnemyFollowing : MonoBehaviour
             {
                 rb.velocity = new Vector2(speed, 0f);
             }
+            return;
+
         }
-        if (IsAttacking)
+        if (distance < rangeAttack - 2)
         {
-            _IsExitAttack = true;
+            SwitchState(State.attacking);
             if (transform.position.x > playerPos.position.x)
             {
                 rb.velocity = new Vector2(-0.01f, 0f);
@@ -169,7 +166,10 @@ public class EnemyFollowing : MonoBehaviour
             {
                 rb.velocity = new Vector2(0.01f, 0f);
             }
+            return;
         }
+       
+      
     }
     public void IsExitAttack()
     {

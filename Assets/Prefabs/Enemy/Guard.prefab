@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8304429221329061566}
   - component: {fileID: 4513620185915017021}
   - component: {fileID: 668955786649144264}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: Weapon Straight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -155,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8719605491514615112}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: WeaponContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5556597882447446453}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.67269164, y: 0}
@@ -538,7 +538,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.016015798, y: -0.8953136}
@@ -654,7 +654,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.016015798, y: -0.89531344}
@@ -820,7 +820,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4337237209878878300}
-  m_LocalRotation: {x: -0, y: -0, z: 0.51216817, w: 0.8588852}
+  m_LocalRotation: {x: -0, y: -0, z: 0.512168, w: 0.8588853}
   m_LocalPosition: {x: 0.13, y: -1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -904,7 +904,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.016015917, y: -0.8953138}
@@ -935,7 +935,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4337237209945349072}
-  m_LocalRotation: {x: -0, y: -0, z: -0.42257884, w: -0.90632623}
+  m_LocalRotation: {x: -0, y: -0, z: -0.42257857, w: -0.9063263}
   m_LocalPosition: {x: 1.308, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1003,7 +1003,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1167,7 +1167,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4337237210104419239}
-  m_LocalRotation: {x: -0, y: -0, z: -0.52825946, w: 0.849083}
+  m_LocalRotation: {x: -0, y: -0, z: -0.52825934, w: 0.84908307}
   m_LocalPosition: {x: 0.04, y: -1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1235,7 +1235,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.016015917, y: -0.8953139}
@@ -1421,6 +1421,7 @@ MonoBehaviour:
   speed: 1
   range: 30
   rangeAttack: 5
+  _IsExitAttack: 1
 --- !u!1 &4337237210127145242
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,7 +1532,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.67269164, y: 0}
@@ -1669,7 +1670,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1830,7 +1831,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1960,7 +1961,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2005,7 +2006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3694584633613259488}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2140,6 +2141,11 @@ PrefabInstance:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 199910722625497008, guid: 67a684e320da6e7439421a07e3fa265c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 199385802554314066, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
       propertyPath: m_SortingOrder
@@ -2155,17 +2161,12 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 199910722625497008, guid: 67a684e320da6e7439421a07e3fa265c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 198320247807911846, guid: 67a684e320da6e7439421a07e3fa265c,
+    - target: {fileID: 198794646228705736, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 198320247807911846, guid: 67a684e320da6e7439421a07e3fa265c,
+    - target: {fileID: 198794646228705736, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
       propertyPath: looping
       value: 0
@@ -2180,22 +2181,22 @@ PrefabInstance:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 198559278997166938, guid: 67a684e320da6e7439421a07e3fa265c,
+    - target: {fileID: 198320247807911846, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 198559278997166938, guid: 67a684e320da6e7439421a07e3fa265c,
+    - target: {fileID: 198320247807911846, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 198794646228705736, guid: 67a684e320da6e7439421a07e3fa265c,
+    - target: {fileID: 198559278997166938, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 198794646228705736, guid: 67a684e320da6e7439421a07e3fa265c,
+    - target: {fileID: 198559278997166938, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
       propertyPath: looping
       value: 0

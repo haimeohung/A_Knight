@@ -17,9 +17,9 @@ public class SpawnMachine : MonoBehaviour
     [Header("Info")]
     [SerializeField] private int numberOfClone;
 
-    private Queue<GameObject> items = new Queue<GameObject>();
-    public System.Action<GameObject> SetOnInit { private get; set; } = null;
-    public System.Action<GameObject> SetOnDelete { private get; set; } = (g) => { Destroy(g); };
+    private List<GameObject> items = new List<GameObject>();
+    public event System.Action<GameObject> SetOnInit;
+    public event System.Action<GameObject> SetOnDelete;
     void Start()
     {
         what.SetActive(false);
@@ -38,12 +38,18 @@ public class SpawnMachine : MonoBehaviour
                 switch (limitedMode)
                 {
                     case LimitedMode.DeleteFirst:
-                        SetOnDelete(items.Dequeue());
+                        SetOnDelete(items[0]);
+                        items.RemoveAt(0);
                         numberOfClone = items.Count;
                         break;
                     case LimitedMode.StopSpawn:
                         while (items.Count >= limit)
+                        {
+                            for (int i = 0; i < items.Count; i++)
+                                if (items[i] == null)
+                                    items.RemoveAt(i);
                             yield return 0;
+                        }
                         break;
                 }
             }
@@ -51,7 +57,7 @@ public class SpawnMachine : MonoBehaviour
             gene.transform.SetParentWithoutChangeScale(null, what.transform.position);
             gene.SetActive(true);
             try { SetOnInit(gene); } catch { }
-            items.Enqueue(gene);
+            items.Add(gene);
             numberOfClone = items.Count;
             yield return new WaitForSeconds(delayTimeSpawn + Random.Range(0, randomDelayDelta));
         }
@@ -67,12 +73,18 @@ public class SpawnMachine : MonoBehaviour
             switch (limitedMode)
             {
                 case LimitedMode.DeleteFirst:
-                    SetOnDelete(items.Dequeue());
+                    SetOnDelete(items[0]);
+                    items.RemoveAt(0);
                     numberOfClone = items.Count;
                     break;
                 case LimitedMode.StopSpawn:
-                    if (items.Count >= limit)
+                    while (items.Count >= limit)
+                    {
+                        for (int i = 0; i < items.Count; i++)
+                            if (items[i] == null)
+                                items.RemoveAt(i);
                         return;
+                    }
                     break;
             }
         }
@@ -80,7 +92,7 @@ public class SpawnMachine : MonoBehaviour
         gene.transform.SetParentWithoutChangeScale(null, what.transform.position);
         gene.SetActive(true);
         try { SetOnInit(gene); } catch { }
-        items.Enqueue(gene);
+        items.Add(gene);
         numberOfClone = items.Count;
     }
 }

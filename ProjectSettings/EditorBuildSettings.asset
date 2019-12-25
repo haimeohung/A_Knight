@@ -5,16 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/WelcomeScene.unity
-    guid: a26e72eacec44114a8862024b74772f1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/EndlessModeGamePlay.unity
-    guid: 1f94f498f6325d94fa351f6357f380eb
+    path: Assets/Scenes/Loading.unity
+    guid: 285ccc976ad61f8488ef049bee45b6c0
   - enabled: 1
-    path: Assets/Scenes/SelectGamePlayScene.unity
-    guid: 33fa804c9f271c04089344dce459f1a5
+    path: Assets/Scenes/Map_Teammate.unity
+    guid: 231beca677a6a2448b4e3f75311a6352
   m_configObjects: {}

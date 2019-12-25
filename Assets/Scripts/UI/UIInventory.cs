@@ -96,6 +96,8 @@ public class UIInventory : MonoBehaviour
 
     public void UseItem()
     {
+        if (SelectedItem.Equals(initItem))
+            return;
         buffs.AddNewBuff(SelectedItem);
         (hash[SelectedItem.name] as Node).number--;
         player.ani.SetTrigger("Eat");

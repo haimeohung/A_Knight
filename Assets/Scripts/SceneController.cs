@@ -1,7 +1,20 @@
-﻿public class SceneController
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
+public class SceneController : MonoBehaviour
 {
-    public static void ChangeScene(string sceneName)
+    public static TipList tips;
+
+    protected static string _sceneName = "", _nextSceneName = "";
+    public static void ChangeScene(string sceneName, string nextSceneName)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("Loading");
+        _nextSceneName = nextSceneName;
+        _sceneName = sceneName;
     }
+    public static string currentSceneName => SceneManager.GetActiveScene().name;
+    protected AsyncOperation ChangeScene(string sceneName) => SceneManager.LoadSceneAsync(sceneName);
 }

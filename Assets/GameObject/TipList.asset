@@ -1,0 +1,198 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4395596951647644919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tip
+  tip: "Zombie ph\xE1t n\u1ED5 v\xE0 g\xE2y s\xE1t th\u01B0\u01A1ng khi ch\xFAng b\u1ECB
+    ti\xEAu di\u1EC7t, v\xEC v\u1EADy h\xE3y s\u1EED d\u1EE5ng v\u0169 kh\xED t\u1EA7m
+    xa"
+  image: {fileID: 21300000, guid: 9cdd0324304078d489a13c619faad761, type: 3}
+--- !u!114 &-2377068884825281869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tip
+  tip: "B\u1EA1n c\xF3 th\u1EC3 h\u1ED3i ph\u1EE5c theo th\u1EDDi gian, do \u0111\xF3
+    h\xE3y ch\u1EDD \u0111\u1EE3i tr\u01B0\u1EDBc khi \u0111\xE1nh nhau ti\u1EBFp"
+  image: {fileID: 21300000, guid: 466a23acbe7bca346ba7c7ed5b7a4ba2, type: 3}
+--- !u!114 &-1993860909881234172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tip
+  tip: "\u0110\xE1nh v\u1EDBi ph\xE1p s\u01B0 l\xE0 m\u1ED9t cu\u1ED9c chi\u1EBFn
+    l\xE2u d\xE0i, h\xE3y chu\u1EA9n b\u1ECB tinh th\u1EA7n th\u1EADt k\u0129 tr\u01B0\u1EDBc
+    khi \u0111\u1ED1i \u0111\u1EA7u v\u1EDBi h\u1EAFn"
+  image: {fileID: 21300000, guid: b4f7106c0e3575d4bba06ef9bd764399, type: 3}
+--- !u!114 &-1506068517323482848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tip
+  tip: "\"Ng\u01B0\u01A1i s\u1EBD \u0111\u01B0\u1EE3c h\u1ED3i sinh m\u1ED7i khi th\u1EA5t
+    b\u1EA1i, nh\u01B0ng th\u1EA5t b\u1EA1i qu\xE1 nhi\u1EC1u th\xEC s\u1EBD c\xF3
+    chuy\u1EC7n g\xEC \u0111\xF3 x\u1EA3y ra.\" - Mr.Unknown"
+  image: {fileID: 21300000, guid: 8aabd52d51b12f144b578202a5012cda, type: 3}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55abbb8cb96c16846873846e8a7e4352, type: 3}
+  m_Name: TipList
+  m_EditorClassIdentifier: 
+  list:
+  - {fileID: 4669328759907175543}
+  - {fileID: 2529509254927599265}
+  - {fileID: 85900122063530401}
+  - {fileID: 565871526093301300}
+  - {fileID: 1312445330905717516}
+  - {fileID: -4395596951647644919}
+  - {fileID: 4774498989574304443}
+  - {fileID: -1993860909881234172}
+  - {fileID: -2377068884825281869}
+  - {fileID: 1747206800791761758}
+  - {fileID: -1506068517323482848}
+--- !u!114 &85900122063530401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tip
+  tip: "V\u0169 kh\xED huy\u1EC1n tho\u1EA1i c\u1EE7a J Knight, c\xF3 th\u1EC3 t\u1EA5n
+    c\xF4ng c\u1EADn chi\u1EBFn n\u1EBFu k\u0129 n\u0103ng c\u1EE7a ng\u01B0\u1EDDi
+    s\u1EED d\u1EE5ng \u0111\u1EA1t \u0111\u1EBFn \u0111\u1EB3ng c\u1EA5p nh\u1EA5t
+    \u0111\u1ECBnh"
+  image: {fileID: 21300000, guid: 835b0845816e01542871d60aa56374f2, type: 3}
+--- !u!114 &565871526093301300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tip
+  tip: "V\u0169 kh\xED d\xE2n d\u1EE5ng chuy\xEAn d\xF9ng \u0111\u1EC3 s\u0103n b\u1EAFt
+    th\xFA r\u1EEBng, gi\u1EDD c\xF3 th\u1EC3 l\xE0m v\u0169 kh\xED t\u1EF1 v\u1EC7"
+  image: {fileID: 21300000, guid: df8e9387b1a2a71439dbf8b4e46419db, type: 3}
+--- !u!114 &1312445330905717516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tip
+  tip: "Nh\u1EEFng t\xEAn Guard c\xF3 m\u1ED9t kho\u1EA3ng delay sau khi tung \u0111\xF2n
+    t\u1EA5n c\xF4ng, h\xE3y l\u1EE3i d\u1EE5ng kho\u1EA3ng tr\u1ED1ng \u0111\xF3
+    \u0111\u1EC3 ph\u1EA3n c\xF4ng"
+  image: {fileID: 21300000, guid: a4d697525ee4e4b4bb9e5087b00c1c33, type: 3}
+--- !u!114 &1747206800791761758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tip
+  tip: "\"Ng\u01B0\u01A1i s\u1EBD \u0111\u01B0\u1EE3c h\u1ED3i sinh m\u1ED7i khi th\u1EA5t
+    b\u1EA1i, nh\u01B0ng th\u1EA5t b\u1EA1i qu\xE1 nhi\u1EC1u th\xEC s\u1EBD c\xF3
+    chuy\u1EC7n g\xEC \u0111\xF3 x\u1EA3y ra.\" - Mr.Unknown"
+  image: {fileID: 21300000, guid: 8aabd52d51b12f144b578202a5012cda, type: 3}
+--- !u!114 &2529509254927599265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tip
+  tip: "Red Crystal Crab's Katana c\xF3 s\u1EE9c s\xE1t th\u01B0\u01A1ng g\u1EA5p
+    \u0111\xF4i phi\xEAn b\u1EA3n copy c\u1EE7a n\xF3, h\xE3y c\u1EA9n th\u1EADn v\u1EDBi
+    n\xF3"
+  image: {fileID: 21300000, guid: 6a2c60faa84642a4c84d6d52bbee9971, type: 3}
+--- !u!114 &4669328759907175543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tip
+  tip: "V\u1EADt ph\u1EA9m l\u1ED7i sinh ra do s\u1EE9c m\u1EA1nh d\u01B0 th\u1EEBa
+    c\u1EE7a phi\xEAn b\u1EA3n g\u1ED1c"
+  image: {fileID: 21300000, guid: b89b4a618c34d384b9a7b4addae0f079, type: 3}
+--- !u!114 &4774498989574304443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tip
+  tip: "H\xE3y c\u1EA9n th\u1EADn khi \u0111\xE1nh ch\xEDnh b\u1EA3n th\xE2n m\xECnh"
+  image: {fileID: 21300000, guid: 0999aa1dd908c76478a54878194c585c, type: 3}
