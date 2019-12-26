@@ -318,13 +318,14 @@ GameObject:
   - component: {fileID: 1570598568210699365}
   - component: {fileID: 4572736902282246894}
   - component: {fileID: 5594466049680304155}
+  - component: {fileID: 3878571388478215708}
   m_Layer: 12
   m_Name: Zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1570598568210699362
 Transform:
   m_ObjectHideFlags: 0
@@ -469,6 +470,23 @@ MonoBehaviour:
   speed: 1
   range: 30
   rangeAttack: 3
+  _IsExitAttack: 1
+--- !u!114 &3878571388478215708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570598568210699390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4d326866a562940a72c0d730bafe7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP_index: 20
+  ATK_index: 3
+  DEF_index: 3
+  SPD_index: 3
 --- !u!1 &1570598568230218781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,6 +1888,10 @@ PrefabInstance:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1988778204445182, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1169958064465980, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -1878,13 +1900,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1988778204445182, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1080554763449460, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199910722625497008, guid: 67a684e320da6e7439421a07e3fa265c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 199385802554314066, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
@@ -1901,17 +1924,12 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 199910722625497008, guid: 67a684e320da6e7439421a07e3fa265c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 198320247807911846, guid: 67a684e320da6e7439421a07e3fa265c,
+    - target: {fileID: 198794646228705736, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 198320247807911846, guid: 67a684e320da6e7439421a07e3fa265c,
+    - target: {fileID: 198794646228705736, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
       propertyPath: looping
       value: 0
@@ -1926,22 +1944,22 @@ PrefabInstance:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 198559278997166938, guid: 67a684e320da6e7439421a07e3fa265c,
+    - target: {fileID: 198320247807911846, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 198559278997166938, guid: 67a684e320da6e7439421a07e3fa265c,
+    - target: {fileID: 198320247807911846, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 198794646228705736, guid: 67a684e320da6e7439421a07e3fa265c,
+    - target: {fileID: 198559278997166938, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 198794646228705736, guid: 67a684e320da6e7439421a07e3fa265c,
+    - target: {fileID: 198559278997166938, guid: 67a684e320da6e7439421a07e3fa265c,
         type: 3}
       propertyPath: looping
       value: 0

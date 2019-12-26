@@ -8,8 +8,8 @@ public class Pickup : MonoBehaviour
     [SerializeField] private Item item;
     void Start()
     {
-        inventory = FindObjectOfType<UIInventory>();
         gameObject.GetComponent<Animator>().runtimeAnimatorController = item.ani;
+        inventory = FindObjectOfType<UIInventory>();
         StartCoroutine(AssignHitBox());
     }
 
@@ -17,7 +17,7 @@ public class Pickup : MonoBehaviour
     {
         if (collision.gameObject.layer == 8)
         {
-            inventory?.AddNewItem(item, 1);
+            inventory.AddNewItem(item, 1);
             Destroy(gameObject);
         }
     }

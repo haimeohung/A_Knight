@@ -1579,8 +1579,8 @@ GameObject:
   - component: {fileID: 2346672534783151017}
   - component: {fileID: 7224113701145512817}
   - component: {fileID: 7224113701145512821}
-  - component: {fileID: 8535626217999558027}
   - component: {fileID: 2846353534174850589}
+  - component: {fileID: 4521621212386730513}
   m_Layer: 12
   m_Name: Deadman
   m_TagString: Untagged
@@ -1716,21 +1716,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 1
---- !u!114 &8535626217999558027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7224113701145512814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 907d60ec6a6df8f459927f2a7652818c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  range: 30
-  rangeAttack: 5
 --- !u!114 &2846353534174850589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1745,10 +1730,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   range: 30
-  rangeAttack: 5
   _IsExit: 1
   random_attack: 0
-  hp: 100
+  info: {fileID: 0}
+--- !u!114 &4521621212386730513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7224113701145512814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4d326866a562940a72c0d730bafe7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP_index: 1000
+  ATK_index: 100
+  DEF_index: 20
+  SPD_index: 0
 --- !u!1 &7224113701146868144
 GameObject:
   m_ObjectHideFlags: 0

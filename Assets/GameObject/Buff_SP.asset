@@ -24,3 +24,4 @@ MonoBehaviour:
   effect: 0
   effectDescription: "T\u0103ng t\u1ED1c \u0111\u1ED9 h\u1ED3i ph\u1EE5c SP th\xEAm
     5 SP/s trong 10s"
+  dropRate: 0.2

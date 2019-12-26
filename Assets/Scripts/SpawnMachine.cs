@@ -7,10 +7,12 @@ public class SpawnMachine : MonoBehaviour
 {
     public enum SpawnMode { Auto, Trigger }
     private enum LimitedMode { StopSpawn, DeleteFirst }
+    private enum PositionMode { ThisObject, WhatObject }
 
     [SerializeField] private SpawnMode spawnMode = SpawnMode.Trigger;
     [SerializeField] private GameObject what;
     [SerializeField] private LimitedMode limitedMode = LimitedMode.DeleteFirst;
+    [SerializeField] private PositionMode positionMode = PositionMode.WhatObject;
     [SerializeField] [Range(1, 10000)] int limit = 1;
     [SerializeField] private float delayTimeSpawn = 1f;
     [SerializeField] private float randomDelayDelta = 0f;
@@ -54,7 +56,10 @@ public class SpawnMachine : MonoBehaviour
                 }
             }
             GameObject gene = Instantiate(what);
-            gene.transform.SetParentWithoutChangeScale(null, what.transform.position);
+            if (positionMode == PositionMode.WhatObject)
+                gene.transform.SetParentWithoutChangeScale(null, what.transform.position);
+            else
+                gene.transform.SetParentWithoutChangeScale(null, transform.position);
             gene.SetActive(true);
             try { SetOnInit(gene); } catch { }
             items.Add(gene);
@@ -89,7 +94,10 @@ public class SpawnMachine : MonoBehaviour
             }
         }
         GameObject gene = Instantiate(what);
-        gene.transform.SetParentWithoutChangeScale(null, what.transform.position);
+        if (positionMode == PositionMode.WhatObject)
+            gene.transform.SetParentWithoutChangeScale(null, what.transform.position);
+        else
+            gene.transform.SetParentWithoutChangeScale(null, transform.position);
         gene.SetActive(true);
         try { SetOnInit(gene); } catch { }
         items.Add(gene);

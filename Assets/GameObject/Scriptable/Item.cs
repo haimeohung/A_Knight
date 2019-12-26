@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Item", menuName = "Item/Item...")]
+[CreateAssetMenu(fileName = "Item", menuName = "ScriptableObject/Item...")]
 public class Item : ScriptableObject
 {
     public RuntimeAnimatorController ani;
@@ -14,6 +14,7 @@ public class Item : ScriptableObject
     public string info;
     public Effect effect;
     public string effectDescription;
+    public float dropRate;
     public enum Effect
     {
         low_hp,

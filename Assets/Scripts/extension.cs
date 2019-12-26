@@ -115,9 +115,28 @@ namespace Unity.Extentison
 
                 objs[i].gameObject.AddComponent<Rigidbody2D>();
                 objs[i].gameObject.AddComponent<EntityPostCollisionFaded>();
+                objs[i].gameObject.AddComponent<DelayDestroy>();
                 Rigidbody2D rb = objs[i].gameObject.GetComponent<Rigidbody2D>();
                 System.Random r = new System.Random();
                 rb.velocity = new Vector2(r.Next(-10, 10), r.Next(0, 10));
+            }
+        }
+        
+        public static void slowFade(this GameObject gameObject, float delay = 0f)
+        {
+            gameObject.AddComponent<SlowAutoFade>();
+            gameObject.GetComponent<SlowAutoFade>().Trigger(delay);
+        }
+        private class DelayDestroy: MonoBehaviour
+        {
+            private float timer = 0f;
+            private void Update()
+            {
+                timer += Time.deltaTime;
+                if (timer > 10f)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
         private class SlowAutoFade : MonoBehaviour
@@ -153,11 +172,6 @@ namespace Unity.Extentison
                 gameObject.AddComponent<AutoFade>();
                 Destroy(this);
             }
-        }
-        public static void slowFade(this GameObject gameObject, float delay = 0f)
-        {
-            gameObject.AddComponent<SlowAutoFade>();
-            gameObject.GetComponent<SlowAutoFade>().Trigger(delay);
         }
     }
 }

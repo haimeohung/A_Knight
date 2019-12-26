@@ -22,3 +22,4 @@ MonoBehaviour:
     h\u01A1n m\u1ED7i khi \u0111\xE1nh boss"
   effect: 0
   effectDescription: "T\u0103ng t\u1EA1m th\u1EDDi 20 \u0111i\u1EC3m DEF trong 20s"
+  dropRate: 0.1

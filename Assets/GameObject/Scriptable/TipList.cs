@@ -3,13 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Tip : ScriptableObject
-{
-    public string tip;
-    public Sprite image;
-}
-
-[CreateAssetMenu(fileName = "TipList", menuName = "ScriptableObject/List")]
+[CreateAssetMenu(fileName = "TipList", menuName = "ScriptableObject/TipList...")]
 public class TipList : ScriptableObject
 {
     public List<Tip> list;

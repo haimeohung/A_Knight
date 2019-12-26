@@ -88,7 +88,7 @@ public class EnemyFollowing : MonoBehaviour
     }
 
     private void SwitchState(State state)
-    {   
+    {
         if (state == State.following)
         {
             IsFollowing = true;
@@ -168,8 +168,8 @@ public class EnemyFollowing : MonoBehaviour
             }
             return;
         }
-       
-      
+
+
     }
     public void IsExitAttack()
     {
@@ -177,7 +177,7 @@ public class EnemyFollowing : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (IsFollowing)
+        if (IsFollowing || _IsExitAttack)
         {
             if (rb.velocity.x > 0)
             {
@@ -187,6 +187,6 @@ public class EnemyFollowing : MonoBehaviour
             {
                 FacingRight = false;
             }
-        }     
+        }
     }
 }

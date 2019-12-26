@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class SeriousmanController : MonoBehaviour
 {
     private Transform playerPos;
@@ -11,11 +12,10 @@ public class SeriousmanController : MonoBehaviour
     private State current_state;
     // serialize zone
     [SerializeField] float speed = 2f;
-    [SerializeField] float range = 30;
-    [SerializeField] float rangeAttack = 5;
+    [SerializeField] float range;
     [SerializeField] bool _IsExit = true;
     [SerializeField] int random_attack;
-    [SerializeField] int hp = 100;
+    public EntityInfo info;
     // trigger zone
     private bool _IsAttack = false;
     private bool _IsFury = false;
@@ -123,6 +123,7 @@ public class SeriousmanController : MonoBehaviour
     {
         ani = gameObject.GetComponent<Animator>();
         playerPos = GameObject.FindObjectOfType<PlayerControler2D>().transform;
+        info = gameObject.GetComponent<EntityInfo>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0f, 0f);
         StartCoroutine(FirstFrame());
@@ -219,7 +220,7 @@ public class SeriousmanController : MonoBehaviour
     }
     private void Update()
     {
-        if (_IsExit == false)
+        if (_IsExit == false )
         {
             if (OneTimeUpdate)
             {
@@ -228,22 +229,20 @@ public class SeriousmanController : MonoBehaviour
             }
             return;
         }
-        if (OneTimeUpdate2 && hp <= 50)
+        if (Mathf.Abs(transform.position.x - playerPos.position.x) > range)
         {
-            //SwitchState(State.idle);
+            return;
+        }
+        if (OneTimeUpdate2 && info.HP_index <= 250)
+        {
             SwitchState(State.fury);
             SwitchState(State.idle);
             SetVelocityIdle();
             OneTimeUpdate2 = false;
             return;
         }
-        //if (current_state == State.fury)
-        //{
-        //    SwitchState(State.idle);
-        //    return;
-        //}
 
-        random_attack = (new System.Random()).Next(0, hp);
+        random_attack = (new System.Random()).Next(0, info.HP_index);
         if (random_attack % 10 == 0)
         {
             SwitchState(State.idle);
@@ -264,7 +263,7 @@ public class SeriousmanController : MonoBehaviour
             }
             return;
         }
-        if (random_attack % 8 == 0 && hp > 50)
+        if (random_attack % 8 == 0 && info.HP_index > 250)
         {
             SwitchState(State.idle);
             SwitchState(State.laugh);
@@ -290,13 +289,13 @@ public class SeriousmanController : MonoBehaviour
     {
         if (transform.position.x > playerPos.position.x)
         {
-            rb.velocity = new Vector2(0f, 0f);
+            rb.velocity = new Vector2(-0.01f, 0f);
             FacingRight = false;
 
         }
         else
         {
-            rb.velocity = new Vector2(0.1f, 0f);
+            rb.velocity = new Vector2(0.01f, 0f);
             FacingRight = true;
 
         }
@@ -308,7 +307,7 @@ public class SeriousmanController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (current_state == State.running)
+        if (current_state == State.running || _IsExit)
         {
             if (rb.velocity.x > 0)
             {

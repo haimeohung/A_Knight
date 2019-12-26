@@ -14,10 +14,9 @@ public class DeadmanController : MonoBehaviour
     // serialize zone
     [SerializeField] float speed = 0f;
     [SerializeField] float range = 30;
-    [SerializeField] float rangeAttack = 5;
     [SerializeField] bool _IsExit = true;
     [SerializeField] int random_attack;
-    [SerializeField] int hp = 100;
+    public EntityInfo info;
     // trigger zone
     private bool _IsAttack = false;
     private bool _IsFire = false;
@@ -82,6 +81,7 @@ public class DeadmanController : MonoBehaviour
         player = GameObject.FindObjectOfType<PlayerControler2D>();
         playerPos = player.transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
+        info = gameObject.GetComponent<EntityInfo>();
         rb.velocity = new Vector2(0f, 0f);
         StartCoroutine(FirstFrame());
     }
@@ -121,11 +121,6 @@ public class DeadmanController : MonoBehaviour
     {
         if (_IsExit == false)
         {
-            //if (OneTimeUpdate)
-            //{
-            //    _IsExit = true;
-            //    OneTimeUpdate = false;
-            //}
             return;
         }
     
@@ -143,7 +138,6 @@ public class DeadmanController : MonoBehaviour
         {
 
             SwitchState(State.attack);
-            //SetVelocityIdle();
             if (player.FacingRight)
             {
                  rb.position = new Vector2(playerPos.position.x - 2, playerPos.position.y);
@@ -153,15 +147,11 @@ public class DeadmanController : MonoBehaviour
                 rb.position = new Vector2(playerPos.position.x + 2, playerPos.position.y);
 
             }
-            SetVelocityIdle();
-
-
             return;
         }
         else 
         {
             SwitchState(State.fire);
-            SetVelocityIdle();
             return;
         }
 
@@ -185,13 +175,6 @@ public class DeadmanController : MonoBehaviour
 
     private void LateUpdate()
     {
-        //if (rb.velocity.x > 0)
-        //{
-        //    FacingRight = true;
-        //}
-        //if (rb.velocity.x < 0)
-        //{
-        //    FacingRight = false;
-        //}
+       
     }
 }

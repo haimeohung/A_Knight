@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class EntityInfo : MonoBehaviour
 {
-    public int HP_index;
-    public int ATK_index;
-    public int DEF_index;
-    public int SPD_index;
+    public int HP_index = 0;
+    public int ATK_index = 0;
+    public int DEF_index = 0;
+    public int SPD_index = 0;
     public EntityInfo()
     {
-
     }
     public EntityInfo(int _hp_index, int _atk_index, int _def_index, int _speed_index)
     {

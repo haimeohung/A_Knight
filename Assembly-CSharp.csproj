@@ -64,13 +64,18 @@
   <ItemGroup>
     <Compile Include="Assets\Free Asset - 2D Handcrafted Art\Scripts\CamerController.cs" />
     <Compile Include="Assets\GameObject\Scriptable\Item.cs" />
+    <Compile Include="Assets\GameObject\Scriptable\SaveGame.cs" />
+    <Compile Include="Assets\GameObject\Scriptable\Stage.cs" />
+    <Compile Include="Assets\GameObject\Scriptable\Tip.cs" />
     <Compile Include="Assets\GameObject\Scriptable\TipList.cs" />
+    <Compile Include="Assets\Scripts\AutoRotate.cs" />
     <Compile Include="Assets\Scripts\DeleteTimer.cs" />
     <Compile Include="Assets\Scripts\Enemy\DeadmanController.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyFollowing.cs" />
     <Compile Include="Assets\Scripts\Enemy\GuardController.cs" />
     <Compile Include="Assets\Scripts\Enemy\SeriousmanController.cs" />
-    <Compile Include="Assets\Scripts\Entity\EntityDie.cs" />
+    <Compile Include="Assets\Scripts\Enemy\ZombieController.cs" />
+    <Compile Include="Assets\Scripts\Entity\EntityController.cs" />
     <Compile Include="Assets\Scripts\Entity\EntityInfo.cs" />
     <Compile Include="Assets\Scripts\Entity\EntityPosCollision.cs" />
     <Compile Include="Assets\Scripts\Entity\EntityPostCollisionFaded.cs" />
@@ -80,6 +85,7 @@
     <Compile Include="Assets\Scripts\HitboxDraw.cs" />
     <Compile Include="Assets\Scripts\Item\BuffQueue.cs" />
     <Compile Include="Assets\Scripts\Item\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Item\LoadItem.cs" />
     <Compile Include="Assets\Scripts\Item\Pickup.cs" />
     <Compile Include="Assets\Scripts\LogicJoint.cs" />
     <Compile Include="Assets\Scripts\Map Object\BoatCarry.cs" />
@@ -87,6 +93,7 @@
     <Compile Include="Assets\Scripts\QuickMove.cs" />
     <Compile Include="Assets\Scripts\Scene\LoadingSceneController.cs" />
     <Compile Include="Assets\Scripts\Scene\MainMenuController.cs" />
+    <Compile Include="Assets\Scripts\Scene\WorldMapController.cs" />
     <Compile Include="Assets\Scripts\SceneController.cs" />
     <Compile Include="Assets\Scripts\Sound\Sound.cs" />
     <Compile Include="Assets\Scripts\Sound\SoundManager.cs" />
@@ -106,6 +113,7 @@
     <Compile Include="Assets\Scripts\UI\UIInputHander.cs" />
     <Compile Include="Assets\Scripts\UI\UIInventory.cs" />
     <Compile Include="Assets\Scripts\UI\UIItemController.cs" />
+    <Compile Include="Assets\Scripts\UI\UILoadStage.cs" />
     <Compile Include="Assets\Scripts\UI\UILvControler.cs" />
     <Compile Include="Assets\Scripts\UI\UISliderController.cs" />
     <Compile Include="Assets\Scripts\UI\UISliderEditer.cs" />

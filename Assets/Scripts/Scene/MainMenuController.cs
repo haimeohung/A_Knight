@@ -18,7 +18,7 @@ public class MainMenuController : SceneController
         transition.OnFadeInDone += (e) =>
         {
             if (e.name == "Play") 
-                ChangeScene("Map_Teammate","Tên map");
+                ChangeScene("WorldMap","");
         };
     }
 }

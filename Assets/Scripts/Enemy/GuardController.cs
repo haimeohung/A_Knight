@@ -3,32 +3,29 @@ using System.Collections.Generic;
 using Unity.Extentison;
 using UnityEngine;
 
-public class GuardController : MonoBehaviour
+public class GuardController : EntityController
 {
+    [Header("Other")]
     Animator ani;
     EntityInfo info;
-    bool UpdateOneTime = true;
     private class GuardCollider : MonoBehaviour
     {
         public int a = 5;
     }
-    void Start()
+
+    new void Start()
     {
+        base.Start();
         info = gameObject.GetComponent<EntityInfo>();
         foreach (var sprite in gameObject.GetComponentsInChildren<SpriteRenderer>())
         {
             sprite.gameObject.AddComponent<GuardCollider>();
-            Debug.Log(sprite.gameObject.name);
         }
     }
-    void Update()
+    new void Update()
     {
-
-        if (info.HP_index <= 0 && UpdateOneTime)
-        {          
-            //StartCoroutine(delayDie());
-            UpdateOneTime = false;
-        }
+        base.Update();
+       
 
     }
     private void OnTriggerEnter2D(Collider2D collision)

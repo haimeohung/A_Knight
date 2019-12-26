@@ -22,3 +22,4 @@ MonoBehaviour:
     th\u1EAFng ch\xEDnh m\xECnh"
   effect: 0
   effectDescription: "T\u0103ng t\u1EA1m th\u1EDDi 6 \u0111i\u1EC3m SPEED trong 20s"
+  dropRate: 0.1

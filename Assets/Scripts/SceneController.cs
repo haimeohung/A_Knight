@@ -11,9 +11,14 @@ public class SceneController : MonoBehaviour
     protected static string _sceneName = "", _nextSceneName = "";
     public static void ChangeScene(string sceneName, string nextSceneName)
     {
-        SceneManager.LoadScene("Loading");
-        _nextSceneName = nextSceneName;
-        _sceneName = sceneName;
+        if (sceneName == "WorldMap")
+            SceneManager.LoadScene(sceneName);
+        else
+        {
+            SceneManager.LoadScene("Loading");
+            _nextSceneName = nextSceneName;
+            _sceneName = sceneName;
+        }
     }
     public static string currentSceneName => SceneManager.GetActiveScene().name;
     protected AsyncOperation ChangeScene(string sceneName) => SceneManager.LoadSceneAsync(sceneName);

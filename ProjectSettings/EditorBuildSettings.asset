@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Loading.unity
     guid: 285ccc976ad61f8488ef049bee45b6c0
   - enabled: 1
+    path: Assets/Scenes/WorldMap.unity
+    guid: 27fe0f3f1ea58dd48b5ec5fa855695aa
+  - enabled: 1
     path: Assets/Scenes/Map_Teammate.unity
     guid: 231beca677a6a2448b4e3f75311a6352
   m_configObjects: {}
