@@ -315,7 +315,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4337237209009556615}
-  m_LocalRotation: {x: -0, y: -0, z: -0.6712934, w: 0.74119174}
+  m_LocalRotation: {x: -0, y: -0, z: -0.67129344, w: 0.7411917}
   m_LocalPosition: {x: 0, y: 0.6799998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -820,7 +820,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4337237209878878300}
-  m_LocalRotation: {x: -0, y: -0, z: 0.512168, w: 0.8588853}
+  m_LocalRotation: {x: -0, y: -0, z: 0.51216817, w: 0.8588852}
   m_LocalPosition: {x: 0.13, y: -1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -935,7 +935,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4337237209945349072}
-  m_LocalRotation: {x: -0, y: -0, z: -0.42257857, w: -0.9063263}
+  m_LocalRotation: {x: -0, y: -0, z: -0.4225789, w: -0.9063262}
   m_LocalPosition: {x: 1.308, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1167,7 +1167,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4337237210104419239}
-  m_LocalRotation: {x: -0, y: -0, z: -0.52825934, w: 0.84908307}
+  m_LocalRotation: {x: -0, y: -0, z: -0.52825946, w: 0.849083}
   m_LocalPosition: {x: 0.04, y: -1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1258,6 +1258,7 @@ GameObject:
   - component: {fileID: 4337237210124757983}
   - component: {fileID: 4337237210124757957}
   - component: {fileID: 3316164125788718369}
+  - component: {fileID: 8648885329783978909}
   m_Layer: 12
   m_Name: Guard
   m_TagString: Untagged
@@ -1406,6 +1407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2db59e2d99496b4c866cd52d9f99968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listDrop: []
+  samleItemDrop: {fileID: 0}
 --- !u!114 &3316164125788718369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1422,6 +1425,22 @@ MonoBehaviour:
   range: 30
   rangeAttack: 5
   _IsExitAttack: 1
+--- !u!114 &8648885329783978909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4337237210124757956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4d326866a562940a72c0d730bafe7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP_index: 0
+  ATK_index: 0
+  DEF_index: 0
+  SPD_index: 0
 --- !u!1 &4337237210127145242
 GameObject:
   m_ObjectHideFlags: 0

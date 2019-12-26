@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Item", menuName = "Item/Item...")]
+[CreateAssetMenu(fileName = "Item", menuName = "ScriptableObject/Item...")]
 public class Item : ScriptableObject
 {
     public RuntimeAnimatorController ani;
@@ -11,6 +11,7 @@ public class Item : ScriptableObject
     public Sprite image;
     public float timeEffect;
     public string locationDrop;
+    public float dropRate;
     public string info;
     public Effect effect;
     public string effectDescription;

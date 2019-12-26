@@ -2174,6 +2174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 17239484}
   tipList: {fileID: 11400000, guid: 986144a35841eeb4aa2c2db334370b4f, type: 2}
+  saveGame: {fileID: 11400000, guid: 3bf98e4b7cfaf1c4c92b86557239cb9c, type: 2}
+  playText: {fileID: 1697706541}
 --- !u!1 &1380856329
 GameObject:
   m_ObjectHideFlags: 0

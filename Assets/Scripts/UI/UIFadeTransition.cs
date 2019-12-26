@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(RawImage))]
 public class UIFadeTransition : MonoBehaviour
 {
+    public event System.Action<Object> OnFadeInStart;
+    public event System.Action<Object> OnFadeOutStart;
     public event System.Action<Object> OnFadeInDone;
     public event System.Action<Object> OnFadeOutDone;
     [SerializeField] [Range(0.1f, 1f)] private float time = 0.25f;
@@ -43,6 +46,7 @@ public class UIFadeTransition : MonoBehaviour
 
     IEnumerator FadeOut()
     {
+        OnFadeOutStart?.Invoke(eventData);
         image.enabled = true;
         image.color = Color.black;
         timer = time;
@@ -61,6 +65,7 @@ public class UIFadeTransition : MonoBehaviour
 
     IEnumerator FadeIn()
     {
+        OnFadeInStart?.Invoke(eventData);
         image.enabled = true;
         image.color = new Color(0, 0, 0, 0);
         timer = 0f;

@@ -29,25 +29,25 @@ public class FixFont : EditorWindow
                     if (obj.font != font)
                     {
                         counter++;
-                        //obj.font = font;
+                        obj.font = font;
                     }
-                foreach (Text obj in SceneAsset.FindObjectsOfType<Text>())
-                {
-                    try
-                    {
-                        GameObject att = obj.gameObject;
-                        RectTransform oldrt = att.GetComponent<RectTransform>();
-                        RectTransform rt = oldrt.GetCopyOf(new RectTransform());    
-                        DestroyImmediate(obj);
-                        DestroyImmediate(att.GetComponent<CanvasRenderer>());
-                        att.AddComponent<TextMeshProUGUI>();
-                        att.GetComponent<TextMeshProUGUI>().font = font;
-                        oldrt = rt.GetCopyOf(new RectTransform());
-                    }
-                    catch { }
-                    counter++;
+                //foreach (Text obj in SceneAsset.FindObjectsOfType<Text>())
+                //{
+                //    try
+                //    {
+                //        GameObject att = obj.gameObject;
+                //        RectTransform oldrt = att.GetComponent<RectTransform>();
+                //        RectTransform rt = oldrt.GetCopyOf(new RectTransform());    
+                //        DestroyImmediate(obj);
+                //        DestroyImmediate(att.GetComponent<CanvasRenderer>());
+                //        att.AddComponent<TextMeshProUGUI>();
+                //        att.GetComponent<TextMeshProUGUI>().font = font;
+                //        oldrt = rt.GetCopyOf(new RectTransform());
+                //    }
+                //    catch { }
+                //    counter++;
 
-                }
+                //}
                 Debug.Log(counter + " item(s) had been fixed!");
             }
         
