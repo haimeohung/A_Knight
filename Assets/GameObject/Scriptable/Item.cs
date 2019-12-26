@@ -11,6 +11,7 @@ public class Item : ScriptableObject
     public Sprite image;
     public float timeEffect;
     public string locationDrop;
+    public float dropRate;
     public string info;
     public Effect effect;
     public string effectDescription;

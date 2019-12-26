@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808bcc28ecdcec54997196d8792afc9e, type: 3}
   m_Name: SaveGame
   m_EditorClassIdentifier: 
+  isPlayed: 0
   StageUnlock: 2

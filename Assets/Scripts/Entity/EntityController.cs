@@ -28,7 +28,7 @@ public class EntityController: MonoBehaviour
             if (RandomPlus.getValue() < item.dropRate * exDropRate) 
             {
                 GameObject g = Instantiate(samleItemDrop);
-                g.GetComponent<LoadItem>()?.Load(item);
+
                 g.transform.SetParentWithoutChangeScale(null, transform.position);
             }
     }

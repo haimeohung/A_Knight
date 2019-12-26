@@ -15,7 +15,7 @@ public class TipListEditor : EditorWindow
     string tipString = "";
     Sprite tipSprite = null;
 
-    [MenuItem("Window/TipList Editor %#t")]
+    [MenuItem("Window/TipList Editor %&t")]
     static void Init()
     {
         GetWindow(typeof(TipListEditor));

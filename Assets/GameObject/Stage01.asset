@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e664086632f891d408303543050984c0, type: 3}
   m_Name: Stage01
   m_EditorClassIdentifier: 
-  nameStageShow: "V\u1EF0C GI\xD3 H\xDA"
-  nameScene: Map_Teammate
-  description: "TEST TH\u1EEC T\xDD"
+  nameStageShow: "R\u1EEANG NG\u1EE6 SAY"
+  scene: {fileID: 102900000, guid: 231beca677a6a2448b4e3f75311a6352, type: 3}
+  description: "M\u1ED9t khu r\u1EEBng t\u1ED1i t\u0103m v\xE0 \u0111\u1EA7y l\u1EA1nh
+    l\u1EBDo (?)"
