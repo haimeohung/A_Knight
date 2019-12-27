@@ -15,7 +15,6 @@ public class Item : ScriptableObject
     public string info;
     public Effect effect;
     public string effectDescription;
-    public float dropRate;
     public enum Effect
     {
         low_hp,

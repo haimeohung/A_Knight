@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e664086632f891d408303543050984c0, type: 3}
+  m_Name: Final
+  m_EditorClassIdentifier: 
+  nameStageShow: "Hang \u1ED5 qu\u1EF7"
+  scene: {fileID: 102900000, guid: e97fbeccd79941e4a9ef7d67f13afc38, type: 3}
+  description: "\xD0\u1ED1i m\u1EB7t v\u1EDBi hi\u1EC3m h\u1ECDa l\u1EDBn nh\u1EA5t
+    c\u1EE7a th\u1EBF gi\u1EDBi."

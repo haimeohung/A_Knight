@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e664086632f891d408303543050984c0, type: 3}
+  m_Name: Awaken
+  m_EditorClassIdentifier: 
+  nameStageShow: "R\u1EEBng r\u1EADm"
+  scene: {fileID: 102900000, guid: 90871bb780c12d446966d03b9fc0ea36, type: 3}
+  description: "T\u1EA1i n\u01A1i s\xE2u th\u1EB3m c\u0169ng \u0111\u1ED3ng th\u1EDDi
+    l\xE0 t\u1ED1i t\u0103m nh\u1EA5t c\u1EE7a v\u01B0\u01A1ng qu\u1ED1c, A Knight
+    \u0111\u01B0\u1EE3c \u0111\xE1nh th\u1EE9c."

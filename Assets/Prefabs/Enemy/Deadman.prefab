@@ -1728,7 +1728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e60f51bcaf3ed42a091a0f3ba7a0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 0
   range: 30
   _IsExit: 1
   random_attack: 0
@@ -2172,11 +2172,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4797663771675332, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
+    - target: {fileID: 4475254030089770, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4797663771675332, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
+    - target: {fileID: 4475254030089770, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
@@ -2188,11 +2188,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4475254030089770, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
+    - target: {fileID: 4797663771675332, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4475254030089770, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
+    - target: {fileID: 4797663771675332, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}

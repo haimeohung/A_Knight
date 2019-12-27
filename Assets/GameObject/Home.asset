@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e664086632f891d408303543050984c0, type: 3}
-  m_Name: Stage01
+  m_Name: Home
   m_EditorClassIdentifier: 
-  nameStageShow: "R\u1EEANG NG\u1EE6 SAY"
-  scene: {fileID: 102900000, guid: 231beca677a6a2448b4e3f75311a6352, type: 3}
-  description: "M\u1ED9t khu r\u1EEBng t\u1ED1i t\u0103m v\xE0 \u0111\u1EA7y l\u1EA1nh
-    l\u1EBDo (?)"
+  nameStageShow: "L\xE0ng ch\u1EBFt"
+  scene: {fileID: 102900000, guid: 3d74da242ef18894bb35e4650bd4b9de, type: 3}
+  description: "A Knight sinh ra v\xE0 l\u1EDBn l\xEAn t\u1EEB thu\u1EDF nh\u1ECF
+    v\u1EDBi gia \u0111\xECnh v\xE0 b\u1EA1n b\xE8 t\u1EA1i \u0111\xE2y, li\u1EC7u
+    anh c\xF3 \u0111\u01B0\u1EE3c g\u1EB7p l\u1EA1i h\u1ECD?"

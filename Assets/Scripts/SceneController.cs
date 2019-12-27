@@ -20,6 +20,7 @@ public class SceneController : MonoBehaviour
             _sceneName = sceneName;
         }
     }
+    public static AsyncOperation ReLoadScene() => SceneManager.LoadSceneAsync(currentSceneName);
     public static string currentSceneName => SceneManager.GetActiveScene().name;
     protected AsyncOperation ChangeScene(string sceneName) => SceneManager.LoadSceneAsync(sceneName);
 }

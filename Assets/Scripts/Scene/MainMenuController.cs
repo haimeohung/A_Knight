@@ -24,6 +24,6 @@ public class MainMenuController : SceneController
                 ChangeScene("WorldMap","");
         };
         if (saveGame.isPlayed)
-            playText.text = "CONTINUE";
+            playText.text = "TIẾP TỤC";
     }
 }

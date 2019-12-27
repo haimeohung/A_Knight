@@ -11,9 +11,10 @@ public class TipList : ScriptableObject
 
 public class TipListEditor : EditorWindow
 {
-    TipList tipList;
+    TipList tipList, oldTipList;
     string tipString = "";
     Sprite tipSprite = null;
+    bool canRepair;
 
     [MenuItem("Window/TipList Editor %&t")]
     static void Init()
@@ -27,6 +28,31 @@ public class TipListEditor : EditorWindow
 
     void OnGUI()
     {
+        canRepair = EditorGUILayout.Toggle("Repair", canRepair);
+        if (canRepair)
+        {
+            oldTipList = EditorGUILayout.ObjectField("Chọn TipList hỏng", oldTipList, typeof(TipList), false) as TipList;
+            if (GUILayout.Button("Repair..."))
+            {
+                var tmp = oldTipList.list;
+                tipList = CreateInstance<TipList>();
+                tipList.list = new List<Tip>();
+                AssetDatabase.CreateAsset(tipList, "Assets/GameObject/TipList.asset");
+                AssetDatabase.SaveAssets();
+
+                foreach (var item in tmp)
+                {
+                    Tip tip = CreateInstance<Tip>();
+                    tip.tip = item.tip;
+                    tip.image = item.image;
+                    tipList.list.Add(tip);
+                    AssetDatabase.AddObjectToAsset(tip, tipList);
+                    AssetDatabase.SaveAssets();
+                }
+                canRepair = false;
+            }
+        }
+        EditorGUILayout.Space();
         if (GUILayout.Button("Create New TipList List"))
         {
             tipList = CreateInstance<TipList>();

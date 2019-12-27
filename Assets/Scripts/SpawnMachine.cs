@@ -40,7 +40,7 @@ public class SpawnMachine : MonoBehaviour
                 switch (limitedMode)
                 {
                     case LimitedMode.DeleteFirst:
-                        SetOnDelete(items[0]);
+                        SetOnDelete?.Invoke(items[0]);
                         items.RemoveAt(0);
                         numberOfClone = items.Count;
                         break;
@@ -61,7 +61,7 @@ public class SpawnMachine : MonoBehaviour
             else
                 gene.transform.SetParentWithoutChangeScale(null, transform.position);
             gene.SetActive(true);
-            try { SetOnInit(gene); } catch { }
+            try { SetOnInit?.Invoke(gene); } catch { }
             items.Add(gene);
             numberOfClone = items.Count;
             yield return new WaitForSeconds(delayTimeSpawn + Random.Range(0, randomDelayDelta));
@@ -78,7 +78,7 @@ public class SpawnMachine : MonoBehaviour
             switch (limitedMode)
             {
                 case LimitedMode.DeleteFirst:
-                    SetOnDelete(items[0]);
+                    SetOnDelete?.Invoke(items[0]);
                     items.RemoveAt(0);
                     numberOfClone = items.Count;
                     break;
@@ -99,7 +99,7 @@ public class SpawnMachine : MonoBehaviour
         else
             gene.transform.SetParentWithoutChangeScale(null, transform.position);
         gene.SetActive(true);
-        try { SetOnInit(gene); } catch { }
+        try { SetOnInit?.Invoke(gene); } catch { }
         items.Add(gene);
         numberOfClone = items.Count;
     }

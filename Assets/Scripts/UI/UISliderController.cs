@@ -22,7 +22,7 @@ public class UISliderController : MonoBehaviour
     [HideInInspector] public TextMeshProUGUI text;
     [HideInInspector] public Slider[] sliders;
     private float dropHPtimer;
-
+    public event System.Action setOnValueDrop;
     public float value { get => _value; set => _value = value; }
     public float autoRecoveryPerSecond { get => _autoRecoveryPerSecond; set => _autoRecoveryPerSecond = value; }
     public int MaxValue { get => maxValue; set => maxValue = value; }
@@ -40,6 +40,7 @@ public class UISliderController : MonoBehaviour
             sliders[1].value = _value / maxValue;
             if (_value < tmp)
             {
+                setOnValueDrop?.Invoke();
                 if (timer <= 0)
                     StartCoroutine(DropDow());
                 else

@@ -119,11 +119,12 @@ public class DeadmanController : MonoBehaviour
     }
     private void Update()
     {
+        rb.velocity = new Vector2(0f, 0f);
         if (_IsExit == false)
         {
             return;
         }
-    
+            
         random_attack = (new System.Random()).Next(1, 4);
         
         if (random_attack == 1)
@@ -138,13 +139,16 @@ public class DeadmanController : MonoBehaviour
         {
 
             SwitchState(State.attack);
-            if (player.FacingRight)
+
+            if (player.FacingRight )
             {
                  rb.position = new Vector2(playerPos.position.x - 2, playerPos.position.y);
+                Debug.Log("adad");
             }
             else
             {
                 rb.position = new Vector2(playerPos.position.x + 2, playerPos.position.y);
+                Debug.Log("adad");
 
             }
             return;
