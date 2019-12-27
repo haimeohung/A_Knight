@@ -1,0 +1,248 @@
+Edit the dialogue on the go.
+You can edit and add comments, edit the tags, and set node type.
+Do not attempt to add more nodes: the number of nodes must match when importing the text file.
+Do not modify the IDs.
+Do not add or remove empty lines.
+Do not restructure the data.
+
+Dialogue name: Laura
+---------------------------------
+#NODEID#
+1
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Hello, Laura.
+#COMMENT#
+Sup?
+#COMMENT#
+Where am I?
+---------------------------------
+#NODEID#
+3
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+I am the Avatar. I know it all.
+#COMMENT#
+I just guessed.
+#COMMENT#
+I've always known who you are, Laura.
+---------------------------------
+#NODEID#
+9
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+I actually wanted to ask you that same thing...
+#COMMENT#
+I've no idea, but the place is amazing.
+---------------------------------
+#NODEID#
+10
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Thanks!
+#COMMENT#
+Anyway, gotta go...
+---------------------------------
+#NODEID#
+14
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+Not much, you?
+#COMMENT#
+Uh, do you know where we are?
+---------------------------------
+#NODEID#
+15
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+"Always"? How long have you been here?
+#COMMENT#
+I wanna go home...
+---------------------------------
+#NODEID#
+18
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+What?! Oh no...
+#COMMENT#
+Err... ok bye.
+---------------------------------
+#NODEID#
+20
+#TAG#
+
+#ISPLAYER#
+True
+---
+#COMMENT#
+I dunno...
+#COMMENT#
+I wanna go home...
+---------------------------------
+#NODEID#
+0
+#TAG#
+Laura
+#ISPLAYER#
+False
+---
+#COMMENT#
+Hello!
+---------------------------------
+#NODEID#
+2
+#TAG#
+Laura
+#ISPLAYER#
+False
+---
+#COMMENT#
+OMG how do you know my name?
+---------------------------------
+#NODEID#
+4
+#TAG#
+Laura
+#ISPLAYER#
+False
+---
+#COMMENT#
+Right...
+#COMMENT#
+So...
+#COMMENT#
+Do you know where we are?
+---------------------------------
+#NODEID#
+5
+#TAG#
+Laura
+#ISPLAYER#
+False
+---
+#COMMENT#
+Good guess, then!
+---------------------------------
+#NODEID#
+6
+#TAG#
+Laura
+#ISPLAYER#
+False
+---
+#COMMENT#
+Omg, stop!
+#COMMENT#
+Go away!
+---------------------------------
+#NODEID#
+7
+#TAG#
+Laura
+#ISPLAYER#
+False
+---
+#COMMENT#
+Not much, you?
+---------------------------------
+#NODEID#
+8
+#TAG#
+Laura
+#ISPLAYER#
+False
+---
+#COMMENT#
+I've always wondered the same thing...
+---------------------------------
+#NODEID#
+11
+#TAG#
+Laura
+#ISPLAYER#
+False
+---
+#COMMENT#
+Oh, okay. See ya.
+---------------------------------
+#NODEID#
+12
+#TAG#
+Laura
+#ISPLAYER#
+False
+---
+#COMMENT#
+Charlie is the oldest here. He might know.
+---------------------------------
+#NODEID#
+16
+#TAG#
+Laura
+#ISPLAYER#
+False
+---
+#COMMENT#
+This is your home now.
+---------------------------------
+#NODEID#
+17
+#TAG#
+Laura
+#ISPLAYER#
+False
+---
+#COMMENT#
+Eh.. around 20,000 years. 
+---------------------------------
+#NODEID#
+19
+#TAG#
+Laura
+#ISPLAYER#
+False
+---
+#COMMENT#
+Oh no, what?
+---------------------------------
+#NODEID#
+13
+#TAG#
+Laura
+#ISPLAYER#
+False
+---
+#COMMENT#
+Yeeeeeah...
+#COMMENT#
+See ya!
+---------------------------------
+#END#

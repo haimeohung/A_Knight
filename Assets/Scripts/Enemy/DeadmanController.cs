@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeadmanController : MonoBehaviour
+public class DeadmanController : EntityController
 {
     private Transform playerPos;
     private PlayerControler2D player;

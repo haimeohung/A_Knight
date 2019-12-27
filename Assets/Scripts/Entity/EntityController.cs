@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EntityController: MonoBehaviour
 {
+    public event System.Action OnDie;
     [Header("Drop")]
     [SerializeField] protected List<Item> listDrop;
     [SerializeField] private GameObject samleItemDrop;
@@ -17,7 +18,10 @@ public class EntityController: MonoBehaviour
     {
         if (info.HP_index <= 0)
         {
+            OnDie?.Invoke();
+            gameObject.ChangeLayerCompletely(18);
             gameObject.explode();
+            gameObject.slowFade(10);
             DropTriger();
             Destroy(this);
         }

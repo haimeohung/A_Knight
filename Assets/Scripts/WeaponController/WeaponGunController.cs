@@ -28,7 +28,8 @@ public class WeaponGunController : WeaponController
 
         SetOnTrigger = () =>
         {
-            spawn.Trigger_Spawn();
+            if (controler.MP.value >= 5)
+                spawn.Trigger_Spawn();
         };
     }
 

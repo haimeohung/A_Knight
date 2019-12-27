@@ -13,7 +13,7 @@ namespace Unity.Extentison
         public static bool isNull(this Transform transform) => transform is null || transform.Equals(null);
         public static float signedAngle(this Vector3 vector) => vector == Vector3.zero ? 0f : Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
         public static float signedAngle(this Vector2 vector) => vector == Vector2.zero ? 0f : Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
-        public static Color MultiplyAlpha(this Color color, float alpha) =>  new Color(color.r, color.g, color.b, color.a * alpha);
+        public static Color MultiplyAlpha(this Color color, float alpha) => new Color(color.r, color.g, color.b, color.a * alpha);
         public static Color ChangeAlpha(this Color color, float alpha) => new Color(color.r, color.g, color.b, alpha);
         public static void SetParentWithoutChangeScale(this Transform c, Transform p = null, Vector3? pos = null)
         {
@@ -52,7 +52,7 @@ namespace Unity.Extentison
                     {
                         pinfo.SetValue(comp, pinfo.GetValue(other, null), null);
                     }
-                    catch { } 
+                    catch { }
                 }
             }
             FieldInfo[] finfos = type.GetFields(flags);
@@ -63,6 +63,27 @@ namespace Unity.Extentison
             return comp as T;
         }
         public static T RandomList<T>(this IList<T> list) => list.Count == 0 ? default : list[RandomPlus.getRange(0, list.Count)];
+        public static T GetFirstComponentInParent<T>(this GameObject o) where T : class
+        {
+            while (true)
+            {
+                T ret = o.GetComponent<T>();
+                if (ret is null)
+                {
+                    if (o.transform.parent != null)
+                        o = o.transform.parent.gameObject;
+                    else
+                        return null;
+                }
+                else
+                    return ret;
+            }
+        }
+        public static void ChangeLayerCompletely(this GameObject o, int layer)
+        {
+            foreach (Transform t in o.GetComponentsInChildren<Transform>())
+                t.gameObject.layer = layer;
+        }
     }
 
     public abstract class RandomPlus
@@ -121,13 +142,17 @@ namespace Unity.Extentison
                 rb.velocity = new Vector2(r.Next(-10, 10), r.Next(0, 10));
             }
         }
-        
+
         public static void slowFade(this GameObject gameObject, float delay = 0f)
         {
-            gameObject.AddComponent<SlowAutoFade>();
-            gameObject.GetComponent<SlowAutoFade>().Trigger(delay);
+            if (gameObject != null)
+            {
+                gameObject.AddComponent<SlowAutoFade>();
+                gameObject.GetComponent<SlowAutoFade>().Trigger(delay);
+            }
+
         }
-        private class DelayDestroy: MonoBehaviour
+        private class DelayDestroy : MonoBehaviour
         {
             private float timer = 0f;
             private void Update()

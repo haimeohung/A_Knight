@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ab39d710250154db42c4ade2bc4acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tip: "Nh\u1EEFng t\xEAn Guard c\xF3 m\u1ED9t kho\u1EA3ng delay sau khi tung \u0111\xF2n
+  tip: "Nh\u1EEFng t\xEAn Guard c\xF3 m\u1ED9t kho\u1EA3ng ch\u1EDD sau khi tung \u0111\xF2n
     t\u1EA5n c\xF4ng, h\xE3y l\u1EE3i d\u1EE5ng kho\u1EA3ng tr\u1ED1ng \u0111\xF3
     \u0111\u1EC3 ph\u1EA3n c\xF4ng"
   image: {fileID: 21300000, guid: a4d697525ee4e4b4bb9e5087b00c1c33, type: 3}

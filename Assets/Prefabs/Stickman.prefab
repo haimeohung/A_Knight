@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 2616076292754022858}
   - component: {fileID: 7348152743116362902}
   - component: {fileID: 426195632470630966}
-  - component: {fileID: 8572644640564118}
+  - component: {fileID: 8217769150895034291}
   m_Layer: 14
   m_Name: Weapon Straight
   m_TagString: Untagged
@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50834caa3f75f3468083d78c1b2bce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 4922780581557607668}
 --- !u!114 &426195632470630966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,8 +307,8 @@ MonoBehaviour:
   delayTimeSpawn: 0
   randomDelayDelta: 0
   numberOfClone: 1
---- !u!60 &8572644640564118
-PolygonCollider2D:
+--- !u!61 &8217769150895034291
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -319,7 +320,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 1.4770423, y: -0.021714896}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.027600838, y: 0.3854388}
@@ -329,20 +330,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 2.1587262, y: 0.11498937}
-      - {x: 0.8887261, y: 0.124989375}
-      - {x: 0.8887261, y: 0.29498938}
-      - {x: 0.24872611, y: 0.29498938}
-      - {x: 0.23872611, y: 0.124989375}
-      - {x: -0.06127388, y: 0.124989375}
-      - {x: -0.06127388, y: -0.10501062}
-      - {x: 0.21872611, y: -0.18501063}
-      - {x: 1.0487261, y: -0.18501063}
-      - {x: 2.0087261, y: -0.16501062}
-      - {x: 2.1187263, y: -0.12501062}
-      - {x: 2.1587262, y: -0.07501062}
+  serializedVersion: 2
+  m_Size: {x: 1.3633678, y: 0.20416075}
+  m_EdgeRadius: 0
 --- !u!1 &2076904779427013613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,7 +1081,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2800469727971245351}
-  m_LocalRotation: {x: -0, y: -0, z: -0.42257857, w: -0.9063263}
+  m_LocalRotation: {x: -0, y: -0, z: -0.42257884, w: -0.90632623}
   m_LocalPosition: {x: 1.308, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1523,13 +1513,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 0}
-  runSpeed: 12
-  jumpForce: 16
+  runSpeed: 20
+  jumpForce: 20
   jumpAbility: 2
   HP: {fileID: 0}
   MP: {fileID: 0}
   SP: {fileID: 0}
-  atk: 0
+  hp: 100
+  mp: 100
+  sp: 100
+  atk: 6
   def: 0
   lengthTimeJump: 0.35
   whatIsGround:
@@ -1552,7 +1545,7 @@ MonoBehaviour:
   _attacking: 0
   _runningSpeed: 0
   jumpCounter: 2
-  ani: {fileID: 0}
+  ani: {fileID: 2800469728282561836}
 --- !u!1 &2800469728285425645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9dfde22d3dc52a42958c43e8f5d0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 4922780581557607668}
 --- !u!1 &5367924704079399853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2757,6 +2751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3630a2ce2cf4a241b7a639670479d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 4922780581557607668}
 --- !u!61 &7233948517541721263
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2856,7 +2851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
       propertyPath: m_Layer

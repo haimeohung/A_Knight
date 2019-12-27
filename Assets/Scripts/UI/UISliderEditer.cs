@@ -13,7 +13,7 @@ public class UISliderBarEditer : Editor
         try
         {
             UISliderController target = (UISliderController)this.target;
-
+            
             target.images[0].color = target.color.MultiplyAlpha(0.5f);
             target.images[1].color = target.color;
             target.images[2].color = Color.white.MultiplyAlpha(target.color.a);

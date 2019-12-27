@@ -8,8 +8,10 @@ public class ArrowController : MonoBehaviour
 {
     Rigidbody2D rigi;
     bool stopUpdate = false;
+    [SerializeField] private PlayerControler2D player;
     void Start()
     {
+        player.MP.value -= 5;
         rigi = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -24,8 +26,12 @@ public class ArrowController : MonoBehaviour
     {
         if (collision.gameObject.layer == 8)
             return;
+        if (collision.gameObject.layer == 12)
+        {
+            EntityInfo info = collision.gameObject.GetFirstComponentInParent<EntityInfo>();
+            info?.BeAttacked(player.atk + 4);
+        }
         transform.SetParentWithoutChangeScale(collision.transform);
-
         Destroy(this);
         Destroy(rigi);
     }

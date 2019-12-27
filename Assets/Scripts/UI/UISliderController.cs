@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Extentison;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -76,7 +77,11 @@ public class UISliderController : MonoBehaviour
         images = gameObject.GetComponentsInChildren<RawImage>();
         sliders = gameObject.GetComponentsInChildren<Slider>();
         text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
-        
+
+        images[0].color = color.MultiplyAlpha(0.5f);
+        images[1].color = color;
+        images[2].color = Color.white.MultiplyAlpha(color.a);
+
         CheckValue();
     }
 

@@ -11,6 +11,7 @@ public class PlayerControler2D : MonoBehaviour
 {
     [Header("Control Setting")]
     [SerializeField] private UIInputHander input = null;
+    [SerializeField] PhysicsMaterial2D idle, move;
     public int runSpeed = 6;
     [SerializeField] private int jumpForce = 10;
     [SerializeField] private int jumpAbility = 1;
@@ -149,7 +150,10 @@ public class PlayerControler2D : MonoBehaviour
                     FacingRight = false;
                 else
                     FacingRight = true;
+                rb.sharedMaterial = move;
             }
+            else
+                rb.sharedMaterial = idle;
             rb.velocity = new Vector2(value, rb.velocity.y);
         }
     }
@@ -186,6 +190,15 @@ public class PlayerControler2D : MonoBehaviour
     }
     #endregion
 
+    void OnDisable()
+    {
+        try
+        {
+            rb.sharedMaterial = idle;
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+        catch { }
+    }
 
     private Rigidbody2D rb;
     public Animator ani;

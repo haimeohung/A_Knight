@@ -15,15 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/WorldMap.unity
     guid: 27fe0f3f1ea58dd48b5ec5fa855695aa
   - enabled: 1
-    path: Assets/Scenes/Map_Teammate.unity
-    guid: 231beca677a6a2448b4e3f75311a6352
+    path: Assets/Scenes/Map_Awaken.unity
+    guid: 90871bb780c12d446966d03b9fc0ea36
   - enabled: 1
     path: Assets/Scenes/Map_Home.unity
     guid: 3d74da242ef18894bb35e4650bd4b9de
   - enabled: 1
+    path: Assets/Scenes/Map_Teammate.unity
+    guid: 231beca677a6a2448b4e3f75311a6352
+  - enabled: 1
     path: Assets/Scenes/Map_Final.unity
     guid: e97fbeccd79941e4a9ef7d67f13afc38
-  - enabled: 1
-    path: Assets/Scenes/Map_Awaken.unity
-    guid: 90871bb780c12d446966d03b9fc0ea36
   m_configObjects: {}

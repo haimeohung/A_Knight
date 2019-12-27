@@ -18,9 +18,9 @@ public class EntityInfo : MonoBehaviour
         DEF_index = _def_index;
         SPD_index = _speed_index;
     }
-    public void BeAttacked(EntityInfo entity)
+    public void BeAttacked(int damage)
     {
-        int true_damage = (entity.ATK_index - this.DEF_index) > 0 ? (entity.ATK_index - this.DEF_index): 1;
+        int true_damage = (damage - this.DEF_index) > 0 ? (damage - this.DEF_index): 1;
         this.HP_index -= true_damage;      
     }
 

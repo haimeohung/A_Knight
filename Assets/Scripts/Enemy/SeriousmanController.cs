@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeriousmanController : MonoBehaviour
+public class SeriousmanController : EntityController
 {
     private Transform playerPos;
     private Animator ani;
@@ -220,6 +220,7 @@ public class SeriousmanController : MonoBehaviour
     }
     private void Update()
     {
+        //base.Update();
         if (_IsExit == false )
         {
             if (OneTimeUpdate)

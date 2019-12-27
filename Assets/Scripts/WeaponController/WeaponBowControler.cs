@@ -16,6 +16,13 @@ public class WeaponBowControler : WeaponController
     private LineRenderer Renderer;
     private SpawnMachine spawn;
     private Vector3 inputDirection, lastInputDirection;
+
+    private void Awake()
+    {
+        input = FindObjectOfType<UIInputHander>();
+        controler = FindObjectOfType<PlayerControler2D>().GetComponent<PlayerControler2D>();
+    }
+
     void Start()
     {
         Renderer = GetComponent<LineRenderer>();
@@ -23,8 +30,6 @@ public class WeaponBowControler : WeaponController
         Renderer.SetWidth(0.075f, 0.075f);
         Renderer.SetColors(Color.black, Color.black);
 
-        input = FindObjectOfType<UIInputHander>();
-        controler = FindObjectOfType<PlayerControler2D>().GetComponent<PlayerControler2D>();
         spawn = gameObject.GetComponent<SpawnMachine>();
         spawn.SetOnInit += (clone) =>
         {
@@ -38,10 +43,10 @@ public class WeaponBowControler : WeaponController
 
         SetOnTrigger = () =>
         {   
-            spawn.Trigger_Spawn();
+            if (controler.MP.value >= 5)
+                spawn.Trigger_Spawn();
         };
     }
-    
     void Update()
     {
         Renderer.SetPosition(0, top.position);

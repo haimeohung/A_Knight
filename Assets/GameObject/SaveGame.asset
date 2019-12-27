@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SaveGame
   m_EditorClassIdentifier: 
   isPlayed: 0
-  StageUnlock: 4
+  StageUnlock: 1
