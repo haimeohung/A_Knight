@@ -51,7 +51,7 @@ Tên | Mô tả |
 
 <b>Teammate </b>
 
-![teammate](https://user-images.githubusercontent.com/43202025/71496105-056c5000-2884-11ea-8aa1-742a4169b4fc.png)
+![teammate](https://user-images.githubusercontent.com/43202025/71496177-6d229b00-2884-11ea-8853-b512e76804b1.png)
 
 <b>Final </b>
 
