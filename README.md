@@ -85,4 +85,4 @@ Tên | Mô tả |
 
 ## 8. APK
 
-Đang cập nhật ...
+https://github.com/vutuanhai237/A_Knight/tree/master/Build
