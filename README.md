@@ -86,3 +86,7 @@ Tên | Mô tả |
 ## 8. APK
 
 https://github.com/vutuanhai237/A_Knight/tree/master/Build
+
+## 9. Lưu ý
+
+Nếu project bị lỗi font, chọn Window -> TextMeshPro -> FixFont -> Chọn phông chữ và ấn Fix
