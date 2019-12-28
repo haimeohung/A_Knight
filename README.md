@@ -56,3 +56,15 @@ Tên | Mô tả |
 <b>Final </b>
 
 ![final](https://user-images.githubusercontent.com/43202025/71496106-056c5000-2884-11ea-9b0f-edbe76f2e4f3.png)
+
+## 5. Thành viên
+
+- Vũ Tuấn Hải - 1720433 - 1720433@gm.uit.edu.vn
+
+- Nguyễn Du Lịch - 17520096 - 17520096@gm.uit.edu.vn
+
+- Nguyễn Duy Minh - 17520754 - 17520754@gm.uit.edu.vn
+
+## 6. Báo cáo chi tiết
+
+[Báo cáo A Knight.pdf](https://github.com/vutuanhai237/Self_Driving_Car/files/4006577/Bao.cao.A.Knight.pdf)
