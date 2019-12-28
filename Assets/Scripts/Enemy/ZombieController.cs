@@ -12,7 +12,7 @@ public class ZombieController : EntityController
         public int a = 5;
     }
 
-    void Start()
+    new void Start()
     {
         base.Start();
         foreach (var sprite in gameObject.GetComponentsInChildren<SpriteRenderer>())
@@ -20,7 +20,7 @@ public class ZombieController : EntityController
             sprite.gameObject.AddComponent<ZombieCollider>();
         }
     }
-    void Update()
+    new void Update()
     {
         base.Update();
 

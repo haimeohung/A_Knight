@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using Unity.Extentison;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(UISliderController))]
 public class UISliderBarEditer : Editor
 {
@@ -29,3 +30,4 @@ public class UISliderBarEditer : Editor
         catch { }
     }
 }
+#endif

@@ -6,6 +6,7 @@ using UnityEditor;
 using TMPro;
 using UnityEngine.UI;
 
+#if UNITY_EDITOR
 public class FixFont : EditorWindow
 {
     [MenuItem("Window/TextMeshPro/Fix font")]
@@ -53,3 +54,4 @@ public class FixFont : EditorWindow
         
     }
 }
+#endif

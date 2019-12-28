@@ -16,7 +16,7 @@ public class SceneController : MonoBehaviour
     /// <param name="nextSceneName"> no need after all </param>
     public static void ChangeScene(string sceneName, string nextSceneName)
     {
-        if (sceneName == "WorldMap")
+        if (sceneName == "WorldMap" || sceneName == "MainMenu")
             SceneManager.LoadScene(sceneName);
         else
         {
@@ -29,11 +29,4 @@ public class SceneController : MonoBehaviour
     public static string currentSceneName => SceneManager.GetActiveScene().name;
     protected AsyncOperation ChangeScene(string sceneName) => SceneManager.LoadSceneAsync(sceneName);
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape)) 
-        {
-
-        }
-    }
 }

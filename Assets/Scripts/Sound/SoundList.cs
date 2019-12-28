@@ -9,6 +9,7 @@ public class SoundList : ScriptableObject
     public List<Sound> list;
 }
 
+#if UNITY_EDITOR
 public class SoundListEditor : EditorWindow
 {
     SoundList SoundList, oldSoundList;
@@ -90,3 +91,4 @@ public class SoundListEditor : EditorWindow
             EditorUtility.SetDirty(SoundList);
     }
 }
+#endif

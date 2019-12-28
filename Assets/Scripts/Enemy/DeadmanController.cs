@@ -16,7 +16,6 @@ public class DeadmanController : EntityController
     [SerializeField] float range = 30;
     [SerializeField] bool _IsExit = true;
     [SerializeField] int random_attack;
-    public EntityInfo info;
     // trigger zone
     private bool _IsAttack = false;
     private bool _IsFire = false;
@@ -75,7 +74,7 @@ public class DeadmanController : EntityController
         idle,
     }
 
-    private void Start()
+    new void Start()
     {
         base.Start();
 
@@ -121,7 +120,7 @@ public class DeadmanController : EntityController
         yield return 0;
         SwitchState(State.idle);
     }
-    private void Update()
+    new void Update()
     {
         base.Update();
         rb.velocity = new Vector2(0f, rb.velocity.y);

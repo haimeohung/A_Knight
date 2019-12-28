@@ -9,6 +9,7 @@ public class TipList : ScriptableObject
     public List<Tip> list;
 }
 
+#if UNITY_EDITOR
 public class TipListEditor : EditorWindow
 {
     TipList tipList, oldTipList;
@@ -78,3 +79,4 @@ public class TipListEditor : EditorWindow
             EditorUtility.SetDirty(tipList);
     }
 }
+#endif

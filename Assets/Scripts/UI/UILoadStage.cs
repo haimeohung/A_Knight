@@ -66,6 +66,6 @@ public class UILoadStage : MonoBehaviour
             return;
         UIFadeTransition transition = FindObjectOfType<UIFadeTransition>();
         transition.Trigger_FadeIn(null);
-        transition.OnFadeInDone += (e) => { SceneController.ChangeScene(stage.scene.name, stage.nameStageShow); };
+        transition.OnFadeInDone += (e) => { SceneController.ChangeScene(stage.sceneName, stage.nameStageShow); };
     }
 }

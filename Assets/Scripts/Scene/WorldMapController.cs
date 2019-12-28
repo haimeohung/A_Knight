@@ -35,4 +35,12 @@ public class WorldMapController : SceneController
             Destroy(loads[i].GetComponentInChildren<AutoRotate>());
         }
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ChangeScene("MainMenu", "");
+        }
+    }
 }

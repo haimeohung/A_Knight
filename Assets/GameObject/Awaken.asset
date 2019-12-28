@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameStageShow: "R\u1EEBng r\u1EADm"
   scene: {fileID: 102900000, guid: 90871bb780c12d446966d03b9fc0ea36, type: 3}
+  sceneName: Map_Awaken
   description: "T\u1EA1i n\u01A1i s\xE2u th\u1EB3m c\u0169ng \u0111\u1ED3ng th\u1EDDi
     l\xE0 t\u1ED1i t\u0103m nh\u1EA5t c\u1EE7a v\u01B0\u01A1ng qu\u1ED1c, A Knight
     \u0111\u01B0\u1EE3c \u0111\xE1nh th\u1EE9c."

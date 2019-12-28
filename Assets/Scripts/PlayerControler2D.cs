@@ -305,7 +305,8 @@ public class PlayerControler2D : MonoBehaviour
         #endregion
         foreach (var sp in gameObject.GetComponentsInChildren<SpriteRenderer>())
         {
-            sp.gameObject.AddComponent<PlayerCollider>();
+            var r = sp.gameObject.AddComponent<PlayerCollider>();
+            r.player = this;
             var p = sp.gameObject.AddComponent<PolygonCollider2D>();
             p.isTrigger = true;
         }
@@ -366,12 +367,15 @@ public class PlayerControler2D : MonoBehaviour
         #region swap weapon
         if (input.OnButtonDown(ButtonTag.Swap))
         {
-            if ((int)SelectedWeapon == save.StageUnlock)
+            if ((int)SelectedWeapon == min(save.StageUnlock, 3)) 
                 SelectedWeapon = WeaponTag.Sword;
             else SelectedWeapon = SelectedWeapon + 1;
         }
         #endregion
     }
+
+    private int min(int a, int b) => a < b ? a : b;
+
     private void LateUpdate()
     {
         RuningSpeed = input.movingDirection * runSpeed;
@@ -463,11 +467,7 @@ public class PlayerControler2D : MonoBehaviour
 
     private class PlayerCollider : MonoBehaviour
     {
-        private PlayerControler2D player;
-        void Start()
-        {
-            player = gameObject.GetComponent<PlayerControler2D>();
-        }
+        public PlayerControler2D player;
         private void OnTriggerEnter2D(Collider2D collision)
         {
 

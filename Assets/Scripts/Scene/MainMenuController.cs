@@ -14,6 +14,7 @@ public class MainMenuController : SceneController
     void Awake()
     {
         tips = tipList;
+        Application.targetFrameRate = 60;
     }
 
     void Start()
