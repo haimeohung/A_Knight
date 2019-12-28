@@ -57,7 +57,21 @@ Tên | Mô tả |
 
 ![final](https://user-images.githubusercontent.com/43202025/71496106-056c5000-2884-11ea-9b0f-edbe76f2e4f3.png)
 
-## 5. Thành viên
+## 5. Hình ảnh trong game
+
+![g](https://user-images.githubusercontent.com/43202025/71537522-f652d400-294f-11ea-8aa5-483f6fbb002c.png)
+
+![f](https://user-images.githubusercontent.com/43202025/71537523-f7840100-294f-11ea-946e-c5bbcb9d95fe.png)
+
+![e](https://user-images.githubusercontent.com/43202025/71537524-f7840100-294f-11ea-8d2b-35f6c7ce92b9.png)
+
+![d](https://user-images.githubusercontent.com/43202025/71537525-f7840100-294f-11ea-9995-9cf9d9ed2946.png)
+
+![b](https://user-images.githubusercontent.com/43202025/71537526-f81c9780-294f-11ea-971d-2a3ceb65f871.png)
+
+![a](https://user-images.githubusercontent.com/43202025/71537527-f81c9780-294f-11ea-9b99-30d08ab2af45.png)
+
+## 6. Thành viên
 
 - Vũ Tuấn Hải - 1720433 - 1720433@gm.uit.edu.vn
 
@@ -65,6 +79,6 @@ Tên | Mô tả |
 
 - Nguyễn Duy Minh - 17520754 - 17520754@gm.uit.edu.vn
 
-## 6. Báo cáo chi tiết
+## 7. Báo cáo chi tiết
 
 [Báo cáo A Knight.pdf](https://github.com/vutuanhai237/Self_Driving_Car/files/4006577/Bao.cao.A.Knight.pdf)
