@@ -18,7 +18,7 @@ public class EnemyFollowing : MonoBehaviour
         set
         {
             if (value && !_IsFollowing)
-                ani.SetTrigger("FollowingTrigger");
+                ani?.SetTrigger("FollowingTrigger");
             _IsFollowing = value;
         }
     }
@@ -30,7 +30,7 @@ public class EnemyFollowing : MonoBehaviour
         {
             if (value && !_IsAttacking)
             {
-                ani.SetTrigger("AttackTrigger");
+                ani?.SetTrigger("AttackTrigger");
             }
             _IsAttacking = value;
         }
@@ -43,7 +43,7 @@ public class EnemyFollowing : MonoBehaviour
         set
         {
             if (value && !_IsIdle)
-                ani.SetTrigger("IdleTrigger");
+                ani?.SetTrigger("IdleTrigger");
             _IsIdle = value;
         }
     }
@@ -173,6 +173,7 @@ public class EnemyFollowing : MonoBehaviour
     }
     public void IsExitAttack()
     {
+       
         _IsExitAttack = true;
     }
     private void LateUpdate()

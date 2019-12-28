@@ -15,6 +15,9 @@ class AwakenController : SceneController
 
     void Start()
     {
+        SoundManager.instance.Stop("theme");
+        SoundManager.instance.Play("night");
+
         DisableControl();
         secondDialogTrigger.AddComponent<Trigger>();
         secondDialogTrigger.GetComponent<Trigger>().trigger = () => { DisableControl(); dialog.StartDialog("Awaken1"); };
@@ -28,7 +31,9 @@ class AwakenController : SceneController
             }
             ChangeScene("WorldMap", "");
         };
-        transition.OnFadeOutDone += (e) => { dialog.StartDialog("Awaken"); };
+        transition.OnFadeOutDone += (e) => { dialog.StartDialog("Awaken");
+
+        };
         dialog.OnDialogEnd += () =>
         {
             numberDialog++;
@@ -57,6 +62,8 @@ class AwakenController : SceneController
                 update1time = false;
                 trigger();
                 Destroy(gameObject);
+                SoundManager.instance.Play("wind");
+
             }
         }
     }

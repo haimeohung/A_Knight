@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Unity.Extentison;
 public class SeriousmanController : EntityController
 {
     private Transform playerPos;
@@ -15,7 +15,6 @@ public class SeriousmanController : EntityController
     [SerializeField] float range;
     [SerializeField] bool _IsExit = true;
     [SerializeField] int random_attack;
-    public EntityInfo info;
     // trigger zone
     private bool _IsAttack = false;
     private bool _IsFury = false;
@@ -32,7 +31,7 @@ public class SeriousmanController : EntityController
         set
         {
             if (value && !_IsAttack)
-                ani.SetTrigger("AttackTrigger");
+                ani?.SetTrigger("AttackTrigger");
             _IsAttack = value;
         }
     }
@@ -42,7 +41,7 @@ public class SeriousmanController : EntityController
         set
         {
             if (value && !_IsFury)
-                ani.SetTrigger("FuryTrigger");
+                ani?.SetTrigger("FuryTrigger");
             _IsFury = value;
         }
     }
@@ -52,7 +51,7 @@ public class SeriousmanController : EntityController
         set
         {
             if (value && !_IsFire)
-                ani.SetTrigger("FireTrigger");
+                ani?.SetTrigger("FireTrigger");
             _IsFire = value;
         }
     }
@@ -62,7 +61,7 @@ public class SeriousmanController : EntityController
         set
         {
             if (value && !_IsRunning)
-                ani.SetTrigger("RunningTrigger");
+                ani?.SetTrigger("RunningTrigger");
             _IsRunning = value;
         }
     }
@@ -72,7 +71,7 @@ public class SeriousmanController : EntityController
         set
         {
             if (value && !_IsDie)
-                ani.SetTrigger("DieTrigger");
+                ani?.SetTrigger("DieTrigger");
             _IsDie = value;
         }
     }
@@ -82,7 +81,7 @@ public class SeriousmanController : EntityController
         set
         {
             if (value && !_IsIdle)
-                ani.SetTrigger("IdleTrigger");
+                ani?.SetTrigger("IdleTrigger");
             _IsIdle = value;
         }
     }
@@ -92,7 +91,7 @@ public class SeriousmanController : EntityController
         set
         {
             if (value && !_IsLaugh)
-                ani.SetTrigger("LaughTrigger");
+                ani?.SetTrigger("LaughTrigger");
             _IsLaugh = value;
         }
     }
@@ -119,11 +118,11 @@ public class SeriousmanController : EntityController
         laugh
     }
    
-    private void Start()
+    new void Start()
     {
+        base.Start();
         ani = gameObject.GetComponent<Animator>();
         playerPos = GameObject.FindObjectOfType<PlayerControler2D>().transform;
-        info = gameObject.GetComponent<EntityInfo>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0f, 0f);
         StartCoroutine(FirstFrame());
@@ -218,9 +217,10 @@ public class SeriousmanController : EntityController
         yield return 0;
         SwitchState(State.idle);
     }
-    private void Update()
+
+    new void Update()
     {
-        //base.Update();
+        base.Update();
         if (_IsExit == false )
         {
             if (OneTimeUpdate)
@@ -242,8 +242,7 @@ public class SeriousmanController : EntityController
             OneTimeUpdate2 = false;
             return;
         }
-
-        random_attack = (new System.Random()).Next(0, info.HP_index);
+        random_attack = (new System.Random()).Next(-10, info.HP_index);
         if (random_attack % 10 == 0)
         {
             SwitchState(State.idle);

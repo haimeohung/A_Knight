@@ -9,6 +9,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PlayerControler2D : MonoBehaviour
 {
+    [SerializeField] private SaveGame save;
     [Header("Control Setting")]
     [SerializeField] private UIInputHander input = null;
     [SerializeField] PhysicsMaterial2D idle, move;
@@ -16,7 +17,7 @@ public class PlayerControler2D : MonoBehaviour
     [SerializeField] private int jumpForce = 10;
     [SerializeField] private int jumpAbility = 1;
     public UISliderController HP, MP, SP;
-    public int atk, def;
+    public int hp, mp, sp, atk, def;
     [Range(0.2f, 0.5f)] [SerializeField] private float lengthTimeJump = 0.35f;
     [Header("Checking Setting")]
     [SerializeField] private LayerMask whatIsGround;
@@ -73,6 +74,8 @@ public class PlayerControler2D : MonoBehaviour
             if (value && (!_isGrounder))
             {
                 ani?.SetTrigger("Grounder");
+                SoundManager.instance.Play("hit_ground");
+
                 Attacking = false;
             }
             _isGrounder = value;
@@ -131,6 +134,7 @@ public class PlayerControler2D : MonoBehaviour
         {
             if (!_attacking && value)
                 ani.SetTrigger("Attack");
+
             _attacking = value;
         }
     }
@@ -163,8 +167,6 @@ public class PlayerControler2D : MonoBehaviour
         get => _selectedWeapon;
         set
         {
-            if (_selectedWeapon == value)
-                return;
             weapons[(int)_selectedWeapon]?.parent.SetActive(false);
             try
             {
@@ -189,6 +191,16 @@ public class PlayerControler2D : MonoBehaviour
         }
     }
     #endregion
+
+
+    void OnEnable()
+    {
+        try
+        {
+            SelectedWeapon = SelectedWeapon;
+        }
+        catch { };
+    }
 
     void OnDisable()
     {
@@ -225,6 +237,7 @@ public class PlayerControler2D : MonoBehaviour
             right = parent.transform.GetChild(1);
         }
     }
+
 
     void Start()
     {
@@ -290,6 +303,12 @@ public class PlayerControler2D : MonoBehaviour
                 weapons[(int)tag] = node;
         }
         #endregion
+        foreach (var sp in gameObject.GetComponentsInChildren<SpriteRenderer>())
+        {
+            sp.gameObject.AddComponent<PlayerCollider>();
+            var p = sp.gameObject.AddComponent<PolygonCollider2D>();
+            p.isTrigger = true;
+        }
         SelectedWeapon = initWeapon;
     }
 
@@ -343,6 +362,15 @@ public class PlayerControler2D : MonoBehaviour
         
         Attacking |= input.GetDirection(JoystickTag.Weapon).Magnitude2D() > 0.1f;
         CanGoNextAttack = input.OnButtonDown(ButtonTag.Attack);
+
+        #region swap weapon
+        if (input.OnButtonDown(ButtonTag.Swap))
+        {
+            if ((int)SelectedWeapon == save.StageUnlock)
+                SelectedWeapon = WeaponTag.Sword;
+            else SelectedWeapon = SelectedWeapon + 1;
+        }
+        #endregion
     }
     private void LateUpdate()
     {
@@ -381,7 +409,9 @@ public class PlayerControler2D : MonoBehaviour
         else
         {
             if (input.GetDirection(JoystickTag.Weapon).Magnitude2D() < 0.1)
+            {
                 ani.SetTrigger("AttackDone");
+            }
             AttackPhase = 0;
         }
     }
@@ -431,6 +461,36 @@ public class PlayerControler2D : MonoBehaviour
     }
     #endregion
 
+    private class PlayerCollider : MonoBehaviour
+    {
+        private PlayerControler2D player;
+        void Start()
+        {
+            player = gameObject.GetComponent<PlayerControler2D>();
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
 
-    
+            Debug.Log("đã vào1");
+
+            if (collision.gameObject.layer == 12 || collision.gameObject.layer == 17)
+            {
+                Debug.Log("đã vào");
+
+                SoundManager.instance.Play("player_injured");
+                EntityInfo info = collision.gameObject.GetFirstComponentInParent<EntityInfo>();
+                if (info != null)
+                {
+                    int true_damage = (info.ATK_index - player.def) > 0 ? (info.ATK_index - player.def) : 1;
+                    player.HP.value -= true_damage;
+                }
+
+            }
+            if (collision.gameObject.layer == 4)
+            {
+                player.HP.value -= 1;
+            }
+        }
+    }
+
 }

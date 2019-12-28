@@ -101,6 +101,8 @@ public class UIInventory : MonoBehaviour
         buffs.AddNewBuff(SelectedItem);
         (hash[SelectedItem.name] as Node).number--;
         player.ani.SetTrigger("Eat");
+        SoundManager.instance.Play("player_eat");
+
     }
 
     private class Node

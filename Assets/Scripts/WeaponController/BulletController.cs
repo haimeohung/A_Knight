@@ -10,7 +10,9 @@ public class BulletController : MonoBehaviour
     [SerializeField] private PlayerControler2D player;
     void Start()
     {
+        SoundManager.instance.Play("lazer");
         player.MP.value -= 5;
+        
         rigi = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -20,6 +22,8 @@ public class BulletController : MonoBehaviour
         {
             EntityInfo info = collision.gameObject.GetFirstComponentInParent<EntityInfo>();
             info?.BeAttacked(player.atk + 4);
+            if (info?.HP_index > player.atk + 4) SoundManager.instance.Play("player_injured");
+
         }
         transform.SetParentWithoutChangeScale(collision.gameObject.transform);
         Destroy(rigi);

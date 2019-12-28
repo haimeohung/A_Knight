@@ -8,12 +8,14 @@ class FinalController : SceneController
     [SerializeField] private UIFadeTransition transition;
     [SerializeField] private EntityController thirdDialogTrigger;
     [SerializeField] private UISliderController BossHP;
-
+    int dialogCounter = 0;
 
     void Start()
     {
+        SoundManager.instance.Play("night");
+
         DisableControl();
-        thirdDialogTrigger.OnDie += () => { DisableControl(); dialog.StartDialog("Final1"); };
+        thirdDialogTrigger.OnDie += () => { DisableControl(); dialog.StartDialog("Final2"); };
         transition.OnFadeOutDone += (e) => { dialog.StartDialog("Final"); };
         transition.OnFadeInDone += (e) => { ChangeScene("WorldMap", ""); };
         dialog.OnDialogEnd += () =>
@@ -28,7 +30,9 @@ class FinalController : SceneController
     {
         player.enabled = false;
         input.SetActive(false);
-        thirdDialogTrigger?.gameObject.SetActive(false);
+        if (dialogCounter == 0)
+            thirdDialogTrigger?.gameObject.SetActive(false);
+        dialogCounter++;
     }
 
     private class Trigger : MonoBehaviour
@@ -43,6 +47,8 @@ class FinalController : SceneController
                 update1time = false;
                 trigger();
                 Destroy(gameObject);
+                SoundManager.instance.Play("wind");
+
             }
         }
     }

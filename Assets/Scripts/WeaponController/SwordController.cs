@@ -30,6 +30,8 @@ public class SwordController : MonoBehaviour
             Debug.Log(Time.frameCount);
             EntityInfo info = collision.gameObject.GetFirstComponentInParent<EntityInfo>();
             info?.BeAttacked(player.atk + 4);
+            if (info.HP_index > player.atk + 4) SoundManager.instance.Play("player_injured");
+
             fx?.Trigger_Spawn();
         }
  

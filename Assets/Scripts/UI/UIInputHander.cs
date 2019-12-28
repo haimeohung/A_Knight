@@ -64,7 +64,6 @@ public class UIInputHander : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         joysticks = new VJHander[System.Enum.GetValues(typeof(JoystickTag)).Length];

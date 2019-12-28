@@ -1,6 +1,6 @@
 ﻿namespace Unity.tag
 {
-    public enum ButtonTag { None, Left, Right, Jump, Attack };
+    public enum ButtonTag { None, Left, Right, Jump, Attack, Swap };
     public enum JoystickTag { None, Weapon };
     public enum InputMode { Touch, Key };
     public enum AttackMode { None, NonDirection, HaveDirection };

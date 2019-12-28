@@ -43,23 +43,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268dc70b105993846a123be43345df63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileIndex: 1
+  fileIndex: 0
   skinIndex: 0
   loadTag: 
   startID: 0
   curFocusID: 0
-  currentID: 9402
-  autosave: 1
+  currentID: 83584
+  autosave: 0
   previewPanning: 0
-  currentDiag: 1
-  locEdit: 0
+  currentDiag: 0
+  locEdit: 1
   pNodeID: 18
   aNodeID: 2
   S_playerDiags:
-  - commentCount: 1
+  - commentCount: 5
     s_comment:
-    - text: "B\u1ECDn n\xF3 c\xF3 v\u1EBB y\u1EBFu r\u1ED3i, mau ti\u1EBFn c\xF4ng
-        v\xE0o trung t\xE2m th\xF4i "
+    - text: "Ch\xE0o m\u1EEBng ng\u01B0\u01A1i \u0111\u1EBFn v\u1EDBi tr\xF2 ch\u01A1i
+        c\u1EE7a ta."
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: 1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 28
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "Ta s\u1EBD l\xE0 ng\u01B0\u1EDDi h\u01B0\u1EDBng d\u1EABn v\xE0 ch\u1EC9
+        \u0111\u01B0\u1EDDng cho ng\u01B0\u01A1i."
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "Lu\u1EADt ch\u01A1i r\u1EA5t \u0111\u01A1n gi\u1EA3n, ch\u01A1i \u0111\u1EBFn
+        cu\u1ED1i c\xF9ng v\xE0 ng\u01B0\u01A1i s\u1EBD chi\u1EBFn th\u1EAFng."
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "Ta s\u1EBD gi\u1EDBi thi\u1EC7u v\u1EDBi ng\u01B0\u01A1i k\u1EBB s\u1EBD
+        gi\xFAp ng\u01B0\u01A1i th\u1EF1c hi\u1EC7n \u0111i\u1EC1u \u0111\xF3 trong
+        th\u1EBF gi\u1EDBi n\xE0y."
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\xD0\xE2y l\xE0 A Knight, m\u1ED9t k\u1ECB s\u0129 tuy\u1EC7t v\u1EDDi
+        c\xF3 m\u1ED9t \u0111\u1EA5t n\u01B0\u1EDBc kh\xF4ng tuy\u1EC7t v\u1EDDi cho
+        l\u1EAFm. "
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
@@ -77,13 +143,13 @@ MonoBehaviour:
     ID: 0
     rect:
       serializedVersion: 2
-      x: 50
-      y: 120
+      x: -610
+      y: -60
       width: 349
-      height: 244
+      height: 399
     pTag: 
     expand: 1
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 613b9a6efb8a6174b9e2eece5b01ccf2, type: 3}
     vars:
     - Mr.Unknown
     varKeys:
@@ -91,9 +157,254 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: Comment...
+    - text: "M\xECnh \u0111ang \u1EDF \u0111\xE2u? M\xECnh l\xE0 ai? Ch\u1EBFt ti\u1EC7t,
+        c\u01A1n \u0111au \u0111\u1EA7u n\xE0y. "
       extraData: ExtraData
       inputSetIndex: 1
+      outputNodeIndex: 2
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 28
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 1
+    rect:
+      serializedVersion: 2
+      x: -220
+      y: -60
+      width: 349
+      height: 244
+    pTag: 
+    expand: 1
+    sprite: {fileID: 21300000, guid: af59f73f719e359438e22c1a85d4bc6c, type: 3}
+    vars:
+    - A.Knight
+    varKeys:
+    - character
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "Haizz, th\u1EADt b\u1EA5t h\u1EA1nh cho ta qu\xE1 kh\u1EE9, cu\u1ED1i
+        c\xF9ng b\u1EA3n th\xE2n ch\u1EC9 l\xE0 con t\u1ED1t th\xED th\xF4i."
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: 3
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 41
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: -60
+      width: 349
+      height: 257
+    pTag: 
+    expand: 1
+    sprite: {fileID: 21300000, guid: 613b9a6efb8a6174b9e2eece5b01ccf2, type: 3}
+    vars:
+    - Mr.Unknown
+    varKeys:
+    - character
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "Uhm? Gi\u1ECDng n\xF3i n\xE0y, c\xF3 ch\xFAt g\xEC \u0111\xF3 quen quen.
+        Ai \u0111ang n\xF3i v\u1EC1 ta \u0111\u1EA5y? "
+      extraData: ExtraData
+      inputSetIndex: 3
+      outputNodeIndex: 4
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 41
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 4
+    rect:
+      serializedVersion: 2
+      x: 600
+      y: -70
+      width: 349
+      height: 257
+    pTag: 
+    expand: 1
+    sprite: {fileID: 21300000, guid: af59f73f719e359438e22c1a85d4bc6c, type: 3}
+    vars:
+    - A.Knight
+    varKeys:
+    - character
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "H\u1EEDm, ng\u01B0\u01A1i nghe \u0111\u01B0\u1EE3c ta n\xF3i g\xEC \xE0? "
+      extraData: ExtraData
+      inputSetIndex: 4
+      outputNodeIndex: 5
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 28
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 5
+    rect:
+      serializedVersion: 2
+      x: 1030
+      y: -50
+      width: 349
+      height: 244
+    pTag: 
+    expand: 1
+    sprite: {fileID: 21300000, guid: 613b9a6efb8a6174b9e2eece5b01ccf2, type: 3}
+    vars:
+    - Mr.Unknown
+    varKeys:
+    - character
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "Ph\u1EA3i, r\u1EA5t r\xF5 l\xE0 \u0111\u1EB1ng kh\xE1c. Ng\u01B0\u01A1i
+        \u0111ang \u1EDF trong \u0111\u1EA7u c\u1EE7a ta?"
+      extraData: ExtraData
+      inputSetIndex: 5
+      outputNodeIndex: 6
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 28
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 6
+    rect:
+      serializedVersion: 2
+      x: 1440
+      y: -50
+      width: 349
+      height: 244
+    pTag: 
+    expand: 1
+    sprite: {fileID: 21300000, guid: af59f73f719e359438e22c1a85d4bc6c, type: 3}
+    vars:
+    - A.Knight
+    varKeys:
+    - character
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "C\xF3 th\u1EC3 n\xF3i l\xE0 nh\u01B0 v\u1EADy. "
+      extraData: ExtraData
+      inputSetIndex: 6
+      outputNodeIndex: 7
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 7
+    rect:
+      serializedVersion: 2
+      x: 1880
+      y: 0
+      width: 349
+      height: 237
+    pTag: 
+    expand: 1
+    sprite: {fileID: 21300000, guid: 613b9a6efb8a6174b9e2eece5b01ccf2, type: 3}
+    vars:
+    - Mr.Unknown
+    varKeys:
+    - character
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "N\xF3i cho ta nghe, ng\u01B0\u01A1i l\xE0 ai? Ta l\xE0 ai? V\xE0 ta \u0111ang
+        \u1EDF \u0111\xE2u? "
+      extraData: ExtraData
+      inputSetIndex: 7
+      outputNodeIndex: 8
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 28
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 8
+    rect:
+      serializedVersion: 2
+      x: 2280
+      y: -10
+      width: 349
+      height: 244
+    pTag: 
+    expand: 1
+    sprite: {fileID: 21300000, guid: af59f73f719e359438e22c1a85d4bc6c, type: 3}
+    vars:
+    - A.Knight
+    varKeys:
+    - character
+    isPlayer: 0
+  - commentCount: 4
+    s_comment:
+    - text: "T\xEAn c\u1EE7a ta \u01B0? C\u1EE9 g\u1ECDi ta l\xE0 Mr. Unknown. "
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: 9
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 28
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "Ta ch\u1EC9 l\xE0 m\u1ED9t linh h\u1ED3n \u0111ang phi\xEAu l\u01B0u
+        th\xF4i."
+      extraData: ExtraData
+      inputSetIndex: 8
       outputNodeIndex: -1
       outActionIndex: -1
       showmore: 0
@@ -106,18 +417,230 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    ID: 1
+    - text: "C\xF3 v\u1EBB ng\u01B0\u01A1i l\xE0 m\u1ED9t k\u1ECB s\u1EBD \u0111ang
+        b\u1ECB m\u1EA5t tr\xED nh\u1EDB n\u1EB7ng \u0111\u1EA5y."
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "Nh\u01B0ng \u0111\u1EEBng lo, l\xE0m theo l\u1EDDi ta, ng\u01B0\u01A1i
+        s\u1EBD d\u1EA7n l\u1EA5y l\u1EA1i \u0111\u01B0\u1EE3c k\xED \u1EE9c th\xF4i."
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 9
     rect:
       serializedVersion: 2
-      x: 570
-      y: 190
+      x: 2730
+      y: 50
       width: 349
-      height: 121
+      height: 344
     pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
+    expand: 1
+    sprite: {fileID: 21300000, guid: 613b9a6efb8a6174b9e2eece5b01ccf2, type: 3}
+    vars:
+    - Mr.Unknown
+    varKeys:
+    - character
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: "Th\xF4i \u0111\u01B0\u1EE3c, ta kh\xF4ng bi\u1EBFt ng\u01B0\u01A1i l\xE0
+        ai v\xE0 t\u1EA1i sao l\u1EA1i r\u01A1i v\xE0o t\xECnh hu\u1ED1ng n\xE0y nh\u01B0ng
+        ta hi\u1EC3u t\xECnh h\xECnh r\u1ED3i. "
+      extraData: ExtraData
+      inputSetIndex: 9
+      outputNodeIndex: 10
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 54
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "M\xE0 ch\xEDnh x\xE1c l\xE0 ta ph\u1EA3i l\xE0m g\xEC cho ng\u01B0\u01A1i? "
+      extraData: ExtraData
+      inputSetIndex: 9
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 10
+    rect:
+      serializedVersion: 2
+      x: 3170
+      y: 10
+      width: 349
+      height: 299
+    pTag: 
+    expand: 1
+    sprite: {fileID: 21300000, guid: af59f73f719e359438e22c1a85d4bc6c, type: 3}
+    vars:
+    - A.Knight
+    varKeys:
+    - character
+    isPlayer: 0
+  - commentCount: 5
+    s_comment:
+    - text: "\u0110\u1EA5t n\u01B0\u1EDBc n\xE0y s\u1EAFp h\u1EE9ng ch\u1ECBu m\u1ED9t
+        tai h\u1ECDa.    "
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: 11
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 28
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "Ng\u01B0\u01A1i ph\u1EA3i \u0111i t\xECm v\xE0 \u0111i ti\xEAu di\u1EC7t
+        ngu\u1ED3n g\u1ED1c c\u1EE7a ch\xFAng."
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "N\u1EBFu ng\u01B0\u01A1i ho\xE0n th\xE0nh th\u1EED th\xE1ch n\xE0y, ng\u01B0\u01A1i
+        s\u1EBD \u0111\u01B0\u1EE3c ph\u1EE5c h\u1ED3i k\xED \u1EE9c."
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "Nhi\u1EC7m v\u1EE5 \u0111\u1EA7u ti\xEAn c\u1EE7a ng\u01B0\u01A1i l\xE0
+        tho\xE1t kh\u1ECFi khu r\u1EEBng n\xE0y."
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "Ng\u01B0\u01A1i s\u1EBD g\u1EB7p m\u1ED9t ch\xFAt kh\xF3 kh\u0103n \u0111\u1EA5y."
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 11
+    rect:
+      serializedVersion: 2
+      x: 3560
+      y: 10
+      width: 349
+      height: 373
+    pTag: 
+    expand: 1
+    sprite: {fileID: 21300000, guid: 613b9a6efb8a6174b9e2eece5b01ccf2, type: 3}
+    vars:
+    - Mr.Unknown
+    varKeys:
+    - character
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "\u0110\u01B0\u1EE3c, ta ch\u1EC9 c\xF2n bi\u1EBFt tin t\u01B0\u1EDFng
+        ng\u01B0\u01A1i th\xF4i. "
+      extraData: ExtraData
+      inputSetIndex: 11
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 12
+    rect:
+      serializedVersion: 2
+      x: 3960
+      y: 20
+      width: 349
+      height: 244
+    pTag: 
+    expand: 1
+    sprite: {fileID: 21300000, guid: af59f73f719e359438e22c1a85d4bc6c, type: 3}
+    vars:
+    - A.Knight
+    varKeys:
+    - character
     isPlayer: 0
   S_actionNodes: []
   S_selNodes: []

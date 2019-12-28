@@ -16,6 +16,8 @@ class HomeController : SceneController
 
     void Start()
     {
+        SoundManager.instance.Play("night");
+
         DisableControl();
         secondDialogTrigger.AddComponent<Trigger>();
         secondDialogTrigger.GetComponent<Trigger>().trigger = () => { DisableControl(); dialog.StartDialog("Home1"); };
@@ -58,6 +60,8 @@ class HomeController : SceneController
                 update1time = false;
                 trigger();
                 Destroy(gameObject);
+                SoundManager.instance.Play("wind");
+
             }
         }
     }

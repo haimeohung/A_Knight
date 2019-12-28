@@ -18,6 +18,7 @@ public class MainMenuController : SceneController
 
     void Start()
     {
+        SoundManager.instance.Play("theme");
         transition.OnFadeInDone += (e) =>
         {
             if (e.name == "Play") 

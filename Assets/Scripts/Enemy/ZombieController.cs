@@ -7,22 +7,20 @@ public class ZombieController : EntityController
 {
     [Header("Other")]
     Animator ani;
-    EntityInfo info;
     private class ZombieCollider : MonoBehaviour
     {
         public int a = 5;
     }
 
-    new void Start()
+    void Start()
     {
         base.Start();
-        info = gameObject.GetComponent<EntityInfo>();
         foreach (var sprite in gameObject.GetComponentsInChildren<SpriteRenderer>())
         {
             sprite.gameObject.AddComponent<ZombieCollider>();
         }
     }
-    new void Update()
+    void Update()
     {
         base.Update();
 

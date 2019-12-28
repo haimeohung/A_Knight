@@ -29,33 +29,33 @@ public class DeadmanController : EntityController
         set
         {
             if (value && !_IsAttack)
-                ani.SetTrigger("AttackTrigger");
+                ani?.SetTrigger("AttackTrigger");
             _IsAttack = value;
         }
     }
-    
+
     private bool IsFire
     {
         get => _IsFire;
         set
         {
             if (value && !_IsFire)
-                ani.SetTrigger("FireTrigger");
+                ani?.SetTrigger("FireTrigger");
             _IsFire = value;
         }
     }
-   
+
     private bool IsIdle
     {
         get => _IsIdle;
         set
         {
             if (value && !_IsIdle)
-                ani.SetTrigger("IdleTrigger");
+                ani?.SetTrigger("IdleTrigger");
             _IsIdle = value;
         }
     }
-   
+
     public bool FacingRight
     {
         get => _facingRight;
@@ -77,6 +77,8 @@ public class DeadmanController : EntityController
 
     private void Start()
     {
+        base.Start();
+
         ani = gameObject.GetComponent<Animator>();
         player = GameObject.FindObjectOfType<PlayerControler2D>();
         playerPos = player.transform;
@@ -94,8 +96,10 @@ public class DeadmanController : EntityController
             IsFire = false;
             IsIdle = false;
             _IsExit = false;
+            SoundManager.instance.Play("man_laugh");
+
         }
-  
+
         if (state == State.fire)
         {
             IsAttack = false;
@@ -103,7 +107,7 @@ public class DeadmanController : EntityController
             IsIdle = false;
             _IsExit = false;
         }
-    
+
         if (state == State.idle)
         {
             IsAttack = false;
@@ -119,14 +123,15 @@ public class DeadmanController : EntityController
     }
     private void Update()
     {
-        rb.velocity = new Vector2(0f, 0f);
-        if (_IsExit == false)
+        base.Update();
+        rb.velocity = new Vector2(0f, rb.velocity.y);
+        if (_IsExit == false || info.HP_index <= 0)
         {
             return;
         }
-            
+
         random_attack = (new System.Random()).Next(1, 4);
-        
+
         if (random_attack == 1)
         {
 
@@ -140,20 +145,17 @@ public class DeadmanController : EntityController
 
             SwitchState(State.attack);
 
-            if (player.FacingRight )
+            if (player.FacingRight)
             {
-                 rb.position = new Vector2(playerPos.position.x - 2, playerPos.position.y);
-                Debug.Log("adad");
+                rb.position = new Vector2(playerPos.position.x - 2, playerPos.position.y);
             }
             else
             {
                 rb.position = new Vector2(playerPos.position.x + 2, playerPos.position.y);
-                Debug.Log("adad");
-
             }
             return;
         }
-        else 
+        else
         {
             SwitchState(State.fire);
             return;
@@ -179,6 +181,6 @@ public class DeadmanController : EntityController
 
     private void LateUpdate()
     {
-       
+
     }
 }

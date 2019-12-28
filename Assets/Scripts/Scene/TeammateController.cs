@@ -19,7 +19,9 @@ class TeammateController : SceneController
         secondDialogTrigger.AddComponent<Trigger>();
         secondDialogTrigger.GetComponent<Trigger>().trigger = () => { DisableControl(); dialog.StartDialog("Teammate1"); };
         thirdDialogTrigger.OnDie += () => { BossHP.gameObject.SetActive(false); DisableControl(); dialog.StartDialog("Teammate2"); gate.canTrigger = true; };
-        transition.OnFadeOutDone += (e) => { dialog.StartDialog("Teammate"); };
+        transition.OnFadeOutDone += (e) => { dialog.StartDialog("Teammate");
+            SoundManager.instance.Play("night");
+        };
         transition.OnFadeInDone += (e) =>
         {
             if (e.Equals(null))
@@ -57,6 +59,8 @@ class TeammateController : SceneController
                 update1time = false;
                 trigger();
                 Destroy(gameObject);
+                SoundManager.instance.Play("wind");
+
             }
         }
     }

@@ -5,14 +5,16 @@ using Unity.Extentison;
 
 public class WeaponGunController : WeaponController
 {
-    private UIInputHander input;
-    private PlayerControler2D controler;
+    [SerializeField] private UIInputHander input;
     [SerializeField] private float bulletSpeed = 100f;
+    private PlayerControler2D controler;
     private SpawnMachine spawn;
     private Vector3 inputDirection, lastInputDirection;
     void Start()
     {
-        input = FindObjectOfType<UIInputHander>();
+        if (input.Equals(null))
+            input = FindObjectOfType<UIInputHander>();
+
         controler = FindObjectOfType<PlayerControler2D>().GetComponent<PlayerControler2D>();
         spawn = gameObject.GetComponent<SpawnMachine>();
         spawn.SetOnInit += (clone) =>

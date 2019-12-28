@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    private UIInventory inventory;
-    [SerializeField] private Item item;
-    void Start()
+    public UIInventory inventory;
+    public Item item;
+    public void Start()
     {
         gameObject.GetComponent<Animator>().runtimeAnimatorController = item.ani;
-        inventory = FindObjectOfType<UIInventory>();
+        if (inventory is null)
+            inventory = FindObjectOfType<UIInventory>();
         StartCoroutine(AssignHitBox());
     }
 
