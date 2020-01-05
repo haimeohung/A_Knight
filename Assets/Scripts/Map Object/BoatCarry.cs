@@ -28,7 +28,7 @@ public class BoatCarry : MonoBehaviour
                 if (Time.time - time > 2f)
                 {
                     Debug.Log(collision.gameObject.layer);
-                    ani.SetTrigger("DuckTrigger");
+                    ani?.SetTrigger("DuckTrigger");
                     time = Time.time;
                 }
                 
@@ -65,6 +65,6 @@ public class BoatCarry : MonoBehaviour
 
     public void EndDuck()
     {
-        ani.SetTrigger("EndDuck");
+        ani?.SetTrigger("EndDuck");
     }
 }

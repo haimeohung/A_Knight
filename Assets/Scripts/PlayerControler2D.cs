@@ -51,7 +51,7 @@ public class PlayerControler2D : MonoBehaviour
                 return;
             CanGoNextAttack = false;
             _attackPhase = value > 3 ? 1 : value;
-            ani.SetInteger("AttackPhase", _attackPhase);
+            ani?.SetInteger("AttackPhase", _attackPhase);
         }
     }
     public bool FacingRight
@@ -133,7 +133,7 @@ public class PlayerControler2D : MonoBehaviour
         set
         {
             if (!_attacking && value)
-                ani.SetTrigger("Attack");
+                ani?.SetTrigger("Attack");
 
             _attacking = value;
         }
@@ -264,6 +264,9 @@ public class PlayerControler2D : MonoBehaviour
             if (HP is null || MP is null || SP is null)
                 Debug.LogError("Cannt find HP stat");
         }
+        HP.value = hp;
+        MP.value = mp;
+        SP.value = sp;
         if (groundCheck.isNull())
         {
             groundCheck = transform.Find("GroundCheck")?.GetComponent<Transform>();
@@ -467,16 +470,14 @@ public class PlayerControler2D : MonoBehaviour
 
     private class PlayerCollider : MonoBehaviour
     {
+        float timer = 2f;
         public PlayerControler2D player;
         private void OnTriggerEnter2D(Collider2D collision)
         {
-
-            Debug.Log("đã vào1");
-
+            if (timer <= 0f) { timer = 2f; return; }
+            else { timer -= Time.deltaTime; }
             if (collision.gameObject.layer == 12 || collision.gameObject.layer == 17)
             {
-                Debug.Log("đã vào");
-
                 SoundManager.instance.Play("player_injured");
                 EntityInfo info = collision.gameObject.GetFirstComponentInParent<EntityInfo>();
                 if (info != null)

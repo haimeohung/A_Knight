@@ -22,9 +22,9 @@ class FinalController : SceneController
         {
             input.SetActive(true);
             player.enabled = true;
-            thirdDialogTrigger?.gameObject.SetActive(true);
+            if (thirdDialogTrigger != null) thirdDialogTrigger.gameObject.SetActive(true);
             if (dialogCounter == 1)
-                BossHP.gameObject.SetActive(true);
+                if (BossHP != null) BossHP.gameObject.SetActive(true);
         };
     }
 

@@ -19,6 +19,7 @@ public class ZombieController : EntityController
         {
             sprite.gameObject.AddComponent<ZombieCollider>();
         }
+     
     }
     new void Update()
     {

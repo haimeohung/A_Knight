@@ -18,7 +18,11 @@ public class EnemyFollowing : MonoBehaviour
         set
         {
             if (value && !_IsFollowing)
+            {
+                if (ani == null) return;
                 ani?.SetTrigger("FollowingTrigger");
+               
+            }
             _IsFollowing = value;
         }
     }
@@ -30,6 +34,7 @@ public class EnemyFollowing : MonoBehaviour
         {
             if (value && !_IsAttacking)
             {
+                if (ani == null) return;
                 ani?.SetTrigger("AttackTrigger");
             }
             _IsAttacking = value;
@@ -89,6 +94,8 @@ public class EnemyFollowing : MonoBehaviour
 
     private void SwitchState(State state)
     {
+        if (ani is null) return;
+
         if (state == State.following)
         {
             IsFollowing = true;
