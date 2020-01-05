@@ -13,7 +13,7 @@ Tuy nhiên, con người cũ trong anh vẫn còn, và liên tục đấu tranh 
 
 Mở đầu sẽ là cảnh nhân vật chính được đánh thức mà không có bất kì kí ức nào về cuộc sống trước đó. A Knight phải làm các nhiệm vụ mà chính người chơi  - Mr. Unknown giao cho. Hành trình phiêu lưu của A Knight là hành trình đi tìm lại bản thân cũng như giải cứu thế giới. 
 
-![Introducation](https://user-images.githubusercontent.com/43202025/71473890-9226f780-280b-11ea-9882-eafb6b6f5f47.png)
+![Introducation](https://user-images.githubusercontent.com/43202025/71774969-20893f00-2fab-11ea-83ec-6a7901a110ba.png)
 
 ## 2. Đồ họa
 
