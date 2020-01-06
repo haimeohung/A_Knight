@@ -87,6 +87,10 @@ Tên | Mô tả |
 
 https://github.com/vutuanhai237/A_Knight/tree/master/Build
 
-## 9. Lưu ý
+## 9. Video
+
+[Youtube](https://youtu.be/-KdnrkL1kOg)
+
+## 10. Lưu ý
 
 Nếu project bị lỗi font, chọn Window -> TextMeshPro -> FixFont -> Chọn phông chữ và ấn Fix
