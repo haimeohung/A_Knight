@@ -81,7 +81,7 @@ Tên | Mô tả |
 
 ## 7. Báo cáo chi tiết
 
-[Báo cáo A Knight.pdf](https://github.com/vutuanhai237/Self_Driving_Car/files/4026749/Bao.cao.A.Knight.pdf)
+[Báo cáo A Knight.pdf](https://github.com/vutuanhai237/Self_Driving_Car/files/4029322/Bao.cao.A.Knight.pdf)
 
 ## 8. APK
 
